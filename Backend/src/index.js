@@ -1,8 +1,14 @@
 const express = require('express');
 const dbconnect = require("./config/dbConnect");
 
-const app = express();
+const userRouter = require("./features/Users/users.router");
+const projectRouter = require("./features/Projects/projects.router");
 
+const app = express();
+app.use(express.json());
+
+app.use("/users", userRouter)
+app.use("/projects",projectRouter )
 app.get("/", (req, res)=>{
     res.send("working fine");
 })
