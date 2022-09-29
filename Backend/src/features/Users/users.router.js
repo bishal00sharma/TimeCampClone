@@ -20,12 +20,28 @@ const authMiddleware = async (req,res,next) => {
     }
 }
 
-
+// API request to get all User
 app.get("/",authMiddleware, async (req,res)=>{
     let u = await users.find()
     res.send(u);
 })
 
+
+// API request to delete User Id
+app.delete("/", authMiddleware, async(req,res)=>{
+    let id = req.userId;
+    let delete_user = await users.deleteOne({id});
+    res.send("User Id deleted Successfully!");
+})
+
+// API request to update User details
+app.patch("/", authMiddleware, async(req,res)=>{
+    let id = req.userId;
+    let update = await users.updateOne({"_id":id},{$set: {...req.body}});
+    res.send("User Details Updated Successfully!");
+})
+
+// API request to User signing up
 app.post("/signup", async (req,res)=>{
     let {email} = req.body;
     try{
@@ -43,6 +59,7 @@ app.post("/signup", async (req,res)=>{
     }
 })
 
+// API request to User logging in
 app.post("/login", async (req,res)=>{
     let { email, password } = req.body;
     try {
