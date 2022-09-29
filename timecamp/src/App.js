@@ -1,5 +1,5 @@
 import './App.css';
-import TrelloTimeTracking from './Integrations/trelloTimeTracking/trelloTimeTracking';
+import TrelloTimeTracking from './Integrations/TrelloTimeTracking/TrelloTimeTracking';
 
 function App() {
   return (
