@@ -3,7 +3,25 @@ const express = require('express');
 const users = require("./users.schema");
 const app = express.Router();
 
-app.get("/",async (req,res)=>{
+
+const authMiddleware = async (req,res,next) => {    
+    let token = req.headers.token;
+    if(token){
+        let [id,email,password] = token.split(":");
+        let u = await users.findById(id);
+        if(u.email === email && u.password === password){
+            req.userId = id;
+            next();
+        }else{
+            res.status(401).send("Not Authorised");
+        }
+    }else{
+        res.status(401).send("Not Authorised");
+    }
+}
+
+
+app.get("/",authMiddleware, async (req,res)=>{
     let u = await users.find()
     res.send(u);
 })

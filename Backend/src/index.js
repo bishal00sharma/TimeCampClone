@@ -9,7 +9,7 @@ const projectRouter = require("./features/Projects/projects.router");
 
 const users = require("./features/Users/users.schema");
 
-const authMiddleware = async (req,res,next) => {    
+ const authMiddleware = async (req,res,next) => {    
     let token = req.headers.token;
     if(token){
         let [id,email,password] = token.split(":");
@@ -18,7 +18,7 @@ const authMiddleware = async (req,res,next) => {
             req.userId = id;
             next();
         }else{
-            res.status(401).send("----Not Authorised");
+            res.status(401).send("Not Authorised");
         }
     }else{
         res.status(401).send("Not Authorised");
@@ -41,3 +41,5 @@ app.listen(process.env.PORT, async ()=>{
     await dbconnect();
     console.log(`Listening on http://localhost:${process.env.PORT}`);
 })
+
+
