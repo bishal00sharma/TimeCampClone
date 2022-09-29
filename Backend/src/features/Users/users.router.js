@@ -18,7 +18,7 @@ app.post("/signup", async (req,res)=>{
 
         let newUser = await users.create(req.body);
         res.send({
-            token : `${newUser.id}:${newUser.email}:${newUser.password}}`
+            token : `${newUser.id}:${newUser.email}:${newUser.password}`
         });
     }catch(e){
         res.status(500).send(e.message)
@@ -33,7 +33,7 @@ app.post("/login", async (req,res)=>{
             return res.status(401).send("Incorrect credentials");
         }
         res.send({
-            token : `${user.id}:${user.email}:${user.password}}`
+            token : `${user.id}:${user.email}:${user.password}`
         })
     }catch(e) {
         req.status(500).send(e.message)
