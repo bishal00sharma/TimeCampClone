@@ -13,7 +13,7 @@ app.post("/signup", async (req,res)=>{
     try{
         let user = await users.findOne({email});
         if(user){
-            return res.status(401).send("Email id already exists! Try logging in");
+         return res.status(401).send("Email id already exists! Try logging in");
         }
 
         let newUser = await users.create(req.body);
