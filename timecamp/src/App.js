@@ -1,21 +1,21 @@
 import React from 'react';
 import './App.css';
-import GoogleCalender from './Pages/Integrations/GoogleCalender/GoogleCalender';
-import TrelloTimeTracking from "./Pages/Integrations/TrelloTimeTracking/TrelloTimeTracking";
+import HomePage from './Routes/HomePage';
+import TrelloTimeTracking from './Integrations/TrelloTimeTracking/TrelloTimeTracking';
 
-// import Features from './Pages/Features/Features';
-// import Navbar from './Components/Navbar';
-// import Footer from './Components/Footer';
-import Tags from './Pages/Backend Frontend/Tags';
+import Features from './Pages/Features/Features';
+import Navbar from './Components/Navbar';
+import Footer from './Components/Footer';
+import Automatic from './Pages/Features/Automatic';
 function App() {
   return (
     <div className="App">
-
-    {/* <Features/>
+    {/* <Features/> */}
     <Navbar/>
-      <Footer/> */}
+    <HomePage/>
+      <Footer/>
       {/* <TrelloTimeTracking /> */}
-      <GoogleCalender />
+      {/* <Automatic/> */}
    </div>
   );
 }
