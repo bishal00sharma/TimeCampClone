@@ -1,9 +1,12 @@
-import { Flex, Grid, Img, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Grid, Img, MenuButton, MenuItem, MenuList, Text } from "@chakra-ui/react";
+import { Menu,} from '@chakra-ui/react'
+import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
 import LogoBar from "../../Components/Login/Logo-bar"
 
 export default function Sidebar() {
     return (
-        <Grid boxShadow="rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" alignItems="flex-start" templateRows="7vh 93vh">
+        <Grid boxShadow="rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" alignItems="flex-start" templateRows="7vh 93vh" pos="relative">
+            <Box pos="absolute" right="-20px" top="10px" backgroundColor="white" p="10px" borderRadius="50%" border="1px solid rgba(100, 100, 111, 0.2)"> <ChevronLeftIcon w={6} h={6} /> </Box>
             <LogoBar />
             <Grid id="sidebar">
                 <Grid h="fit-content"  >
@@ -12,6 +15,7 @@ export default function Sidebar() {
                         <Img src={require("../../Resources/icons/dashboard/timesheet.png")} alt="TimeSheet" />
                         <Text>TimeSheet</Text>
                     </Flex>
+                    
                 </Grid>
                 <Grid>
                     <Text>ANALYZE</Text>
@@ -19,13 +23,15 @@ export default function Sidebar() {
                         <Img src={require("../../Resources/icons/dashboard/dashboard.png")} alt="TimeSheet" />
                         <Text>Dashboard</Text>
                     </Flex>
-                    <Flex>
-                        <Img src={require("../../Resources/icons/dashboard/reports.png")} alt="TimeSheet" />
-                        <Text>Reports</Text>
-                    </Flex>
-                    <Flex>
+                        <Flex className="menu">
+                            <Img src={require("../../Resources/icons/dashboard/reports.png")} alt="TimeSheet" />
+                            <Text>Reports </Text>
+                            <ChevronRightIcon w={4} h={4} />
+                        </Flex>
+                    <Flex className="menu">
                         <Img src={require("../../Resources/icons/dashboard/computer-time.png")} alt="TimeSheet" />
                         <Text>Computer Time</Text>
+                        <ChevronRightIcon w={4} h={4} />
                     </Flex>
                 </Grid>
                 <Grid>
