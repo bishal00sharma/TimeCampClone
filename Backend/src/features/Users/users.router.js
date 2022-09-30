@@ -62,16 +62,17 @@ app.post("/signup", async (req,res)=>{
 // API request to User logging in
 app.post("/login", async (req,res)=>{
     let { email, password } = req.body;
+    console.log("9999",email, password)
     try {
-        let user = await users.findOne({email,password});
+        let user = await users.findOne({"email":email,"password": password});
         if(!user){
             return res.status(401).send("Incorrect credentials");
         }
-        res.send({
+        res.status(200).send({
             token : `${user.id}:${user.email}:${user.password}`
         })
     }catch(e) {
-        req.status(500).send(e.message)
+        res.status(500).send(e.message)
     }
 })
 //Patch for adding Tag

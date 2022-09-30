@@ -7,28 +7,27 @@ import {
     AUTH_SIGNUP_ERROR,
     AUTH_SIGNUP_LOADING,
     AUTH_SIGNUP_SUCCESS,
-    AUTH_LOGOUT
 } from "./auth.type";
 
 
 export const login = (creds) =>  async (dispatch) => {
-    dispatch(AUTH_LOGIN_LOADING);
+    dispatch({type:AUTH_LOGIN_LOADING});
     try{
         let response = await axios.post("http://localhost:8080/users/login", creds);
-        dispatch({type:AUTH_LOGIN_SUCCESS, payload: response.data});
+        dispatch({type:AUTH_LOGIN_SUCCESS, payload: response.data.token});
         return response.data;
     } catch (e) {
-        dispatch(AUTH_LOGIN_ERROR);
+        dispatch({type:AUTH_LOGIN_ERROR});
     }
 }
 
 export const signup = (creds) => async (dispatch) => {
-    dispatch(AUTH_SIGNUP_LOADING);
+    dispatch({type:AUTH_SIGNUP_LOADING});
     try{
         let response = await axios.post("http://localhost:8080/users/signup", creds);
         dispatch({type:AUTH_SIGNUP_SUCCESS, payload: response.data});
         return response.data;
     } catch (e) {
-        dispatch(AUTH_SIGNUP_ERROR);
+        dispatch({type:AUTH_SIGNUP_ERROR});
     }
 }

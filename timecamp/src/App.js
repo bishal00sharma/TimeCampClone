@@ -1,11 +1,13 @@
+import { Box } from '@chakra-ui/react';
 import React from 'react';
 import './App.css';
-import Navbar from './Components/Navbar';
-import Footer from './Components/Footer';
+import Login from './Pages/Login';
+
 function App() {
   return (
-    <div className="App">
-   </div>
+    <Box className="App">
+      <Login />
+   </Box>
   );
 }
 
