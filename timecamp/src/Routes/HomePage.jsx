@@ -1,4 +1,5 @@
 import React from "react";
+import "./price.css";
 import style from "../Routes/home.module.css";
 import {
   Button,
@@ -6,10 +7,19 @@ import {
   Container,
   Box,
   Flex,
+  Spacer,
   Stack,
   Text,
   Image,
   SimpleGrid,
+  ListItem,
+  Accordion,
+    AccordionIcon,
+    MinusIcon,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  UnorderedList,
 } from "@chakra-ui/react";
 import Carousels from "../Components/Carousel";
 
@@ -124,11 +134,26 @@ const HomePage = () => {
           Trusted by 18,000 teams from all over the world (and still growing!)
         </h3>
         <div className={style.subpart}>
-          <img src="https://cdn-m.timecamp.com/img/greenbranding/social-proof-section/usp-logo-white.png" />
-          <img src="https://cdn-m.timecamp.com/img/greenbranding/social-proof-section/dsv-logo-white.png" />
-          <img src="https://cdn-m.timecamp.com/img/greenbranding/social-proof-section/raindrop-logo-white.png" />
-          <img src="https://cdn-m.timecamp.com/img/greenbranding/social-proof-section/saatchi-logo-white.png" />
-          <img src="https://cdn-m.timecamp.com/img/greenbranding/social-proof-section/havas-logo-white.png" />
+          <img
+            src="https://cdn-m.timecamp.com/img/greenbranding/social-proof-section/usp-logo-white.png"
+            alt="usp"
+          />
+          <img
+            src="https://cdn-m.timecamp.com/img/greenbranding/social-proof-section/dsv-logo-white.png"
+            alt="dsv"
+          />
+          <img
+            src="https://cdn-m.timecamp.com/img/greenbranding/social-proof-section/raindrop-logo-white.png"
+            alt="raindrop"
+          />
+          <img
+            src="https://cdn-m.timecamp.com/img/greenbranding/social-proof-section/saatchi-logo-white.png"
+            alt="saatchi"
+          />
+          <img
+            src="https://cdn-m.timecamp.com/img/greenbranding/social-proof-section/havas-logo-white.png"
+            alt="havalogo"
+          />
         </div>
       </div>
       <div className={style.profatibility}>
@@ -619,74 +644,524 @@ const HomePage = () => {
       </SimpleGrid>
 
       {/* quick integrations */}
-      <Container maxW={"6xl"}>
-        <Stack
-          align={"center"}
-          spacing={{ base: 8, md: 10 }}
-          py={{ base: 20, md: 28 }}
-          direction={{ base: "column", md: "row" }}
+
+      <div className={style.integration}>
+        <div className={style.integration_subpart1}>
+          <h4 style={{ marginTop: "14%" }}>TIME TRACKING INTEGRATIONS</h4>
+          <h1>
+            Easy and quick integration with more than 100 apps and work tools
+          </h1>
+          <p>
+            TimeCamp works great alongside with all of the most popular work
+            management tools.
+          </p>
+          <p>
+            Now, you can also track time directly from your go-to apps such as
+            Trello or Asana thanks to our Chrome extension.
+          </p>
+          <Button
+            backgroundColor="#25CF60"
+            height="20"
+            marginTop="4%"
+            marginLeft="-7%"
+            _hover="#25CF60;"
+            color="white"
+            borderRadius="22px"
+            fontSize="20"
+          >
+            <img
+              height="20px"
+              marginRight="8px"
+              src="https://cdn-m.timecamp.com/img/greenbranding/features/chrome-white.png"
+              alt=""
+            />
+            Track time in Chrome
+          </Button>
+          <p>
+            Maintain your current workflow and connect TimeCamp, the best time
+            tracking software, with your currently used apps.
+          </p>
+          <h4>
+            Check integrations<i class="fa-solid fa-arrow-right"></i>
+          </h4>
+        </div>
+        {/* <div className={style.integration_subpart2}> */}
+        <SimpleGrid
+          columns={[3, null, 3]}
+          marginTop="24"
+          spacing="40px"
+          marginLeft={"50px"}
         >
-          <Stack flex={1} spacing={{ base: 5, md: 10 }}>
-            <Stack spacing={"3"}>
-              <Text textAlign="start" fontWeight="bold" color="#25CF60">
-                TIME TRACKING INTEGRATIONS
-              </Text>
-              <Heading
-                textAlign="start"
-                fontWeight="500"
-                fontSize="5xl"
-                color="black"
-              >
-                Easy and quick integration with more than 100 apps and work
-                tools
-              </Heading>
-              <Text fontWeight="bold" textAlign="start" color="gray.500">
-                TimeCamp works great alongside with all of the most popular work
-                management tools.
-              </Text>
-              <Text fontWeight="bold" textAlign="start" color="gray.500">
-                TimeCamp works great alongside with all of the most popular work
-                management tools.
-              </Text>
-              <Text textAlign="start">
-                Now, you can also track time directly from your go-to apps such
-                as Trello or Asana thanks to our Chrome extension.
-              </Text>
-            </Stack>
-            <Stack spacing={{ base: -8, sm: -10 }} direction={{ sm: "row" }}>
+          {trackingApi.map((el) => {
+            return (
+              <>
+                <Box
+                  height="120px"
+                  backgroundColor={"white"}
+                  width="120px"
+                  borderRadius={"35px"}
+                >
+                  <Image
+                    height="50%"
+                    margin={"auto"}
+                    marginTop="6"
+                    justifyContent={"center"}
+                    src={el.img}
+                  />
+                </Box>
+              </>
+            );
+          })}
+        </SimpleGrid>
+      </div>
+      {/* f********************** */}
+      <div className={style.pricee}>
+        <div>
+          <Text color="#25CF60" fontSize="16" textAlign="center" as="b">
+            Pricing
+          </Text>
+          <Text
+            fontSize="4xl"
+            fontWeight={"bold"}
+            marginTop="5"
+            textAlign={"center"}
+          >
+            Your time costs more
+          </Text>
+          <Text
+            fontSize="18"
+            color="gray.500"
+            marginTop="4"
+            textAlign={"center"}
+          >
+            Use free forever plan or subscribe to a paid plan to get more
+            <br />
+            features!
+          </Text>
+        </div>
+        <Flex marginTop={"6"}>
+          <Spacer />
+          <Button
+            backgroundColor="#25CF60"
+            height="12"
+            marginLeft={"2"}
+            marginTop={"2"}
+            _hover="#25CF60;"
+            color="white"
+            borderRadius="22px"
+          >
+            Annualy 10% discount
+          </Button>
+          <Button
+            backgroundColor="aquawhite"
+            height="12"
+            width="32"
+            marginLeft={"2"}
+            marginTop={"2"}
+            color="#25CF60"
+            borderRadius="22px"
+          >
+            Monthly
+          </Button>
+          <Spacer />
+        </Flex>
+        <div id="price">
+          <div id="third">
+            <div id="launch">
+              <div id="launch_price">
+                <Text color="#25CF60" fontSize="5xl" textAlign="center" as="b">
+                  Free
+                </Text>
+                <Text fontSize="s" textAlign={"center"}>
+                  Free forever plan
+                </Text>
+              </div>
+              <hr />
+              <div>
+                <Text fontSize="s" textAlign={"start"}>
+                  Measure on which activities you spend time while working
+                </Text>
+              </div>
               <Button
                 backgroundColor="#25CF60"
-                size="lg"
-                marginRight="9%"
-                height="80px"
-                borderRadius="22px"
-                marginLeft="2%"
-                _hover={{ backgroundColor: "#25CF60" }}
+                height="12"
+                marginLeft={"2"}
+                marginTop={"2"}
+                _hover="#25CF60;"
                 color="white"
+                borderRadius="22px"
               >
-                <Image height="80%" src="https://cdn-m.timecamp.com/img/greenbranding/features/chrome-white.png" alt=""/> track time in chrome
+                Join for Free
               </Button>
-            </Stack>
-          </Stack>
-          <SimpleGrid
-            columns={[3, null, 1]}
-            marginTop="5%"
-            marginLeft="7%"
-            spacing="40px"
-          >
-            {trackingapi.map((el) => {
-              return (
-                <>
-                  <Box height="80px">
-                    <Image width="55%" src={el.img} alt="Dan Abramov" />
+              <div id="launch_list">
+                <UnorderedList textAlign={"start"}>
+                  <ListItem>Unlimited users</ListItem>
+                  <ListItem>Unlimited Projects & tasks</ListItem>
+                  <ListItem>Desktop & Mobile app</ListItem>
+                </UnorderedList>
+              </div>
+            </div>
+          </div>
+          {/* ************************** */}
+          <div id="third">
+            <div id="launch">
+              <div id="launch_price">
+                <Text fontSize="5xl" textAlign="center" as="b">
+                  $ 6.3
+                </Text>
+                <Text fontSize="s" textAlign={"center"}>
+                  user/mo
+                </Text>
+              </div>
+              <hr />
+              <div>
+                <Text fontSize="s" textAlign={"start"}>
+                  Be more transparent and gain customers' trust
+                </Text>
+              </div>
+              <Button
+                backgroundColor="#25CF60"
+                height="12"
+                marginLeft={"2"}
+                marginTop={"2"}
+                _hover="#25CF60;"
+                color="white"
+                borderRadius="22px"
+              >
+                Start your free trial
+              </Button>
+              <div id="launch_list">
+                <UnorderedList textAlign={"start"}>
+                  <ListItem>Time rounding</ListItem>
+                  <ListItem>Custom report</ListItem>
+                  <ListItem>Hide time from users</ListItem>
+                  <ListItem>Management roles</ListItem>
+                  <ListItem>Team productivity tracking</ListItem>
+                  <ListItem>XLS reports export</ListItem>
+                  <ListItem>Unlimited integrations</ListItem>
+                  <ListItem>Billable time & budgeting</ListItem>
+                </UnorderedList>
+              </div>
+            </div>
+          </div>
+          {/* **************************** */}
+          <div id="third">
+            <div id="launch" style={{ backgroundColor: "#25CF60" }}>
+              <div id="launch_price">
+                <Text color="white" fontSize="5xl" textAlign="center" as="b">
+                  $ 9
+                </Text>
+                <Text fontSize="s" textAlign={"center"}>
+                  user/mo
+                </Text>
+              </div>
+              <hr />
+              <div>
+                <Text color="white" fontSize="s" textAlign={"start"}>
+                  Get full control over your business
+                </Text>
+              </div>
+              <Button
+                color="#25CF60"
+                height="12"
+                marginLeft={"2"}
+                marginTop={"2"}
+                _hover="white"
+                backgroundColor={"white"}
+                borderRadius="22px"
+              >
+                Start your free trial
+              </Button>
+              <div>
+                <Text fontSize="20" color="white" textAlign={"start"}>
+                  Everything in basic plus
+                </Text>
+              </div>
+              <div id="launch_list">
+                <UnorderedList color="white" textAlign={"start"}>
+                  <ListItem>Custom user roles</ListItem>
+                  <ListItem>Billing rates</ListItem>
+                  <ListItem>Invoicing</ListItem>
+                  <ListItem>Timesheet approvals</ListItem>
+                  <ListItem>Screenshots</ListItem>
+                  <ListItem>SSO login</ListItem>
+                  <ListItem>2-factor authentication</ListItem>
+                </UnorderedList>
+              </div>
+            </div>
+          </div>
+          {/* **************************** */}
+          <div id="third">
+            <div id="launch">
+              <div id="launch_price">
+                <Text color="#25CF60" fontSize="s" textAlign="center" as="b">
+                  Free
+                </Text>
+                <Text fontSize="3xl" marginTop={"4"} textAlign={"center"}>
+                  Let's discuss
+                </Text>
+              </div>
+              <hr />
+              <div>
+                <Text fontSize="s" textAlign={"start"}>
+                  Customize TimeCamp to your custom needs
+                </Text>
+              </div>
+              <Button
+                backgroundColor="#25CF60"
+                height="12"
+                marginLeft={"2"}
+                marginTop={"2"}
+                _hover="#25CF60;"
+                color="white"
+                borderRadius="22px"
+              >
+                Contact us
+              </Button>
+              <Text fontSize="20" marginTop={"5"} textAlign={"center"}>
+                Everything in Pro plus
+              </Text>
+              <div id="launch_list">
+                <UnorderedList textAlign={"start"}>
+                  <ListItem>Personalized training</ListItem>
+                  <ListItem>Private cloud implementation</ListItem>
+                  <ListItem>Self hosted server</ListItem>
+                </UnorderedList>
+              </div>
+            </div>
+          </div>
+        </div>
+        <Text fontSize="18" color="gray.500" marginTop="6" textAlign={"center"}>
+          SSL Secure Payment
+        </Text>
+      </div>
+
+      {/* *************************************************** */}
+      {/* <div className={style.timecamp}>
+        <div className={style.timecamp_subpart1}>
+          <h1>Use TimeCamp to your advantage</h1>
+          <p>
+            If you’re struggling to keep track of your work across different
+            projects, you need a radical change. You need TimeCamp.
+          </p>
+          <div className={style.divcamp}></div>
+        </div>
+      </div> */}
+
+      {/*  *************faq*************/}
+      {/* <Accordion allowToggle>
+        <AccordionItem>
+          <h2>
+            <AccordionButton>
+              <Box flex="1" textAlign="left">
+                Section 1 title
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pb={4}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </AccordionPanel>
+        </AccordionItem>
+
+        <AccordionItem>
+          <h2>
+            <AccordionButton>
+              <Box flex="1" textAlign="left">
+                Section 2 title
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pb={4}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </AccordionPanel>
+        </AccordionItem>
+      </Accordion> */}
+      <Text fontSize="5xl" marginTop={"5%"} marginBottom="10">FAQ</Text>
+      <Accordion maxW={"6xl"} marginLeft="5%" allowMultiple>
+        <AccordionItem>
+          {({ isExpanded }) => (
+            <>
+              <h2>
+                <AccordionButton>
+                  {isExpanded ? <Box>➖</Box> : <Box>➕</Box>}
+                  <Box
+                    height={"12"}
+                    flex="1"
+                    marginTop={"6"}
+                    marginLeft="4"
+                    fontSize={"20"}
+                    textAlign="start"
+                    fontWeight={"500"}
+                  >
+                    What is time tracker?
                   </Box>
-                </>
-              );
-            })}
-          </SimpleGrid>
-        </Stack>
-      </Container>
-      {/* f********************** */}
+                </AccordionButton>
+              </h2>
+              <AccordionPanel pb={3} textAlign="start">
+                A time tracker is computer software or a web app that allows
+                teams, managers, and freelancers to measure time spent on tasks
+                and projects. It is used in many industries (law firms,
+                accounting, creative agencies, IT teams) for settling up with
+                hourly workers and billing clients for work. You can integrate a
+                time tracker with third-party tools for project management,
+                accounting, customer service, to-do lists, and many more.
+                Speaking shortly, a time tracker helps you understand which
+                practices in your business lead to time waste. With this
+                knowledge, you can reduce bad practices and optimize workflow.
+              </AccordionPanel>
+            </>
+          )}
+        </AccordionItem>
+      </Accordion>
+      <Accordion maxW={"6xl"} marginLeft="5%" allowMultiple>
+        <AccordionItem>
+          {({ isExpanded }) => (
+            <>
+              <h2>
+                <AccordionButton>
+                  {isExpanded ? <Box>➖</Box> : <Box>➕</Box>}
+                  <Box
+                    height={"12"}
+                    flex="1"
+                    marginTop={"6"}
+                    marginLeft="4"
+                    fontSize={"20"}
+                    textAlign="start"
+                    fontWeight={"500"}
+                  >
+                    Why use time tracker?
+                  </Box>
+                </AccordionButton>
+              </h2>
+              <AccordionPanel pb={3} textAlign="start">
+                There are many reasons to use time tracking software. Here are
+                the main use cases for a time tracker: <br />
+                1.Tracking billable hours: helps freelancers and employees who
+                are paid on an hourly basis measure time spent on work with
+                accuracy up to every second.
+                <br />
+                2.Improving productivity: employees who struggle with poor time
+                management and distractions can work on their efficiency,
+                understand how they work, and what takes most of their time.
+                <br />
+                3.Timesheet management: one of the most common features of time
+                tracker is a timesheet – a digital version of a paper timesheet.
+                With a time tracker, your team can have it filled out
+                automatically.
+              </AccordionPanel>
+            </>
+          )}
+        </AccordionItem>
+      </Accordion>
+      <Accordion maxW={"6xl"} marginLeft="5%" allowMultiple>
+        <AccordionItem>
+          {({ isExpanded }) => (
+            <>
+              <h2>
+                <AccordionButton>
+                  {isExpanded ? <Box>➖</Box> : <Box>➕</Box>}
+                  <Box
+                    height={"12"}
+                    flex="1"
+                    marginTop={"6"}
+                    marginLeft="4"
+                    fontSize={"20"}
+                    textAlign="start"
+                    fontWeight={"500"}
+                  >
+                    What are the benefits of time tracker?
+                  </Box>
+                </AccordionButton>
+              </h2>
+              <AccordionPanel pb={3} textAlign="start">
+                Here are all the benefits of using time tracking software in a
+                nutshell.
+                <br />
+                <ul>
+                  <li>Increased productivity</li>
+                  <li>Accurate timesheets</li>
+                  <li>Real-time updates on projects status</li>
+                  <li>Easy attendance management, Workflow automation</li>
+                </ul>
+              </AccordionPanel>
+            </>
+          )}
+        </AccordionItem>
+      </Accordion>
+      <Accordion maxW={"6xl"} marginLeft="5%" allowMultiple>
+        <AccordionItem>
+          {({ isExpanded }) => (
+            <>
+              <h2>
+                <AccordionButton>
+                  {isExpanded ? <Box>➖</Box> : <Box>➕</Box>}
+                  <Box
+                    height={"12"}
+                    flex="1"
+                    marginTop={"6"}
+                    marginLeft="4"
+                    fontSize={"20"}
+                    textAlign="start"
+                    fontWeight={"500"}
+                  >
+                    How to bill client on hourly work?
+                  </Box>
+                </AccordionButton>
+              </h2>
+              <AccordionPanel pb={3} textAlign="start">
+                With TimeCamp, you can set up billing rates for your team
+                members, projects, and clients.
+                <br /> Have the time tracker record billable time and easily
+                turn timesheet data into invoices, adjust the tax rates for your
+                country and profession. And then, simply export the document or
+                send it straight to your clients.
+              </AccordionPanel>
+            </>
+          )}
+        </AccordionItem>
+      </Accordion>
+      <Accordion maxW={"6xl"} marginLeft="5%" allowMultiple>
+        <AccordionItem>
+          {({ isExpanded }) => (
+            <>
+              <h2>
+                <AccordionButton>
+                  {isExpanded ? <Box>➖</Box> : <Box>➕</Box>}
+                  <Box
+                    height={"12"}
+                    flex="1"
+                    marginTop={"6"}
+                    marginLeft="4"
+                    fontSize={"20"}
+                    textAlign="start"
+                    fontWeight={"500"}
+                  >
+                    How to save time on timesheet?
+                  </Box>
+                </AccordionButton>
+              </h2>
+              <AccordionPanel pb={3} textAlign="start">
+                There is nothing better than having your timesheet filled out
+                automatically!<br/> TimeCamp’s non-intrusive desktop app works in the
+                background so you and your team can focus on what really
+                matters, while the time tracker collects all the data for
+                timesheets.<br/> Edit your time logs any time or add time manually
+                for even more accuracy. Approve your team’s daily or weekly
+                timesheets with one click without effort.<br/> Quick, easy, and
+                painless timesheet management!
+              </AccordionPanel>
+            </>
+          )}
+        </AccordionItem>
+      </Accordion>
     </>
   );
 };
