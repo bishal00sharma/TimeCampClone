@@ -13,8 +13,9 @@ import {
 export const login = (creds) =>  async (dispatch) => {
     dispatch({type:AUTH_LOGIN_LOADING});
     try{
-        let response = await axios.post("http://localhost:8080/users/login", creds);
-        dispatch({type:AUTH_LOGIN_SUCCESS, payload: response.data.token});
+        let response = await axios.post("http://localhost:8080/users/login", {email: creds.email, password: creds.password});
+        console.log("res",response.data)
+        dispatch({type:AUTH_LOGIN_SUCCESS, payload: response.data.token})
         return response.data;
     } catch (e) {
         dispatch({type:AUTH_LOGIN_ERROR});

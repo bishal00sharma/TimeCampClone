@@ -8,7 +8,7 @@ export default function Login () {
         <Grid>
             <Navbar />
             <Grid  w="100vw" h="90vh" alignItems="center" justifyContent="center" >
-                <Grid templateColumns={{base:"1fr", sm:"1fr", md:"1fr 1fr", lg:"1fr 1.4fr"}} gap="100px" m="auto" w="55%" alignItems="center" >
+                <Grid templateColumns={{base:"1fr", sm:"1fr", md:"1fr", lg:"1fr 1.4fr"}} gap="100px" m="auto" w={{base:"80%",sm:"80%", md:"70%",lg:"55%"}} alignItems="center" >
                     <Stack textAlign="left" spacing='24px'>
                         <Text fontSize='xs' color="green">PRODUCT UPDATE</Text>
                         <Text fontSize="5xl" fontWeight="700">TimeCamp Plugin for Google Chrome</Text>
@@ -25,7 +25,7 @@ export default function Login () {
                             </Flex>
                             <Text>or</Text>
                             <LoginForm />
-                            <Grid gap="10px" templateColumns={{base:"1fr", sm:"1fr", md:"1fr 0.2fr 1f", lg:"1fr 0.2fr 1fr"}} >
+                            <Grid gap="10px" templateColumns={{base:"1fr", sm:"1fr", md:"1fr 0.2fr 1f", lg:"1fr 0.2fr 1fr"}} justifyContent="center" >
                                 <Link to="/auth/signup">No Account? Sign Up</Link>
                                 <Text border="1px solid rgba(128, 128, 128, 0.226)">or</Text>
                                 <Link>Login with SSO </Link>

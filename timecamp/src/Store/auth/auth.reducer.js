@@ -13,10 +13,7 @@ let token = localStorage.getItem('token') || "";
 let initState = {
     loading: false,
     error: false,
-    data : {
-        token,
-        isAuth: false,
-    }
+    token: token,
 }
 
 
@@ -26,7 +23,7 @@ export const authReducer = (state = initState, {type, payload}) =>{
         case AUTH_LOGIN_LOADING : 
             return {
                 ...state,
-                loading :true,
+                loading : true,
                 error: false,
             }
         case AUTH_LOGIN_ERROR : 
@@ -36,15 +33,11 @@ export const authReducer = (state = initState, {type, payload}) =>{
                 error: true,
             }
         case AUTH_LOGIN_SUCCESS : 
-            localStorage.setItem(JSON.stringify('token', payload));
             return {
                 ...state,
                 loading : false,
                 error: false,
-                data : {
-                    token : payload,
-                    isAuth: true
-                }
+                token : payload,
             }
         case AUTH_SIGNUP_LOADING : 
             return {
@@ -64,10 +57,7 @@ export const authReducer = (state = initState, {type, payload}) =>{
                 ...state,
                 loading : false,
                 error: false,
-                data : {
-                    token : payload,
-                    isAuth: true
-                }
+                token : payload,
             }
         case AUTH_LOGOUT : 
             localStorage.removeItem('token')

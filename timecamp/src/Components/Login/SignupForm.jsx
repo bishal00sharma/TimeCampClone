@@ -2,15 +2,14 @@ import { Button, Input, Stack, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import {login} from "../../Store/auth/auth.actions"
+import {signup} from "../../Store/auth/auth.actions"
 
-export default function LoginForm () {
+export default function SignupForm () {
 
     const [ creds, setCreds] = useState({email : "", password:""});
     const [ InputError, setError] = useState("");
     const dispatch = useDispatch();
     const {token,error} = useSelector((store)=> store.auth)
-
 
     const handleChange = (e) => {
         const {name, value} = e.target;
@@ -26,8 +25,13 @@ export default function LoginForm () {
         }
         else{
             e.preventDefault();
-            dispatch(login(creds));
+            dispatch(signup(creds));
         }
+    }
+
+
+    if(token!==""){
+        return <div>Successfully logged in</div>
     }
 
     return (
@@ -38,10 +42,11 @@ export default function LoginForm () {
         <Stack >
             <Input placeholder="Email" name="email" onChange={handleChange}/>
             <Input type="password" placeholder="Password" name="password" onChange={handleChange}/>
+            <Input placeholder="Phone(Optional)" name="phone" onChange={handleChange}/>
         </Stack>
         
         <Link to="/auth/password_reset">Forgotten Password ? </Link>
-        <Button colorScheme="green" borderRadius="30px" onClick={handleSubmit}>Log In</Button> 
+        <Button colorScheme="green" borderRadius="30px" onClick={handleSubmit}>Sign Up for free</Button> 
         </>
     )
 }
