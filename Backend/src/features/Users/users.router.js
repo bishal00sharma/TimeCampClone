@@ -3,11 +3,45 @@ const express = require('express');
 const users = require("./users.schema");
 const app = express.Router();
 
-app.get("/",async (req,res)=>{
+
+const authMiddleware = async (req,res,next) => {    
+    let token = req.headers.token;
+    if(token){
+        let [id,email,password] = token.split(":");
+        let u = await users.findById(id);
+        if(u.email === email && u.password === password){
+            req.userId = id;
+            next();
+        }else{
+            res.status(401).send("Not Authorised");
+        }
+    }else{
+        res.status(401).send("Not Authorised");
+    }
+}
+
+// API request to get all User
+app.get("/",authMiddleware, async (req,res)=>{
     let u = await users.find()
     res.send(u);
 })
 
+
+// API request to delete User Id
+app.delete("/", authMiddleware, async(req,res)=>{
+    let id = req.userId;
+    let delete_user = await users.deleteOne({id});
+    res.send("User Id deleted Successfully!");
+})
+
+// API request to update User details
+app.patch("/", authMiddleware, async(req,res)=>{
+    let id = req.userId;
+    let update = await users.updateOne({"_id":id},{$set: {...req.body}});
+    res.send("User Details Updated Successfully!");
+})
+
+// API request to User signing up
 app.post("/signup", async (req,res)=>{
     let {email} = req.body;
     try{
@@ -18,13 +52,14 @@ app.post("/signup", async (req,res)=>{
 
         let newUser = await users.create(req.body);
         res.send({
-            token : `${newUser.id}:${newUser.email}:${newUser.password}}`
+            token : `${newUser.id}:${newUser.email}:${newUser.password}`
         });
     }catch(e){
         res.status(500).send(e.message)
     }
 })
 
+// API request to User logging in
 app.post("/login", async (req,res)=>{
     let { email, password } = req.body;
     try {
@@ -33,7 +68,7 @@ app.post("/login", async (req,res)=>{
             return res.status(401).send("Incorrect credentials");
         }
         res.send({
-            token : `${user.id}:${user.email}:${user.password}}`
+            token : `${user.id}:${user.email}:${user.password}`
         })
     }catch(e) {
         req.status(500).send(e.message)

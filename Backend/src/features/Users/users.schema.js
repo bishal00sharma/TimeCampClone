@@ -6,7 +6,5 @@ const userSchema = new mongoose.Schema({
     tags : { type : Array , "default" : [] }
 })
 
-
-
 const users = mongoose.model("user", userSchema);
 module.exports = users;
