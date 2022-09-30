@@ -1,13 +1,11 @@
 import { Box } from '@chakra-ui/react';
 import React from 'react';
 import './App.css';
-import Login from './Pages/Login';
-import Signup from './Pages/Signup';
+import TimeSheet from './Pages/User_Dashboard/TimeSheet';
 function App() {
   return (
     <Box className="App">
-      <Signup />
-      {/* <Login /> */}
+      <TimeSheet />
    </Box>
   );
 }
