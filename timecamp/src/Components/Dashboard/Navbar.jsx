@@ -2,7 +2,7 @@ import { Button, Flex, Img, Text} from "@chakra-ui/react"
 
 export default function Navbar() {
     return (
-        <Flex color="grey" justifyContent="center" alignItems="center" gap="10px" fontSize="15px" h="7vh" borderBottom="1px solid"> 
+        <Flex color="grey" justifyContent="center" alignItems="center" gap="10px" fontSize="15px" h="7vh" borderBottom="1px solid rgba(128, 128, 128, 0.490)"> 
             <Flex gap="5px">
                 <Img src={require("../../Resources/icons/loading.png")} alt="loading" />
                 <Text fontWeight="700"> 10 days left</Text>    
