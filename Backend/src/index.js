@@ -1,5 +1,7 @@
 require("dotenv").config({path: __dirname+"/config.env"})
 const express = require('express');
+var cors = require('cors')
+require("dotenv").config({path: __dirname+"/config.env"})
 const dbconnect = require("./config/dbConnect");
 
 
@@ -28,6 +30,7 @@ const users = require("./features/Users/users.schema");
 
 const app = express();
 app.use(express.json());
+app.use(cors())
 
 app.use("/users", userRouter);
 app.use("/tasks",authMiddleware,tasksRouter);
@@ -40,6 +43,10 @@ app.get("/", (req, res)=>{
 app.listen(process.env.PORT, async ()=>{
     await dbconnect();
     console.log(`Listening on http://localhost:${process.env.PORT}`);
+
 })
+
+
+
 
 

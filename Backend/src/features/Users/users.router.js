@@ -74,6 +74,30 @@ app.post("/login", async (req,res)=>{
         req.status(500).send(e.message)
     }
 })
+//Patch for adding Tag
+app.patch("/tags/:id", async(req,res)=>{
+    let {id} =req.params;
+     await users.updateOne({ "_id" :id },{
+ $push : {
+          "tags" :  req.body 
+        }
+               
+      });
+      res.send("Patched done")
+});
+    
+app.get("/tags/:id", async(req,res) => {
+    try{
+    let {id} = req.params ; 
+    let user= await users.findOne( { "_id" :id } );
+    res.send(user);
+    }
+    catch(err){
+        res.status(500).send(err.message);
+    }
+})
+
+
 
 
 module.exports = app;
