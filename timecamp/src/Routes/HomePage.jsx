@@ -710,6 +710,7 @@ const HomePage = () => {
           </SimpleGrid>
         </Stack>
       </Container>
+      {/* f********************** */}
     </>
   );
 };
