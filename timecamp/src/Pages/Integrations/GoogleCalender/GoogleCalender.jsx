@@ -286,52 +286,58 @@ import {
                 justifyContent={"center"}
               >
                 <Button
-                  w={"34%"}
-                  backgroundColor= {"#3c91e6"}
-                  display="flex"
-                  direction={["column", "column", "row"]}
-                  alignItems={"center"}
-                  justifyContent={"left"}
-                  borderRadius={"26px"}
-                  px={"40px"}
-                  py={"15px"}
-                  color={"white"}
-                  fontWeight={700}
-                  _hover={"manipulation"}
-                  fontSize={"1rem"}
-                  lineHeight={"1.5"}
-                  h={"70px"}
-                  gap={"16px"}
-                >
-                  <Image maxW={"40px"} maxH={"40px"} src='https://cdn-m.timecamp.com/img/integrations/chrome.png'></Image>
-                  <Text noOfLines={[3,2,1]} >Track time in Chrome</Text> 
-                </Button>
-              </Box>
-              <Box
-                pt="32px"
-                display={"flex"}
-                justifyContent={"center"}
+                w={"34%"}
+                backgroundColor= {"#3c91e6"}
+                borderRadius={"26px"}
+                px={["15px","20px","40px"]}
+                py={["9px","12px","15px"]}
+                h={"70px"}
+                
               >
-                <Button
-                  w={"34%"}
-                  backgroundColor= {"#3c91e6"}
-                  display="flex"
+                <Stack
+                  direction={["column", "column","row","row"]}
                   alignItems={"center"}
-                  justifyContent={"left"}
-                  borderRadius={"26px"}
-                  px={"40px"}
-                  py={"15px"}
-                  color={"white"}
-                  fontWeight={700}
-                  _hover={"manipulation"}
-                  fontSize={"1rem"}
-                  lineHeight={"1.5"}
-                  h={"70px"}
-                  gap={"0px"}
+                  justifyContent={["center","left","left"]}
+                  gap={["8px","12px","16px"]}
                 >
-                  <Image maxW={"60px"} maxH={"60px"} src='https://cdn-m.timecamp.com/img/integrations/edge.svg'></Image>
-                  Track time in Edge 
-                </Button>
+                  <Image maxW={"20%"} maxH={"80%"} src='https://cdn-m.timecamp.com/img/integrations/chrome.png'></Image>
+                  <Text
+                    fontSize={["0.2rem","0.5rem","0.5rem","1rem"]}
+                    fontWeight={700} 
+                    lineHeight={["0.8","1.1","1.5"]}
+                    color={"white"}
+                  >Track time in Chrome</Text> 
+                </Stack>
+              </Button>
+            </Box>
+            <Box
+              pt="32px"
+              display={"flex"}
+              justifyContent={"center"}
+            >
+              <Button
+               w={"34%"}
+               backgroundColor= {"#3c91e6"}
+               borderRadius={"26px"}
+               px={["15px","20px","40px"]}
+               py={["9px","12px","15px"]}
+               h={"70px"}
+              >
+                <Stack
+                  direction={["column", "column","row","row"]}
+                  alignItems={"center"}
+                  justifyContent={["center","left","left"]}
+                  gap={["8px","12px","16px"]}
+                >
+                  <Image maxW={"30%"} maxH={"80%px"} src='https://cdn-m.timecamp.com/img/integrations/edge.svg'></Image>
+                  <Text
+                    fontSize={["0.2rem","0.5rem","0.5rem","1rem"]}
+                    fontWeight={700} 
+                    lineHeight={["0.8","1.1","1.5"]}
+                    color={"white"}
+                  >Track time in Edge</Text>
+                </Stack> 
+              </Button>
               </Box>
               <Box
                 mb={"80px"}
@@ -490,7 +496,6 @@ import {
               direction={["column","column","row"]}
               spacing={[10,12,14]}
               px={"10%"}
-              h={"355px"}
               width={"100%"}
               // border={"1px"}
               // borderColor={"black"}
@@ -514,17 +519,18 @@ import {
                 direction={["column"]}
                 spacing={["100","80px","64px"]}
               >
-                <Flex
+                <Stack
                   // border={"1px"}
                   // borderColor={"blue"}
                   w={"100%"}
-                  h={"54px"}
                   direction={["column","column","row"]}
-                  justifyContent={"space-evenly"}
-                  spacing={["100","80px","64px"]}
+                  alignItems={["center","center","space-evenly"]}
+                  justifyContent={["center","center","space-evenly"]}
+                  spacing={[4,6,8]}
                 >
                   <Box
                     w={"54px"}
+                    h={"54px"}
                     borderRadius={"50%"}
                     backgroundColor="#F3F3F3"
                     display={"flex"}
@@ -539,26 +545,26 @@ import {
                   <Text
                     w={"60%"}
                     textAlign={["center","center","left","left"]}
-                    // border={"1px"}
-                    // borderColor={"green"}
-                    fontSize={"17px"}
+                    fontSize={["12px","14px","17px"]}
                     fontWeight={400}
                     lineHeight={1.5}
                     color={"#1b1b20"}
                   >
                     Firstly, copy the address of your Google Calendar account in an iCal calendar format. We recommend generating the private link as shown above.
                   </Text>
-                </Flex>
-                <Flex
+                </Stack>
+                <Stack
                   // border={"1px"}
                   // borderColor={"blue"}
                   w={"100%"}
-                  h={"54px"}
-                  direction={["column","row","row"]}
-                  justifyContent={"space-evenly"}
+                  direction={["column","column","row"]}
+                  alignItems={["center","center","space-evenly"]}
+                  justifyContent={["center","center","space-evenly"]}
+                  spacing={[4,6,8]}
                 >
                   <Box
                     w={"54px"}
+                    h={"54px"}
                     borderRadius={"50%"}
                     backgroundColor="#F3F3F3"
                     display={"flex"}
@@ -572,27 +578,27 @@ import {
                   </Box>
                   <Text
                     w={"60%"}
-                    textAlign={["center","center","left","left"]}
-                    // border={"1px"}
-                    // borderColor={"green"}
-                    fontSize={"17px"}
+                    textAlign={["center","center",,"left"]}
+                    fontSize={["12px","14px","17px"]}
                     fontWeight={400}
                     lineHeight={1.5}
                     color={"#1b1b20"}
                   >
                     In TimeCamp, go to settings, then locate the integrations tab and select Calendar settings. Once on the subpage, just simply paste the calendar link you generated earlier.
                   </Text>
-                </Flex>
-                <Flex
+                </Stack>
+                <Stack
                   // border={"1px"}
                   // borderColor={"blue"}
                   w={"100%"}
-                  h={"54px"}
-                  direction={["column","row","row"]}
-                  justifyContent={"space-evenly"}
+                  direction={["column","column","row"]}
+                  alignItems={["center","center","space-evenly"]}
+                  justifyContent={["center","center","space-evenly"]}
+                  spacing={[4,6,8]}
                 >
                   <Box
                     w={"54px"}
+                    h={"54px"}
                     borderRadius={"50%"}
                     backgroundColor="#F3F3F3"
                     display={"flex"}
@@ -606,17 +612,15 @@ import {
                   </Box>
                   <Text
                     w={"60%"}
-                    textAlign={["center","center","left","left"]}
-                    // border={"1px"}
-                    // borderColor={"green"}
-                    fontSize={"17px"}
+                    textAlign={["center","center","left"]}
+                    fontSize={["12px","14px","17px"]}
                     fontWeight={400}
                     lineHeight={1.5}
                     color={"#1b1b20"}
                   >
                     We also prepared an additional feature. If you want to automate the process of assigning your Google Calendar events to specific projects, simply use the meeting/event name as a keyword in the project. <Text as={"span"} color="#37c266" >Here</Text> you can find more information on how to define project keywords in TimeCamp.
                   </Text>
-                </Flex>
+                </Stack>
               </Stack>
             </Stack>
           </Container>
