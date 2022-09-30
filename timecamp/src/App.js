@@ -6,6 +6,7 @@ import TrelloTimeTracking from "./Pages/Integrations/TrelloTimeTracking/TrelloTi
 // import Features from './Pages/Features/Features';
 // import Navbar from './Components/Navbar';
 // import Footer from './Components/Footer';
+import Tags from './Pages/Backend Frontend/Tags';
 function App() {
   return (
     <div className="App">
