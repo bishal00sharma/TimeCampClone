@@ -16,7 +16,6 @@ function App() {
       <Footer/>
       {/* <TrelloTimeTracking /> */}
       {/* <Automatic/> */}
-
    </div>
   );
 }
