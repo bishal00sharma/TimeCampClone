@@ -130,3 +130,39 @@
     height:100%;
     width:100%;
 }
+.prod_tour{
+    height:420px;
+    width:100%;
+    background-color: #1b1b20;
+    display: flex;
+        margin-top: -20%;
+    margin-top: -2%;
+}
+.prod_tour_subpart1{
+    height:100%;
+    width:50%;
+    color: white;
+}
+.prod_tour_subpart1>h1{
+    font-size: 44px;
+    text-align: start;
+    margin-left: 10%;
+    /* margin-right: 13%; */
+    margin-top: 6%;
+}
+.prod_tour_subpart1>p{
+    font-size: 18px;
+    text-align: start;
+    margin-left: 10%;
+    margin-right: 3%;
+    margin-top: 6%;
+}
+.prod_tour_subpart2{
+    height:100%;
+    width:50%;
+}
+.prod_tour_subpart2>img{
+    height:100%;
+    width:100%;
+    margin-top: 18%;
+}

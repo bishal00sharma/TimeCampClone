@@ -6,14 +6,17 @@ import TrelloTimeTracking from './Integrations/TrelloTimeTracking/TrelloTimeTrac
 import Features from './Pages/Features/Features';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
+import Automatic from './Pages/Features/Automatic';
 function App() {
   return (
     <div className="App">
-    <Features/>
+    {/* <Features/> */}
     <Navbar/>
     <HomePage/>
       <Footer/>
-      <TrelloTimeTracking />
+      {/* <TrelloTimeTracking /> */}
+      {/* <Automatic/> */}
+
    </div>
   );
 }
