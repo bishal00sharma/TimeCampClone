@@ -15,10 +15,11 @@ export default function LoginForm () {
     const handleChange = (e) => {
         const {name, value} = e.target;
         setCreds({...creds,[name]: value});
+        setError("");
     } 
 
     const handleSubmit = (e) => {
-        if(creds.email===""|| creds.password===""){
+        if(creds.email==="" && creds.password===""){
             setError("Please enter your Email id & Password")
         }
         else if(creds.email===""){
@@ -33,10 +34,19 @@ export default function LoginForm () {
         }
     }
 
+    useEffect(()=>{
+        if(error!==""){
+            setError(error)
+        }
+    },[error])
+
     return (
         <>
         {
-            InputError!=="" && <Text color="red">{InputError}</Text>
+            InputError!=="" && <Text color="red" backgroundColor="rgba(255, 0, 0, 0.088)" p="5px">{InputError}</Text>
+        }
+        {
+            token!=="" && <Text color="green">Successfully logged in</Text>
         }
         <Stack >
             <Input placeholder="Email" name="email" onChange={handleChange}/>

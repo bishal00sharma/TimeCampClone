@@ -17,7 +17,7 @@ export default function SignupForm () {
     } 
 
     const handleSubmit = (e) => {
-        if(creds.email===""|| creds.password===""){
+        if(creds.email==="" && creds.password===""){
             setError("Please enter your Email id & Password")
         }
         else if(creds.email===""){
@@ -52,7 +52,7 @@ export default function SignupForm () {
             <Input placeholder="Phone(Optional)" name="phone" onChange={handleChange}/>
         </Stack>
         {
-            InputError!=="" && <Text color="red">{InputError}</Text>
+            InputError!=="" && <Text color="red" backgroundColor="rgba(255, 0, 0, 0.088)" p="5px">{InputError}</Text>
         }
         <Button colorScheme="green" borderRadius="30px" onClick={handleSubmit}>Sign Up for free</Button> 
         </>
