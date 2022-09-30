@@ -8,7 +8,7 @@ export default function Navbar() {
                 <Text fontWeight="700"> 10 days left</Text>    
                 <Text>left in your Pro trail</Text>
             </Flex>
-            <Button colorScheme="orange" color="white" size="md">Subscribe to pro</Button>
+            <Button colorScheme="orange" color="white" size="md" fontWeight="300">Subscribe to pro</Button>
             <Button size="md">Book a Demo</Button>
         </Flex>
     )

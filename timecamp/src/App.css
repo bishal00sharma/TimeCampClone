@@ -62,5 +62,9 @@
 
 #sidebar>div>p{
   text-align: left;
-  font-size: 10px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin: 10px;
+  font-weight: 700;
+  color: grey;
 }
