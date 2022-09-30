@@ -52,7 +52,6 @@ export const authReducer = (state = initState, {type, payload}) =>{
                 error: true,
             }
         case AUTH_SIGNUP_SUCCESS : 
-            localStorage.setItem(JSON.stringify('token', payload));
             return {
                 ...state,
                 loading : false,
@@ -63,10 +62,7 @@ export const authReducer = (state = initState, {type, payload}) =>{
             localStorage.removeItem('token')
             return {
                 ...state,
-                data: {
-                    token : '',
-                    isAuth : false,
-                }
+                token: ""
             }
         default :
             return state;

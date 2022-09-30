@@ -1,6 +1,6 @@
 import { Button, Input, Stack, Text } from "@chakra-ui/react";
+import { useEffect } from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {signup} from "../../Store/auth/auth.actions"
 
@@ -17,7 +17,10 @@ export default function SignupForm () {
     } 
 
     const handleSubmit = (e) => {
-        if(creds.email===""){
+        if(creds.email===""|| creds.password===""){
+            setError("Please enter your Email id & Password")
+        }
+        else if(creds.email===""){
             setError("Please enter your Email Id");
         }
         else if(creds.password===""){
@@ -29,23 +32,28 @@ export default function SignupForm () {
         }
     }
 
+    useEffect(()=>{
+        if(error){
+            setError("Email Id Already Exists! Try Logging in")
+        }
+    },[error])
 
     if(token!==""){
         return <div>Successfully logged in</div>
     }
 
+
     return (
         <>
-        {
-            InputError!=="" && <Text color="red">{InputError}</Text>
-        }
+
         <Stack >
             <Input placeholder="Email" name="email" onChange={handleChange}/>
             <Input type="password" placeholder="Password" name="password" onChange={handleChange}/>
             <Input placeholder="Phone(Optional)" name="phone" onChange={handleChange}/>
         </Stack>
-        
-        <Link to="/auth/password_reset">Forgotten Password ? </Link>
+        {
+            InputError!=="" && <Text color="red">{InputError}</Text>
+        }
         <Button colorScheme="green" borderRadius="30px" onClick={handleSubmit}>Sign Up for free</Button> 
         </>
     )

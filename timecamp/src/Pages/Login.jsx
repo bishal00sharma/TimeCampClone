@@ -19,7 +19,7 @@ export default function Login () {
                     <Box>
                         <form className="gridding form-div">
                             <Text fontSize="2xl" fontWeight="bold">Log in to TimeCamp</Text>
-                            <Flex border="1px solid rgba(128, 128, 128, 0.226)" alignItems="center" justifyContent="center" py="8px" gap="5px"> 
+                            <Flex border="1px solid rgba(128, 128, 128, 0.226)" alignItems="center" justifyContent="center" py="8px" gap="10px"> 
                                 <Img src={require("../Resources/icons/google.png")} h="20px" w="20px" alt="google-icon" />
                                 <Text color="grey">Log in with Google</Text>
                             </Flex>
