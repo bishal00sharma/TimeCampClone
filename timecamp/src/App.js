@@ -1,3 +1,4 @@
+import { Box } from '@chakra-ui/react';
 import React from 'react';
 import './App.css';
 import HomePage from './Routes/HomePage';

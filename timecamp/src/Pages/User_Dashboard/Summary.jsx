@@ -1,10 +1,12 @@
 import React from 'react';
 import {Box, Select,Text} from "@chakra-ui/react"
+import Navbar from '../../Components/Dashboard/Navbar';
 
 
 const Summary = () => {
   return (
     <div>
+        <Navbar />
         <Box display="flex" style={{justifyContent:"space-between",width:"80%",margin:"auto"}}>
          <Box>
          <Text color="gray">Date Range</Text>
