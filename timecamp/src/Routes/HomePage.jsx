@@ -629,7 +629,7 @@ const HomePage = () => {
           <Stack flex={1} spacing={{ base: 5, md: 10 }}>
             <Stack spacing={"3"}>
               <Text textAlign="start" fontWeight="bold" color="#25CF60">
-                FOR EMPLOYEES
+                TIME TRACKING INTEGRATIONS
               </Text>
               <Heading
                 textAlign="start"
@@ -637,58 +637,34 @@ const HomePage = () => {
                 fontSize="5xl"
                 color="black"
               >
-                Track your <br /> employees <br /> working time
+                Easy and quick integration with more than 100 apps and work
+                tools
               </Heading>
               <Text fontWeight="bold" textAlign="start" color="gray.500">
-                Log working hours of your employees automatically or <br />
-                manually and make sure they are billed fairly.
+                TimeCamp works great alongside with all of the most popular work
+                management tools.
               </Text>
-              <Stack alignItems="start">
-                <Button
-                  backgroundColor="white"
-                  size="lg"
-                  marginLeft="-3%"
-                  borderBottom="1.5px solid #25CF60"
-                  _hover={{ backgroundColor: "white" }}
-                >
-                  Check logged time on the handy timesheet
-                </Button>
-              </Stack>
+              <Text fontWeight="bold" textAlign="start" color="gray.500">
+                TimeCamp works great alongside with all of the most popular work
+                management tools.
+              </Text>
               <Text textAlign="start">
-                Enjoy the transparency - check your employees time records{" "}
-                <br />
-                with more detailed information on the handy timesheet or a{" "}
-                <br /> graphical, calendar-like view.
-              </Text>
-              <Text
-                textAlign="start"
-                fontSize="18px"
-                fontWeight="400"
-                color="gray.500"
-              >
-                Try our easy-to-use desktop app
-              </Text>
-              <Text
-                textAlign="start"
-                fontSize="18px"
-                fontWeight="400"
-                color="gray.500"
-              >
-                Track your activities normally
+                Now, you can also track time directly from your go-to apps such
+                as Trello or Asana thanks to our Chrome extension.
               </Text>
             </Stack>
-
             <Stack spacing={{ base: -8, sm: -10 }} direction={{ sm: "row" }}>
               <Button
                 backgroundColor="#25CF60"
                 size="lg"
                 marginRight="9%"
+                height="80px"
                 borderRadius="22px"
                 marginLeft="2%"
                 _hover={{ backgroundColor: "#25CF60" }}
                 color="white"
               >
-                Track employees time
+                <Image height="80%" src="https://cdn-m.timecamp.com/img/greenbranding/features/chrome-white.png" alt=""/> track time in chrome
               </Button>
             </Stack>
           </Stack>
@@ -698,7 +674,7 @@ const HomePage = () => {
             marginLeft="7%"
             spacing="40px"
           >
-            {reviewsImgapi.map((el) => {
+            {trackingapi.map((el) => {
               return (
                 <>
                   <Box height="80px">
