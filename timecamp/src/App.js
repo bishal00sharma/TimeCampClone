@@ -1,6 +1,4 @@
 
-import React from 'react';
-import './App.css';
 import AllRoutes from './Routes/AllRoutes';
 
 function App() {
