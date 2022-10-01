@@ -3,22 +3,16 @@ import React from 'react';
 import './App.css';
 import HomePage from './Routes/HomePage';
 // import TrelloTimeTracking from './Integrations/TrelloTimeTracking/TrelloTimeTracking';
-
-// import Features from './Pages/Features/Features';
-import Navbar from './Components/Navbar';
-// import Footer from './Components/Footer';
-// import Pricing from './Routes/Pricing';
-// import Automatic from './Pages/Features/Automatic';
+import Tags from "./Pages/User_Dashboard/Tags"
+import Dashboard from './Pages/User_Dashboard/Dashboard';
+import Users from './Pages/User_Dashboard/Users';
 function App() {
   return (
     <div className="App">
-    {/* <Features/> */}
-    <Navbar/>
-    {/* <HomePage/> */}
-      {/* <Footer/> */}
-      <Pricing/>
-      {/* <TrelloTimeTracking /> */}
-      {/* <Automatic/> */}
+      <Tags />
+      {/* <AccountSettings /> */}
+      {/* <Dashboard /> */}
+      {/* <Users /> */}
    </div>
   );
 }
