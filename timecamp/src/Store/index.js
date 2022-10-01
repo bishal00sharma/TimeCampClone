@@ -2,10 +2,10 @@ import { legacy_createStore, combineReducers,compose, applyMiddleware} from "red
 
 import thunk from "redux-thunk";
 import { authReducer } from "./auth/auth.reducer";
-import { tasksReducer } from "./tasks/tasks.reducer";
-
+import { projectReducer } from "./Projects/projects.reducer";
 const rootReducer = combineReducers( {
     auth : authReducer,
+    projects: projectReducer,
     tasks : tasksReducer,
 })
 

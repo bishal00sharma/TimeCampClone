@@ -5,7 +5,6 @@ import {
     MenuItem,
     Button,
     Box,
-    color,
 } from '@chakra-ui/react'
 
 import { TriangleDownIcon } from "@chakra-ui/icons";
