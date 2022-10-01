@@ -9,6 +9,8 @@ import { store } from './Store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
     <BrowserRouter>
       <ChakraProvider>
         <Provider store={store}>
