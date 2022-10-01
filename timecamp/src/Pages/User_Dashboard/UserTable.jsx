@@ -1,7 +1,8 @@
 import { Button, Flex, Table, TableCaption, TableContainer, Thead } from '@chakra-ui/react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {FaRegUserCircle} from "react-icons/fa";
-import {MdDeleteForever} from "react-icons/md"
+import {MdDeleteForever} from "react-icons/md";
+import axios from "axios";
 import {
    Tbody,
     Tfoot,
@@ -11,27 +12,61 @@ import {
     
   } from '@chakra-ui/react'
 import UserAdd from './UserAdd';
-const arr=[
-    {
-  "user":"bishalsharma",
-  "project":2,
-  "role":'Admin'
-    },
-    {
-     "user":"sharma",
-     "project":1,
-      "role":'user'
-      },{
-       "user":"masai",
-       "project":1,
-       "role":'normal'
-         },
-]
 
 const UserTable = () => {
-  function userDelete(){
-    alert("Yes")
+
+  const [show, setShow] =useState(false);
+  const [data, setData]=useState([]);
+  const [loading, setLoading] =useState(false)
+  const [value, setValue]=useState("");
+  const [get, setGet]=useState(false)
+
+  async function getData(){
+    localStorage.setItem("token","63344372e20682bebf2433eb:bishal@gmail.com:no");
+    let token=localStorage.getItem("token");
+    let [id]=token.split(":");
+    let dataa= await fetch(`http://localhost:8080/users/${id}/clients`);
+    let res= await dataa.json();
+    setData(res.clients)
+
   }
+   
+  
+ 
+
+  
+//   async function userDelete(item){
+//     localStorage.setItem("token","63344372e20682bebf2433eb:bishal@gmail.com:no");
+//     let token=localStorage.getItem("token");
+//     let [id]=token.split(":");
+//     let arr = ge.filter(function(it) {
+//       return it !== item
+//   })
+//     try {
+//       const response = await fetch(`http://localhost:8080/users/clients/${id}` ,{
+//         method: 'PATCH', 
+//         headers: {
+//           "token":token,
+//           'Content-Type': 'application/json'
+//         },
+//         body:{"clients":arr}       });
+//         setGet(!get)
+//     //  return (response.json());
+//     }
+  
+//   catch (e) {
+//     console.log(e);
+// }}
+function changeGet(){
+  setGet(!get)
+}
+
+useEffect(()=>{
+  getData()
+  
+},[get]);
+console.log(data);
+
   return (
     <Box marginTop="20px">
       <TableContainer>
@@ -48,31 +83,26 @@ const UserTable = () => {
     <Tbody>
     <Tr>
         <Flex>
-        <Td mb="15px" fontWeight="800" color='teal' fontSize="18px">People (1 user)</Td>
-         <UserAdd />
+        <Td mb="15px" fontWeight="800" color='teal' fontSize="18px">Project</Td>
+         <UserAdd  changeGet={changeGet}/>
         </Flex>
         <Td></Td>
         <Td ></Td>
         <Td ></Td>
-      </Tr>
+      </Tr>            {/* <Td > <Flex><Box marginLeft="25px" paddingRight="15px"><FaRegUserCircle color='skyblue' fontSize="25px"/></Box> {item}<Button onClick={()=>userDelete(item._id)} ml="55px" bgColor="red.100"><MdDeleteForever color='red' fontSize="18px"/></Button></Flex></Td> */}
+
       {
-        arr.map((item)=>(
+        data?.map((item)=>(
             <Tr >
-            <Td > <Flex><Box marginLeft="25px" paddingRight="15px"><FaRegUserCircle color='skyblue' fontSize="23px"/></Box> {item.user}<Button onClick={userDelete} ml="35px" bgColor="red.100"><MdDeleteForever color='red' fontSize="20px"/></Button></Flex></Td>
-            <Td>{item.project} Projects</Td>
-            <Td >{item.role}</Td>
+            <Td > <Flex><Box marginLeft="25px" paddingRight="15px"><FaRegUserCircle color='skyblue' fontSize="25px"/></Box> {item}<Button ml="55px" bgColor="red.100"><MdDeleteForever color='red' fontSize="18px"/></Button></Flex></Td>
+            <Td>none </Td>
+            <Td >-</Td>
             <Td ></Td>
           </Tr>
         ))
       }
     </Tbody>
-    {/* <Tfoot>
-      <Tr>
-        <Th>To convert</Th>
-        <Th>into</Th>
-        <Th >multiply by</Th>
-      </Tr>
-    </Tfoot> */}
+   
   </Table>
 </TableContainer>
     </Box>
