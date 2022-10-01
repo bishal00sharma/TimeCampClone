@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, Img } from "@chakra-ui/react";
+import { Box, Grid } from "@chakra-ui/react";
 import Navbar from "../../Components/Dashboard/Navbar";
 import SearchProjects from "../../Components/Dashboard/Projects/SearchProjects";
 import Sidebar from "../../Components/Dashboard/Sidebar";
