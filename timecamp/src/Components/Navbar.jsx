@@ -6,6 +6,7 @@ import {
     Button,
     Box,
     color,
+    useDisclosure,
 } from '@chakra-ui/react'
 
 import { TriangleDownIcon } from "@chakra-ui/icons";
@@ -14,7 +15,8 @@ import style from "../Components/nav.module.css"
 import { Link } from 'react-router-dom'
 
 const Navbar = () => {
-
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen:menu2isOpen, onOpen:menu2onOpen, onClose:menu2onClose } = useDisclosure()
   return (
     <div className={style.nav}>
       <div className={style.comp}>
@@ -27,7 +29,8 @@ const Navbar = () => {
           </Link>
         </div>
         <div className={style.box}>
-          <Menu>
+          <Menu isOpen={isOpen}>
+            <Link to="/features">
             <MenuButton
               borderRadius="none"
               _hover={{ color: "#25CF60" }}
@@ -35,12 +38,14 @@ const Navbar = () => {
               marginLeft="80px"
               as={Button}
               rightIcon={<TriangleDownIcon fontSize="2xs" />}
+              onMouseEnter={onOpen}
+              onMouseLeave={onClose}
             >
               Features
-            </MenuButton>
-            <MenuList color="black" display="flex">
+            </MenuButton></Link>
+            <MenuList color="black" display="flex" onMouseEnter={onOpen} onMouseLeave={onClose}>
               <Box>
-                <Link to="/Automatic">
+                <Link to="/automatic">
                   <MenuItem _hover={{ bgColor: "#25CF60" }}>
                     <img
                       style={{ marginRight: "10px" }}
@@ -90,6 +95,7 @@ const Navbar = () => {
                     Invoicing
                   </MenuItem>
                 </Link>
+                <Link to="/billing">
                 <MenuItem _hover={{ bgColor: "#25CF60" }}>
                   <img
                     style={{ marginRight: "10px" }}
@@ -98,6 +104,8 @@ const Navbar = () => {
                   />
                   Billing rates & budgeting
                 </MenuItem>
+                </Link>
+                <Link to="/timeoff">
                 <MenuItem _hover={{ bgColor: "#25CF60" }}>
                   <img
                     style={{ marginRight: "10px" }}
@@ -106,6 +114,7 @@ const Navbar = () => {
                   />
                   Time off & attendance
                 </MenuItem>
+                </Link>
               </Box>
             </MenuList>
           </Menu>
@@ -122,7 +131,7 @@ const Navbar = () => {
               </MenuButton>
             </Link>
           </Menu>
-          <Menu>
+          <Menu isOpen={menu2isOpen}>
             <MenuButton
               rightIcon={<TriangleDownIcon fontSize="2xs" />}
               borderRadius="none"
@@ -130,11 +139,13 @@ const Navbar = () => {
               bg="white"
               marginLeft="5px"
               as={Button}
+              onMouseEnter={menu2onOpen}
+              onMouseLeave={menu2onClose}
               //   rightIcon={<TriangleDownIcon fontSize="2xs" />}
             >
               Integrations
             </MenuButton>
-            <MenuList color="black" display="flex">
+            <MenuList color="black" display="flex" onMouseEnter={menu2onOpen} onMouseLeave={menu2onClose}>
               <Box>
                 <MenuItem _hover={{ bgColor: "#25CF60" }}>
                   <img
@@ -197,6 +208,7 @@ const Navbar = () => {
           </Menu>
 
           <Menu>
+            <Link to="/blog">
             <MenuButton
               borderRadius="none"
               _hover={{ color: "#25CF60" }}
@@ -205,7 +217,7 @@ const Navbar = () => {
               marginLeft="5px"
             >
               Blog
-            </MenuButton>
+            </MenuButton></Link>
           </Menu>
         </div>
       </div>

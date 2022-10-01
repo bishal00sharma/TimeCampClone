@@ -19,7 +19,7 @@ const AccountSettings = () => {
         <Box boxShadow="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px" paddingBottom="10px" paddingTop="10px">
             <Text marginTop="20px" fontWeight="500">User Settings</Text>
             <Flex marginTop="30px" justifyContent="space-evenly">
-                <Box width="30%"><Image width="90%" height="160px" borderRadius="50%" src="https://media.istockphoto.com/photos/millennial-male-team-leader-organize-virtual-workshop-with-employees-picture-id1300972574?b=1&k=20&m=1300972574&s=170667a&w=0&h=2nBGC7tr0kWIU8zRQ3dMg-C5JLo9H2sNUuDjQ5mlYfo=" /></Box>
+                <Box width="30%"><Image width="90%" height="160px" borderRadius="50%" src={require("../../Resources/profile_image_dummy.jpg")} /></Box>
                 <Box width="60%">
                     <Text fontSize="20px" marginTop="10px">b17ece014@cit.ac.in</Text>
                     <Link color='blue' onClick={change}>Change your email</Link>

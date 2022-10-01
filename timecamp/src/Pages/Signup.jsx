@@ -1,6 +1,6 @@
 import {  Box, Flex, Grid, Img, Text } from "@chakra-ui/react"
 import { Link } from "react-router-dom"
-import Navbar from "../Components/Login/Navbar"
+import Navbar from "../Components/Login/Logo-bar"
 import SignupForm from "../Components/Login/SignupForm"
 
 export default function Signup () {
@@ -19,6 +19,7 @@ export default function Signup () {
                             </Flex>
                             <Text>or</Text>
                             <SignupForm />
+                            <Link to="/auth/signup">Already have an account? Log In</Link>
                             <Text fontSize="sm">By signing up you agree to our <Link>Terms of Service</Link> and <Link>Privacy Policy</Link></Text>
                         </form>
                     </Box>
