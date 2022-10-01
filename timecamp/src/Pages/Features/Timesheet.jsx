@@ -102,7 +102,7 @@ const Timesheet = () => {
               <Box
                 position={"relative"}
                 rounded={"2xl"}
-                boxShadow={"2xl"}
+                // boxShadow={"2xl"}
                 width={"full"}
               >
                 <Image
@@ -240,7 +240,7 @@ const Timesheet = () => {
               <Box
                 position={"relative"}
                 rounded={"2xl"}
-                boxShadow={"2xl"}
+                // boxShadow={"2xl"}
                 width={"full"}
               >
                 <Image
@@ -274,7 +274,7 @@ const Timesheet = () => {
               <Box
                 position={"relative"}
                 rounded={"2xl"}
-                boxShadow={"2xl"}
+                // boxShadow={"2xl"}
                 width={"full"}
               >
                 <Image
@@ -350,7 +350,7 @@ const Timesheet = () => {
               <Box
                 position={"relative"}
                 rounded={"2xl"}
-                boxShadow={"2xl"}
+                // boxShadow={"2xl"}
                 width={"full"}
               >
                 <Image
@@ -384,7 +384,7 @@ const Timesheet = () => {
               <Box
                 position={"relative"}
                 rounded={"2xl"}
-                boxShadow={"2xl"}
+                // boxShadow={"2xl"}
                 width={"full"}
               >
                 <Image
