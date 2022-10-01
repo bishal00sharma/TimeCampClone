@@ -1,4 +1,4 @@
-import { Box, Text,Image, Flex, Button, Input, Link } from '@chakra-ui/react';
+import { Box, Text, Flex, Button, Input, Link } from '@chakra-ui/react';
 import React from 'react'
 import {BiUserPlus} from "react-icons/bi";
 import {FiMail} from "react-icons/fi"

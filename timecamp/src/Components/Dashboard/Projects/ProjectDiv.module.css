@@ -1,0 +1,20 @@
+.ProjectDiv img{
+    width: 20px;
+    height: 20px;
+}
+
+.ProjectDiv {
+    border:1px solid rgba(128, 128, 128, 0.299);
+    border-left: 4px solid rgba(128, 128, 128, 0.299);
+    border-radius: 10px;
+}
+.ProjectDiv:hover {
+    border-left: 4px solid green;
+    background-color: rgba(128, 128, 128, 0.120);
+    cursor: pointer;
+}
+
+.ProjectDiv >div:nth-child(2)>div {
+    border: 1px solid rgba(128, 128, 128, 0.299);
+    padding: 10px;
+}

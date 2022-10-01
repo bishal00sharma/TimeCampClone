@@ -1,15 +1,12 @@
-import AllRoutes from './Pages/AllRoutes';
-import Navbar from './Components/Navbar';
-import Footer from './Components/Footer';
-import TimeSheet from './Pages/User_Dashboard/TimeSheet';
+
+import React from 'react';
+import './App.css';
+import AllRoutes from './Routes/AllRoutes';
+
 function App() {
   return (
     <div className="App">
-    {/* <Navbar/>
-    <AllRoutes/>
-    <Footer /> */}
-    <TimeSheet/>
-
+      <AllRoutes/>
    </div>
   );
 }

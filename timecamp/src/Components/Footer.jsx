@@ -1,6 +1,6 @@
 import style from "../Components/nav.module.css"
 import React from 'react'
-import {  Link, Text } from "@chakra-ui/react"
+import { Text } from "@chakra-ui/react"
 
 
 const Footer = () => {
@@ -68,13 +68,13 @@ const Footer = () => {
         </div>
       </div>
       <div className={style.footerLogo}>
-        <a href="">
+        <a href="https://twitter.com/timecamp/" target="_blank" rel="noreferrer">
           <i className="fa-brands fa-facebook-f"></i>
         </a>
-        <a href="">
+        <a href="https://twitter.com/timecamp/" target="_blank" rel="noreferrer">
           <i className="fa-brands fa-linkedin-in"></i>
         </a>
-        <a href="">
+        <a href="https://twitter.com/timecamp/" target="_blank" rel="noreferrer">
           <i className="fa-brands fa-twitter"></i>
         </a>
       </div>

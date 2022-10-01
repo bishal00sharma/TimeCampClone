@@ -1,0 +1,80 @@
+.button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform .2s;
+}
+.button>button{
+    border: 1px solid lightgray;
+    background-color: white;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.button>span{
+    font-weight: 500;
+    font-size: 16px;
+    color: gray;
+    cursor: pointer;
+    line-height: 1.15;
+    font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif;
+}
+.button:hover{
+    transform: scale(1.2);
+}
+.button>button:hover{
+    border: 1px solid black;
+}
+.button>span:hover{
+    color: black;
+}
+.integrations{
+    padding: 0px 32px;
+    margin-bottom: 80px;
+    height: 276px;
+    transition: transform .2s;
+    /* border: 1px solid magenta; */
+}
+.integrations:hover{
+    transform: scale(1.05);
+}
+.integrations>div{
+    height: 50%;
+    width: 100%;
+    /* border: 1px solid blue; */
+}
+.logo{
+    padding: 40px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    background-color: white;
+}
+.logo>img{
+    max-height: 100%;
+}
+.desc{
+    padding-top: 24px;
+}
+.desc>h2{
+    margin-bottom: 8px;
+    font-size: 22px;
+    font-weight: 600;
+    font-family: lato,sans-serif;
+    line-height: 1.1;
+    text-align: center;
+}
+.desc>p{
+    margin-top: 19px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    font-family: nunito sans,sans-serif;
+    line-height: 1.5;
+}
