@@ -20,7 +20,10 @@ const Navbar = () => {
       <div className={style.comp}>
         <div className={style.logo}>
           <Link to="/">
-            <img src="https://cdn-m.timecamp.com/img/greenbranding/colorLogo.svg" />
+            <img
+              src="https://cdn-m.timecamp.com/img/greenbranding/colorLogo.svg"
+              alt=""
+            />
           </Link>
         </div>
         <div className={style.box}>
@@ -37,47 +40,61 @@ const Navbar = () => {
             </MenuButton>
             <MenuList color="black" display="flex">
               <Box>
-                <Link to="Automatic.jsx">
+                <Link to="/Automatic">
                   <MenuItem _hover={{ bgColor: "#25CF60" }}>
                     <img
                       style={{ marginRight: "10px" }}
                       src="https://cdn-m.timecamp.com/img/greenbranding/features/icons-menu/automatic-time-tracking.svg"
+                      alt=""
                     />
                     Autotime Tracking
+                  </MenuItem>
+                </Link>
+                <Link to="/reporting">
+                  <MenuItem _hover={{ bgColor: "#25CF60" }}>
+                    <img
+                      style={{ marginRight: "10px" }}
+                      src="https://cdn-m.timecamp.com/img/greenbranding/features/icons-menu/reporting.svg"
+                      alt=""
+                    />
+                    Reporting
+                  </MenuItem>
+                </Link>
+                <Link to="/productivity">
+                  <MenuItem _hover={{ bgColor: "#25CF60" }}>
+                    <img
+                      style={{ marginRight: "10px" }}
+                      src="https://cdn-m.timecamp.com/img/greenbranding/features/icons-menu/productivity-tracking.svg"
+                      alt=""
+                    />
+                    Productivity tracking
+                  </MenuItem>
+                </Link>
+                <Link to="/timesheet">
+                  <MenuItem _hover={{ bgColor: "#25CF60" }}>
+                    <img
+                      style={{ marginRight: "10px" }}
+                      src="https://cdn-m.timecamp.com/img/greenbranding/features/icons-menu/timesheet-approvals.svg"
+                      alt=""
+                    />
+                    Timesheet approvals
+                  </MenuItem>
+                </Link>
+                <Link to="/invoicing">
+                  <MenuItem _hover={{ bgColor: "#25CF60" }}>
+                    <img
+                      style={{ marginRight: "10px" }}
+                      src="https://cdn-m.timecamp.com/img/greenbranding/features/icons-menu/invoicing.svg"
+                      alt=""
+                    />
+                    Invoicing
                   </MenuItem>
                 </Link>
                 <MenuItem _hover={{ bgColor: "#25CF60" }}>
                   <img
                     style={{ marginRight: "10px" }}
-                    src="https://cdn-m.timecamp.com/img/greenbranding/features/icons-menu/reporting.svg"
-                  />
-                  Reporting
-                </MenuItem>
-                <MenuItem _hover={{ bgColor: "#25CF60" }}>
-                  <img
-                    style={{ marginRight: "10px" }}
-                    src="https://cdn-m.timecamp.com/img/greenbranding/features/icons-menu/productivity-tracking.svg"
-                  />
-                  Productivity tracking
-                </MenuItem>
-                <MenuItem _hover={{ bgColor: "#25CF60" }}>
-                  <img
-                    style={{ marginRight: "10px" }}
-                    src="https://cdn-m.timecamp.com/img/greenbranding/features/icons-menu/timesheet-approvals.svg"
-                  />
-                  Timesheet approvals
-                </MenuItem>
-                <MenuItem _hover={{ bgColor: "#25CF60" }}>
-                  <img
-                    style={{ marginRight: "10px" }}
-                    src="https://cdn-m.timecamp.com/img/greenbranding/features/icons-menu/invoicing.svg"
-                  />
-                  Invoicing
-                </MenuItem>
-                <MenuItem _hover={{ bgColor: "#25CF60" }}>
-                  <img
-                    style={{ marginRight: "10px" }}
                     src="https://cdn-m.timecamp.com/img/greenbranding/features/icons-menu/billing-rates.svg"
+                    alt=""
                   />
                   Billing rates & budgeting
                 </MenuItem>
@@ -85,6 +102,7 @@ const Navbar = () => {
                   <img
                     style={{ marginRight: "10px" }}
                     src="https://cdn-m.timecamp.com/img/greenbranding/features/icons-menu/attendance-tracking.svg"
+                    alt=""
                   />
                   Time off & attendance
                 </MenuItem>
@@ -92,15 +110,17 @@ const Navbar = () => {
             </MenuList>
           </Menu>
           <Menu>
-            <MenuButton
-              borderRadius="none"
-              _hover={{ color: "#25CF60" }}
-              bg="none"
-              marginLeft="5px"
-              as={Button}
-            >
-              Pricing
-            </MenuButton>
+            <Link to="/Pricing">
+              <MenuButton
+                borderRadius="none"
+                _hover={{ color: "#25CF60" }}
+                bg="none"
+                marginLeft="5px"
+                as={Button}
+              >
+                Pricing
+              </MenuButton>
+            </Link>
           </Menu>
           <Menu>
             <MenuButton
@@ -120,6 +140,7 @@ const Navbar = () => {
                   <img
                     style={{ marginRight: "10px" }}
                     src="https://cdn-m.timecamp.com/img/greenbranding/features/icons-menu/Trello.svg"
+                    alt=""
                   />
                   Trello
                 </MenuItem>
@@ -127,6 +148,7 @@ const Navbar = () => {
                   <img
                     style={{ marginRight: "10px" }}
                     src="https://cdn-m.timecamp.com/img/greenbranding/features/icons-menu/GCalendar.svg"
+                    alt=""
                   />
                   Google Calendar
                 </MenuItem>
@@ -134,6 +156,7 @@ const Navbar = () => {
                   <img
                     style={{ marginRight: "10px" }}
                     src="https://cdn-m.timecamp.com/img/greenbranding/features/icons-menu/iCal.svg"
+                    alt=""
                   />
                   iCal
                 </MenuItem>
@@ -141,6 +164,7 @@ const Navbar = () => {
                   <img
                     style={{ marginRight: "10px" }}
                     src="https://cdn-m.timecamp.com/img/greenbranding/features/icons-menu/Asana.svg"
+                    alt=""
                   />
                   Asana
                 </MenuItem>
@@ -148,6 +172,7 @@ const Navbar = () => {
                   <img
                     style={{ marginRight: "10px" }}
                     src="https://cdn-m.timecamp.com/img/greenbranding/features/icons-menu/Monday.svg"
+                    alt=""
                   />
                   Monday.com
                 </MenuItem>
@@ -155,6 +180,7 @@ const Navbar = () => {
                   <img
                     style={{ marginRight: "10px" }}
                     src="https://cdn-m.timecamp.com/img/greenbranding/features/icons-menu/billing-rates.svg"
+                    alt=""
                   />
                   Jira
                 </MenuItem>
@@ -162,6 +188,7 @@ const Navbar = () => {
                   <img
                     style={{ marginRight: "10px" }}
                     src="https://cdn-m.timecamp.com/img/greenbranding/features/icons-menu/attendance-tracking.svg"
+                    alt=""
                   />
                   Time off & attendance
                 </MenuItem>
