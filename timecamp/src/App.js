@@ -1,6 +1,7 @@
 import { Box } from '@chakra-ui/react';
 import React from 'react';
 import './App.css';
+import BookADemo from './Pages/BookADemo/BookADemo';
 import GoogleCalender from './Pages/Integrations/GoogleCalender/GoogleCalender';
 import TrelloTimeTracking from './Pages/Integrations/TrelloTimeTracking/TrelloTimeTracking';
 // import HomePage from './Routes/HomePage';
@@ -19,7 +20,8 @@ function App() {
       {/* <Footer/> */}
       {/* <Pricing/> */}
       {/* <TrelloTimeTracking /> */}
-      <GoogleCalender />
+      {/* <GoogleCalender /> */}
+      <BookADemo />
       {/* <Automatic/> */}
    </div>
   );
