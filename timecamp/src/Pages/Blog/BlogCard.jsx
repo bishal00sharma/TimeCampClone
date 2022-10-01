@@ -1,7 +1,9 @@
 import { Link, VStack, Image, Box, Text, Heading, Button } from "@chakra-ui/react";
 import React from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 
-export default function BlogsCard({ image,name,des }) {
+export default function BlogCard({ image,name,des,id }) {
+  const navigate=useNavigate()
   return (
     <>
         <VStack
@@ -30,7 +32,7 @@ export default function BlogsCard({ image,name,des }) {
             {des}
           </Text>
           </Box>
-          <Button color={"blue"} bg="white" border={"1px solid blue"} borderRadius="20px">Read More</Button>
+          <Button color={"blue"} bg="white" border={"1px solid blue"} borderRadius="20px" onClick={()=>navigate(`/blog/${id}`)}>Read More</Button>
         </VStack>
      
     </>

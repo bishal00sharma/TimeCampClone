@@ -11,6 +11,7 @@ import Timesheet from "../Pages/Features/Timesheet";
 import Timeoff from "../Pages/Features/Timeoff";
 import Billing from "../Pages/Features/Billing"
 import Blog from "./Blog/Blog";
+import BlogPage from "./Blog/BlogPage";
 const AllRoutes = () => {
   return (
     <div>
@@ -26,6 +27,7 @@ const AllRoutes = () => {
         <Route path="/timeoff" element={<Timeoff />} />
         <Route path="/billing" element={<Billing />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" element={<BlogPage/>}/>
       </Routes>
     </div>
   );
