@@ -6,7 +6,6 @@ import {
     PROJECT_FETCH_SUCCESS,
     ADD_PROJECT,
     DELETE_PROJECT,
-    UPDATE_PROJECT
 } from "./projects.type";
 
 
