@@ -13,8 +13,6 @@ export default function AllProjects() {
         dispatch(fetchProject());
     },[])
 
-
-
     return (
         <Grid gap="10px" px="100px" py="30px">
             {

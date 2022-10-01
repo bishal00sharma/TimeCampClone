@@ -4,11 +4,16 @@ import {
     AUTH_LOGIN_ERROR,
     AUTH_LOGIN_LOADING,
     AUTH_LOGIN_SUCCESS,
+    AUTH_LOGOUT,
     AUTH_SIGNUP_ERROR,
     AUTH_SIGNUP_LOADING,
     AUTH_SIGNUP_SUCCESS,
 } from "./auth.type";
 
+export const logout = () => async (dispatch) => {
+    localStorage.removeItem("token");
+    dispatch({type: AUTH_LOGOUT});
+}
 
 export const login = (creds) =>  async (dispatch) => {
     dispatch({type:AUTH_LOGIN_LOADING});
