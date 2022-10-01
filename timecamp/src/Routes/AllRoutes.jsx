@@ -13,6 +13,7 @@ import Signup from "../Pages/Signup"
 import TimeSheet from "../Pages/User_Dashboard/TimeSheet";
 import Projects from "../Pages/User_Dashboard/Projects";
 import PrivateRouter from "./PrivateRouter";
+import Users from "../Pages/User_Dashboard/Users";
 const AllRoutes = () => {
   return (
     <div>
@@ -29,6 +30,7 @@ const AllRoutes = () => {
         <Route path="/auth/signup" element={<Signup/>} />
         <Route path="/dashboard/timesheet" element={<PrivateRouter> <TimeSheet/></PrivateRouter>} />
         <Route path="/dashboard/projects" element={<PrivateRouter> <Projects/></PrivateRouter>} />
+        <Route path="/dashboard/users" element={<PrivateRouter> <Users/></PrivateRouter>} />
       </Routes>
     </div>
   );
