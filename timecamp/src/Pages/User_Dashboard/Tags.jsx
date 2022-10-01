@@ -16,7 +16,7 @@ import axios from "axios";
   function change(){
     setShow(!show)
   }
-  async function getData(){
+  async function getData(){//give user id here
     let dataa= await fetch("http://localhost:8080/users/tags/63344372e20682bebf2433eb");
     let res= await dataa.json();
     setData(res.tags)
@@ -26,15 +26,30 @@ import axios from "axios";
     
 
   }
-  function addList(value){
+  function addList(value){//give user id here
     axios.patch("http://localhost:8080/users/tags/63344372e20682bebf2433eb",{"tags":value})
     setGet(!get)
+    setValue("")
   }
+//   async function userDelete(id){
+//     try {
+//       const response = await fetch(`http://localhost:8080/tasks/project/633704b7190f75711fcedf8c/${id}` ,{
+//         method: 'DELETE', 
+//         headers: {
+//           "token":"6336ce76b22c509b0ee3e3d9:lokesh0910@gmail.com:lokesh0910",
+//           'Content-Type': 'application/json'
+//         }        });
+//      return (response.json());
+//     }
+  
+//   catch (e) {
+//     console.log(e);
+// }}
   function handleChange(e){
    setValue(e.target.value);
    console.log(value)
   }
-  // console.log(data)
+  console.log(data)
   useEffect(()=>{
     getData()
   },[get]);
@@ -54,8 +69,8 @@ import axios from "axios";
             {!loading && <Spinner thickness='4px'speed='1.65s'emptyColor='gray.200'color='blue.500'size='xl'/>}
             {loading&&
               data.map((item)=>(
-                <Flex key={item.tags} bgColor="gray.100" padding="10px" borderRadius="15px" justifyContent="space-evenly" marginTop="10px">
-                  <Box> <Text fontSize="18px">{item.tags}</Text></Box>
+                <Flex key={item} bgColor="gray.100" padding="10px" borderRadius="15px" justifyContent="space-evenly" marginTop="10px">
+                  <Box> <Text fontSize="18px">{item}</Text></Box>
                   <Box>
                     <Button marginRight="10px" bgColor="gray.300">
                         <BiPlus />
