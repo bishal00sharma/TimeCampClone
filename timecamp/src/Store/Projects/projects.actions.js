@@ -10,9 +10,8 @@ import {
 } from "./projects.type";
 
 
+const token = JSON.parse(localStorage.getItem("token")) || "";
 export const fetchProject = () =>  async (dispatch) => {
-
-    const token = JSON.parse(localStorage.getItem("token")) || "";
     if(token!==""){
         dispatch({type:PROJECT_FETCH_LOADING});
         try{
@@ -24,3 +23,30 @@ export const fetchProject = () =>  async (dispatch) => {
         }    
     }
 }
+
+
+export const deleteProject = (id) => async (dispatch) => {
+    if(token!==""){
+        try{
+            let response = await axios.delete(`http://localhost:8080/projects/${id}`,{headers:{ "token": token}});
+            dispatch({type:DELETE_PROJECT})
+            return response.data;
+        } catch (e) {
+            dispatch({type:PROJECT_FETCH_ERROR,payload:e.response.data});
+        }    
+    }
+}
+
+
+export const addProject = (data) => async (dispatch) => {
+    if(token!=="") {
+        try{
+            let response = await axios.delete(`http://localhost:8080/projects`,data,{headers:{ "token": token}});
+            dispatch({type:ADD_PROJECT, payload: response.data})
+            return response.data;
+        } catch (e) {
+            dispatch({type:PROJECT_FETCH_ERROR,payload:e.response.data});
+        }    
+    }
+}
+

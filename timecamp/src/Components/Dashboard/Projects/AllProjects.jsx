@@ -11,7 +11,7 @@ export default function AllProjects() {
     const dispatch = useDispatch();
     useEffect(()=>{
         dispatch(fetchProject());
-    },[])
+    },[dispatch])
 
     return (
         <Grid gap="10px" px="100px" py="30px">

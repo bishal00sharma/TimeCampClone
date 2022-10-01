@@ -3,12 +3,20 @@
     gap: 30px;
 }
 
-.search>div>div{
+.search>div>div,
+.search>div:nth-child(3)
+{
     border: 1px solid rgba(128, 128, 128, 0.305);
     border-radius: 10px;
     padding: 0 30px;
     gap: 10px;
     align-items: center;
+    cursor: pointer;
+}
+
+.search>div:nth-child(3):hover{
+    font-weight: 500;
+    background-color: tomato;
 }
 .search img {
     width: 20px;
