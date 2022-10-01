@@ -25,7 +25,11 @@ app.get("/",authMiddleware, async (req,res)=>{
     let u = await users.find()
     res.send(u);
 })
-
+// app.get("/:id",authMiddleware, async (req,res)=>{
+//     let id=req.params.id ;
+//     let u = await users.find({_id})
+//     res.send(u);
+// })
 
 // API request to delete User Id
 app.delete("/", authMiddleware, async(req,res)=>{
@@ -63,24 +67,28 @@ app.post("/signup", async (req,res)=>{
 app.post("/login", async (req,res)=>{
     let { email, password } = req.body;
     try {
-        let user = await users.findOne({email,password});
+        let user = await users.findOne({"email":email,"password": password});
         if(!user){
+            let e = await users.findOne({"email":email});
+            if(e){
+                return res.status(401).send("Password doesn't match");
+            }
             return res.status(401).send("Incorrect credentials");
         }
-        res.send({
+        res.status(200).send({
             token : `${user.id}:${user.email}:${user.password}`
         })
     }catch(e) {
-        req.status(500).send(e.message)
+        res.status(500).send(e.message)
     }
 })
 //Patch for adding Tag
 app.patch("/tags/:id", async(req,res)=>{
     let {id} =req.params;
      await users.updateOne({ "_id" :id },{
- $push : {
-          "tags" :  req.body 
-        }
+     $push : {
+          "tags" :  req.body.tags
+             }
                
       });
       res.send("Patched done")
@@ -96,8 +104,6 @@ app.get("/tags/:id", async(req,res) => {
         res.status(500).send(err.message);
     }
 })
-
-
 
 
 module.exports = app;

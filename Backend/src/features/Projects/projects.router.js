@@ -6,9 +6,15 @@ const app = express.Router();
 
 // API request to get all Projects
 app.get("/", async(req,res)=>{
-    let user = req.userId
-    let p = await Project.find({user});
-    res.send(p);
+    try{
+         let user = req.userId
+         let p = await Project.find({user});
+         res.send(p);
+    }
+    catch(err){
+        res.status(500).send(err.message);
+    }
+   
 })
 
 

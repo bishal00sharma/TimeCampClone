@@ -69,13 +69,13 @@ const Footer = () => {
       </div>
       <div className={style.footerLogo}>
         <a href="">
-          <i class="fa-brands fa-facebook-f"></i>
+          <i className="fa-brands fa-facebook-f"></i>
         </a>
         <a href="">
-          <i class="fa-brands fa-linkedin-in"></i>
+          <i className="fa-brands fa-linkedin-in"></i>
         </a>
         <a href="">
-          <i class="fa-brands fa-twitter"></i>
+          <i className="fa-brands fa-twitter"></i>
         </a>
       </div>
       <div style={{ color: "gray" }}>Copyright © 2022 TimeCamp. Inc.</div>

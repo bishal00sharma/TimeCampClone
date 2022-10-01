@@ -1,7 +1,6 @@
 require("dotenv").config({path: __dirname+"/config.env"})
 const express = require('express');
 var cors = require('cors')
-require("dotenv").config({path: __dirname+"/config.env"})
 const dbconnect = require("./config/dbConnect");
 
 
@@ -35,6 +34,8 @@ app.use(cors())
 app.use("/users", userRouter);
 app.use("/tasks",authMiddleware,tasksRouter);
 app.use("/projects",authMiddleware,projectRouter);
+
+
 
 app.get("/", (req, res)=>{
     res.send("working fine");
