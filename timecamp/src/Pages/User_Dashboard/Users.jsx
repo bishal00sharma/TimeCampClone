@@ -25,7 +25,7 @@ const Users = () => {
               <Input bgColor="gray.300" placeholder="Search Users" /> 
             </Box>
         </Flex>
-        <UserTable />
+        <UserTable/>
 
     </Box>
 

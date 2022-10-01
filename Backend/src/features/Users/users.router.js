@@ -25,7 +25,11 @@ app.get("/",authMiddleware, async (req,res)=>{
     let u = await users.find()
     res.send(u);
 })
-
+// app.get("/:id",authMiddleware, async (req,res)=>{
+//     let id=req.params.id ;
+//     let u = await users.find({_id})
+//     res.send(u);
+// })
 
 // API request to delete User Id
 app.delete("/", authMiddleware, async(req,res)=>{
@@ -82,9 +86,9 @@ app.post("/login", async (req,res)=>{
 app.patch("/tags/:id", async(req,res)=>{
     let {id} =req.params;
      await users.updateOne({ "_id" :id },{
- $push : {
-          "tags" :  req.body 
-        }
+     $push : {
+          "tags" :  req.body.tags
+             }
                
       });
       res.send("Patched done")
