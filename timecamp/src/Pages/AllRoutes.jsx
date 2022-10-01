@@ -8,19 +8,24 @@ import Invoicing from "../Pages/Features/Invoicing";
 import Productivity from "../Pages/Features/Productivity";
 import Reporting from "../Pages/Features/Reporting";
 import Timesheet from "../Pages/Features/Timesheet";
-
+import Timeoff from "../Pages/Features/Timeoff";
+import Billing from "../Pages/Features/Billing"
+import Blog from "./Blog/Blog";
 const AllRoutes = () => {
   return (
     <div>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/Pricing" element={<Pricing />} />
-        <Route path="/Automatic" element={<Automatic />} />
-        <Route path="/feature" element={<Feature />} />
+        <Route path="/features" element={<Feature />} />
+        <Route path="/automatic" element={<Automatic />} />
         <Route path="/invoicing" element={<Invoicing />} />
         <Route path="/productivity" element={<Productivity />} />
         <Route path="/reporting" element={<Reporting />} />
         <Route path="/timesheet" element={<Timesheet />} />
+        <Route path="/timeoff" element={<Timeoff />} />
+        <Route path="/billing" element={<Billing />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
     </div>
   );

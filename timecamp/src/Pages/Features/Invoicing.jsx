@@ -102,7 +102,6 @@ const Invoicing = () => {
               <Box
                 position={"relative"}
                 rounded={"2xl"}
-                boxShadow={"2xl"}
                 width={"full"}
               >
                 <Image
@@ -240,7 +239,6 @@ const Invoicing = () => {
               <Box
                 position={"relative"}
                 rounded={"2xl"}
-                boxShadow={"2xl"}
                 width={"full"}
               >
                 <Image
@@ -274,7 +272,6 @@ const Invoicing = () => {
               <Box
                 position={"relative"}
                 rounded={"2xl"}
-                boxShadow={"2xl"}
                 width={"full"}
               >
                 <Image
@@ -350,7 +347,6 @@ const Invoicing = () => {
               <Box
                 position={"relative"}
                 rounded={"2xl"}
-                boxShadow={"2xl"}
                 width={"full"}
               >
                 <Image

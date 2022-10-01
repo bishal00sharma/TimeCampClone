@@ -30,6 +30,7 @@ const Navbar = () => {
         </div>
         <div className={style.box}>
           <Menu isOpen={isOpen}>
+            <Link to="/features">
             <MenuButton
               borderRadius="none"
               _hover={{ color: "#25CF60" }}
@@ -41,10 +42,10 @@ const Navbar = () => {
               onMouseLeave={onClose}
             >
               Features
-            </MenuButton>
+            </MenuButton></Link>
             <MenuList color="black" display="flex" onMouseEnter={onOpen} onMouseLeave={onClose}>
               <Box>
-                <Link to="/Automatic">
+                <Link to="/automatic">
                   <MenuItem _hover={{ bgColor: "#25CF60" }}>
                     <img
                       style={{ marginRight: "10px" }}
@@ -94,6 +95,7 @@ const Navbar = () => {
                     Invoicing
                   </MenuItem>
                 </Link>
+                <Link to="/billing">
                 <MenuItem _hover={{ bgColor: "#25CF60" }}>
                   <img
                     style={{ marginRight: "10px" }}
@@ -102,6 +104,8 @@ const Navbar = () => {
                   />
                   Billing rates & budgeting
                 </MenuItem>
+                </Link>
+                <Link to="/timeoff">
                 <MenuItem _hover={{ bgColor: "#25CF60" }}>
                   <img
                     style={{ marginRight: "10px" }}
@@ -110,6 +114,7 @@ const Navbar = () => {
                   />
                   Time off & attendance
                 </MenuItem>
+                </Link>
               </Box>
             </MenuList>
           </Menu>
@@ -203,6 +208,7 @@ const Navbar = () => {
           </Menu>
 
           <Menu>
+            <Link to="/blog">
             <MenuButton
               borderRadius="none"
               _hover={{ color: "#25CF60" }}
@@ -211,7 +217,7 @@ const Navbar = () => {
               marginLeft="5px"
             >
               Blog
-            </MenuButton>
+            </MenuButton></Link>
           </Menu>
         </div>
       </div>
