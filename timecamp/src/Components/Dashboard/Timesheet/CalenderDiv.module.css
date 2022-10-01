@@ -1,0 +1,18 @@
+.controller >div,
+.controller >svg
+{
+    align-items: center;
+    border: 1px solid rgba(128, 128, 128, 0.363);
+    height: 100%;
+    width: 30px;
+}
+
+.controller >div{
+    width: 60px;
+    justify-content: center;
+}
+
+.controller {
+    height: 40px;
+    align-items: center;
+}

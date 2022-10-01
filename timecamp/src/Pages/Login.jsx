@@ -1,7 +1,7 @@
 import {  Box, Button, Flex, Grid, Img, Stack, Text } from "@chakra-ui/react"
 import { Link } from "react-router-dom"
 import LoginForm from "../Components/Login/LoginForm"
-import Navbar from "../Components/Login/Navbar"
+import Navbar from "../Components/Login/Logo-bar"
 
 export default function Login () {
     return (
