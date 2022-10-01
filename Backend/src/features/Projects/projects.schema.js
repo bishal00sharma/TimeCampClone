@@ -6,7 +6,7 @@ const projectSchema = new mongoose.Schema({
     description : {type: String},
     budget : { type:Number},
     tag : { type: String},
-    user: { type : mongoose.Schema.Types.ObjectId, ref:"user" }
+    user: { type : mongoose.Schema.Types.ObjectId, ref:"user" },
 })
 
 const Project = mongoose.model("project", projectSchema);
