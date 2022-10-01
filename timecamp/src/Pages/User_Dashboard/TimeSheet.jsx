@@ -13,7 +13,7 @@ export default function TimeSheet() {
             <Grid>
                 <Navbar />
                 <Box h="93vh">
-                    <Usermenu />
+                    <Usermenu title="Timesheet" />
                     <Grid px="100px" py="30px">
                         <Flex id="timesheet-menu" alignItems="center" justifyContent="space-between" h="80px">
                             <CalendarDiv />

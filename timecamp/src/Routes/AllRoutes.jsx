@@ -11,6 +11,7 @@ import Timesheet from "../Pages/Features/Timesheet";
 import Login from "../Pages/Login"
 import Signup from "../Pages/Signup"
 import TimeSheet from "../Pages/User_Dashboard/TimeSheet";
+import Projects from "../Pages/User_Dashboard/Projects";
 const AllRoutes = () => {
   return (
     <div>
@@ -25,7 +26,8 @@ const AllRoutes = () => {
         <Route path="/timesheet" element={<Timesheet />} />
         <Route path="/auth/login" element={<Login/>} />
         <Route path="/auth/signup" element={<Signup/>} />
-        <Route path="/auth/dashboard" element={<TimeSheet/>} />
+        <Route path="/dashboard/timesheet" element={<TimeSheet/>} />
+        <Route path="/dashboard/projects" element={<Projects/>} />
       </Routes>
     </div>
   );
