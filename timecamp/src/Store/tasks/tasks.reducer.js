@@ -2,6 +2,7 @@ import {
     TASKS_FETCH_ERROR,
     TASKS_FETCH_LOADING,
     TASKS_FETCH_SUCCESS,
+    TASKS_DELETE
 } from "./tasks.type";
 
 
@@ -34,6 +35,13 @@ export const tasksReducer = (state = initState, {type, payload}) =>{
                 error: "",
                 data : payload,
             }
+            case TASKS_DELETE:
+                 let newTasks = state.filter((task) => task.id !==payload.id)
+                 return {
+                    ...state,
+                    tasks: newTasks
+                   }
+          
      
         default :
             return state;

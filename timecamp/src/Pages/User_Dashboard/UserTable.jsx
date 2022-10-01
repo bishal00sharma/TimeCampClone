@@ -20,52 +20,52 @@ const UserTable = () => {
   const [loading, setLoading] =useState(false)
   const [value, setValue]=useState("");
   const [get, setGet]=useState(false)
-   
 
   async function getData(){
-     localStorage.setItem("token","6336ce76b22c509b0ee3e3d9:lokesh0910@gmail.com:lokesh0910");
+    localStorage.setItem("token","63344372e20682bebf2433eb:bishal@gmail.com:no");
     let token=localStorage.getItem("token");
-      try {
-        const response = await fetch("http://localhost:8080/projects", {
-          method: 'GET', 
-          headers: {
-            "token":token,
-            'Content-Type': 'application/json'
-          }        });
-       return (response.json());
-      }
-    
-    catch (e) {
-      console.log(e);
-  }}
-  console.log(data)
+    let [id]=token.split(":");
+    let dataa= await fetch(`http://localhost:8080/users/${id}/clients`);
+    let res= await dataa.json();
+    setData(res.clients)
+
+  }
+   
+  
+ 
 
   
-  async function userDelete(id){
-    let token=localStorage.getItem("token");
-
-    try {
-      const response = await fetch(`http://localhost:8080/projects/${id}` ,{
-        method: 'DELETE', 
-        headers: {
-          "token":token,
-          'Content-Type': 'application/json'
-        }        });
-        setGet(!get)
-     return (response.json());
-    }
+//   async function userDelete(item){
+//     localStorage.setItem("token","63344372e20682bebf2433eb:bishal@gmail.com:no");
+//     let token=localStorage.getItem("token");
+//     let [id]=token.split(":");
+//     let arr = ge.filter(function(it) {
+//       return it !== item
+//   })
+//     try {
+//       const response = await fetch(`http://localhost:8080/users/clients/${id}` ,{
+//         method: 'PATCH', 
+//         headers: {
+//           "token":token,
+//           'Content-Type': 'application/json'
+//         },
+//         body:{"clients":arr}       });
+//         setGet(!get)
+//     //  return (response.json());
+//     }
   
-  catch (e) {
-    console.log(e);
-}}
+//   catch (e) {
+//     console.log(e);
+// }}
 function changeGet(){
   setGet(!get)
 }
 
 useEffect(()=>{
-  getData().then(res=>(setData(res)))
+  getData()
   
 },[get]);
+console.log(data);
 
   return (
     <Box marginTop="20px">
@@ -83,17 +83,18 @@ useEffect(()=>{
     <Tbody>
     <Tr>
         <Flex>
-        <Td mb="15px" fontWeight="800" color='teal' fontSize="18px">Project ({data.length})</Td>
+        <Td mb="15px" fontWeight="800" color='teal' fontSize="18px">Project</Td>
          <UserAdd  changeGet={changeGet}/>
         </Flex>
         <Td></Td>
         <Td ></Td>
         <Td ></Td>
-      </Tr>
+      </Tr>            {/* <Td > <Flex><Box marginLeft="25px" paddingRight="15px"><FaRegUserCircle color='skyblue' fontSize="25px"/></Box> {item}<Button onClick={()=>userDelete(item._id)} ml="55px" bgColor="red.100"><MdDeleteForever color='red' fontSize="18px"/></Button></Flex></Td> */}
+
       {
         data?.map((item)=>(
             <Tr >
-            <Td > <Flex><Box marginLeft="25px" paddingRight="15px"><FaRegUserCircle color='skyblue' fontSize="25px"/></Box> {item.title}<Button onClick={()=>userDelete(item._id)} ml="55px" bgColor="red.100"><MdDeleteForever color='red' fontSize="18px"/></Button></Flex></Td>
+            <Td > <Flex><Box marginLeft="25px" paddingRight="15px"><FaRegUserCircle color='skyblue' fontSize="25px"/></Box> {item}<Button ml="55px" bgColor="red.100"><MdDeleteForever color='red' fontSize="18px"/></Button></Flex></Td>
             <Td>none </Td>
             <Td >-</Td>
             <Td ></Td>

@@ -5,10 +5,14 @@ import { GrDownload} from 'react-icons/gr';
 import { BsWindows} from 'react-icons/bs';
 import { BsApple} from 'react-icons/bs';
 import { FaUbuntu} from 'react-icons/fa';
+import Navbar from '../../Components/Dashboard/Navbar';
+import Sidebar from '../../Components/Dashboard/Sidebar';
+
 const Dashboard = () => {
     
   return (
-    
+    <Box>
+    <Navbar />
     <Flex justifyContent="space-evenly">
         <hr />
     <Box textAlign="left">
@@ -47,6 +51,7 @@ const Dashboard = () => {
     </Box>
     
    </Flex>
+   </Box>
   )
 }
 export default Dashboard;
