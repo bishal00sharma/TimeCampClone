@@ -248,3 +248,29 @@
     height:100%;
     width:50%;
 } */
+
+/* ********************************************* pricing page ************************************************* */
+.pridiv2{
+    height:auto;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    width:90%;
+    margin: auto;
+    border-top: 1px solid black;
+     border-bottom: 1px solid black;
+    font-weight: 700;
+    font-size: 16px;
+    margin-top: 8%;
+    font-family: nunito sans,sans-serif;
+    text-align: center;
+}
+.pridiv2>.subpart1{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    gap:10px
+}
+.subpart1>img{
+    height:45%;
+    width:52%;
+    margin-top: 10%;
+}
