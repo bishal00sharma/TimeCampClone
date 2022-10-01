@@ -1,18 +1,24 @@
+import { Box } from '@chakra-ui/react';
 import React from 'react';
 import './App.css';
-// import GoogleCalender from './Pages/Integrations/GoogleCalender/GoogleCalender';
-// import TrelloTimeTracking from "./Pages/Integrations/TrelloTimeTracking/TrelloTimeTracking";
-// import Summary from './Pages/User_Dashboard/Summary';
-// import Tags from './Pages/User_Dashboard/Tags';
-import Users from './Pages/User_Dashboard/Users';
-// import Navbar from './Components/Navbar';
-// import AccountSettings from './Pages/User_Dashboard/AccountSettings';
-// import Attendance from './Pages/User_Dashboard/Attendance';
-// import Dashboard from './Pages/User_Dashboard/Dashboard';
-// import Projects from './Pages/User_Dashboard/Projects'
+import HomePage from './Routes/HomePage';
+// import TrelloTimeTracking from './Integrations/TrelloTimeTracking/TrelloTimeTracking';
+
+// import Features from './Pages/Features/Features';
+import Navbar from './Components/Navbar';
+// import Footer from './Components/Footer';
+// import Pricing from './Routes/Pricing';
+// import Automatic from './Pages/Features/Automatic';
 function App() {
   return (
     <div className="App">
+    {/* <Features/> */}
+    <Navbar/>
+    {/* <HomePage/> */}
+      {/* <Footer/> */}
+      <Pricing/>
+      {/* <TrelloTimeTracking /> */}
+      {/* <Automatic/> */}
    </div>
   );
 }

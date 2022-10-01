@@ -59,8 +59,8 @@ import {
                 </Text>
               </Heading>
               <Text color={"gray.500"}>
-                Track time against your projects and create reports and timesheets
-                in seconds.
+                Track time against your projects and create reports and
+                timesheets in seconds.
               </Text>
               <Stack spacing={{ base: -8, sm: -10 }} direction={{ sm: "row" }}>
                 <Input
@@ -193,8 +193,8 @@ import {
                   Schedule a demo and learn more about TimeCamp
                 </Heading>
                 <Text color={"gray.500"} fontSize={["sm", "md", "lg"]}>
-                  Hop on a call with TimeCamp's top minds to get the best possible
-                  introduction to our product.
+                  Hop on a call with TimeCamp's top minds to get the best
+                  possible introduction to our product.
                 </Text>
               </Stack>
               <Stack align={"center"}>
@@ -225,7 +225,7 @@ import {
             mt={-2}
           />
         </Container>
-  
+
         <Center>
           <Heading fontSize={"4xl"}>One app. A multitude of benefits</Heading>
         </Center>
@@ -260,7 +260,7 @@ import {
                   they spend on a given project or task.
                 </Text>
               </Stack>
-  
+
               <Stack
                 onClick={handleTwo}
                 borderLeft={two ? "5px solid #37c266" : "none"}
@@ -285,7 +285,7 @@ import {
                   billing will become easy as pie.
                 </Text>
               </Stack>
-  
+
               <Stack
                 onClick={handleThree}
                 borderLeft={three ? "5px solid #37c266" : "none"}
@@ -387,7 +387,7 @@ import {
                   focus on your work.
                 </Text>
               </Stack>
-  
+
               <Stack spacing={{ base: -8, sm: -10 }} direction={{ sm: "row" }}>
                 <Button
                   rounded={"full"}
@@ -478,11 +478,11 @@ import {
                 </Heading>
                 <Text color={"gray.500"}>
                   If you're in need to track the usage of certain apps by your
-                  team, try this! Stay on the same page with your team without any
-                  micromanagement.
+                  team, try this! Stay on the same page with your team without
+                  any micromanagement.
                 </Text>
               </Stack>
-  
+
               <Stack spacing={{ base: -8, sm: -10 }} direction={{ sm: "row" }}>
                 <Button
                   rounded={"full"}
@@ -527,7 +527,7 @@ import {
                   all. One app. Many features.
                 </Text>
               </Stack>
-  
+
               <Stack spacing={{ base: -8, sm: -10 }} direction={{ sm: "row" }}>
                 <Button
                   rounded={"full"}
@@ -617,12 +617,12 @@ import {
                   </Text>
                 </Heading>
                 <Text color={"gray.500"}>
-                  TimeCamp's billing feature allows you to mark your tracked time
-                  as either billable or non-billable which significantly speeds up
-                  your invoicing as well as resource management.
+                  TimeCamp's billing feature allows you to mark your tracked
+                  time as either billable or non-billable which significantly
+                  speeds up your invoicing as well as resource management.
                 </Text>
               </Stack>
-  
+
               <Stack spacing={{ base: -8, sm: -10 }} direction={{ sm: "row" }}>
                 <Button
                   rounded={"full"}
@@ -667,7 +667,7 @@ import {
                   harder.
                 </Text>
               </Stack>
-  
+
               <Stack spacing={{ base: -8, sm: -10 }} direction={{ sm: "row" }}>
                 <Button
                   rounded={"full"}
@@ -758,10 +758,11 @@ import {
                 </Heading>
                 <Text color={"gray.500"}>
                   TimeCamp also works for attendance reporting. You can finally
-                  scrap the dreaded punch in and out cards and use a simple tool.
+                  scrap the dreaded punch in and out cards and use a simple
+                  tool.
                 </Text>
               </Stack>
-  
+
               <Stack spacing={{ base: -8, sm: -10 }} direction={{ sm: "row" }}>
                 <Button
                   rounded={"full"}
@@ -802,10 +803,11 @@ import {
                 </Heading>
                 <Text color={"gray.500"}>
                   Turn precise data into precise invoices for your clients. No
-                  more disputes over amounts. TimeCamp provides the proof of work.
+                  more disputes over amounts. TimeCamp provides the proof of
+                  work.
                 </Text>
               </Stack>
-  
+
               <Stack spacing={{ base: -8, sm: -10 }} direction={{ sm: "row" }}>
                 <Button
                   rounded={"full"}
@@ -862,10 +864,13 @@ import {
               <Image src="https://cdn-m.timecamp.com/img/customer-stories/saatchi/saatchi.jpg" />
             </Box>
             <Stack spacing={2} p={4} w={"90%"}>
-              <Text fontWeight={"semibold"} fontSize={["lg", "md", "2xl", "4xl"]}>
+              <Text
+                fontWeight={"semibold"}
+                fontSize={["lg", "md", "2xl", "4xl"]}
+              >
                 It’s very simple to use, especially fueling it with Trello, it’s
-                key here, we wanted to maintain our workflow and not jump over to
-                other pieces of software to capture the time data.
+                key here, we wanted to maintain our workflow and not jump over
+                to other pieces of software to capture the time data.
               </Text>
               <Text>
                 <Text as={"span"} fontWeight={"semibold"}>
@@ -892,7 +897,11 @@ import {
             </Text>
           </Text>
         </Center>
-        <Container maxWidth={'9xl'} bgColor={"gray.100"} px={[4,8,16,32,64]}>
+        <Container
+          maxWidth={"9xl"}
+          bgColor={"gray.100"}
+          px={[4, 8, 16, 32, 64]}
+        >
           <Stack
             align={"center"}
             spacing={{ base: 8, md: 10 }}
@@ -908,7 +917,6 @@ import {
                   lineHeight={1}
                   fontWeight={500}
                   fontSize={{ base: "3xl", sm: "4xl" }}
-                  
                 >
                   <Text as={"span"} fontSize={"2xl"}>
                     Easy and quick integration with more than 100 apps and work
@@ -916,20 +924,48 @@ import {
                   </Text>
                 </Heading>
                 <Text color={"gray.500"}>
-                  TimeCamp works great alongside with all of the most popular work
-                  management tools. Now, you can also track time directly from
-                  your go-to apps such as Trello or Asana thanks to our Chrome
-                  extension.
+                  TimeCamp works great alongside with all of the most popular
+                  work management tools. Now, you can also track time directly
+                  from your go-to apps such as Trello or Asana thanks to our
+                  Chrome extension.
                 </Text>
-                <Button h={16} rounded={20} as={'a'}bgColor={'#3c91e6'} color='white' _hover={'none'}><Image w={8} src="https://cdn-m.timecamp.com/img/integrations/chrome.png" m={2}/>Track time in chrome</Button>
-                <Button h={16} rounded={20} as={'a'} bgColor={'#3c91e6'} color='white' _hover={'none'}> <Image  w={16} src="https://cdn-m.timecamp.com/img/integrations/edge.svg"/>Track time in edge</Button>
-                
+                <Button
+                  h={16}
+                  rounded={20}
+                  as={"a"}
+                  bgColor={"#3c91e6"}
+                  color="white"
+                  _hover={"none"}
+                >
+                  <Image
+                    w={8}
+                    src="https://cdn-m.timecamp.com/img/integrations/chrome.png"
+                    m={2}
+                  />
+                  Track time in chrome
+                </Button>
+                <Button
+                  h={16}
+                  rounded={20}
+                  as={"a"}
+                  bgColor={"#3c91e6"}
+                  color="white"
+                  _hover={"none"}
+                >
+                  {" "}
+                  <Image
+                    w={16}
+                    src="https://cdn-m.timecamp.com/img/integrations/edge.svg"
+                  />
+                  Track time in edge
+                </Button>
+
                 <Text color={"gray.500"}>
                   Maintain your current workflow and connect TimeCamp, the best
                   time tracking software, with your currently used apps.
                 </Text>
               </Stack>
-  
+
               <Stack spacing={{ base: -8, sm: -10 }} direction={{ sm: "row" }}>
                 <Button
                   rounded={"full"}
@@ -940,16 +976,16 @@ import {
                   variant={"ghost"}
                   color={"green"}
                 >
-                  Check Integrations <AiOutlineArrowRight/>
+                  Check Integrations <AiOutlineArrowRight />
                 </Button>
               </Stack>
             </Stack>
-  
+
             <SimpleGrid
               p={10}
               justifyContent={"center"}
               columns={[2, 3, 3]}
-              spacing={[10,20]}
+              spacing={[10, 20]}
             >
               <Box
                 bgColor={"white"}
@@ -1158,51 +1194,61 @@ import {
             </SimpleGrid>
           </Stack>
         </Container>
-        <Box bgColor={"gray.100"} my={10}  px={[4,8,16,32,64]}>
-        <Container maxW={'7xl'} py={16} as={Stack} spacing={12}>
-          <Stack spacing={0} align={'center'}>
-            <Heading>You might be interested in these blog posts</Heading>
-            
-          </Stack>
-          <Stack
-            direction={{ base: 'column', md: 'row' }}
-            spacing={{ base: 10, md: 4, lg: 10 }}>
-              <Flex gap={8}  direction={{ base: 'column', md: 'row' }}>
-  
-           <Stack w={'60%'}>
-            <Image w={'300px'} src='https://cdn-m.timecamp.com/img/customer-stories/saatchi/saatchi.jpg'/>
-            <Text color={'blue.400'}>M&C SAATCHI</Text>
-            <Text fontWeight={'semibold'}>
-  How to Blend in TimeCamp to an Already Established Workflow. Some
-  Insights From M&C Saatchi</Text>
-           </Stack>
-           <Stack w={'60%'}>
-            <Image w={'300px'} src='https://cdn-m.timecamp.com/img/customer-stories/tense/tensegroup.jpg'/>
-            <Text color={'blue.400'}>Grupa TENSE</Text>
-            <Text fontWeight={'semibold'}>
-  
-            How TimeCamp helped a thriving digital agency by automating its
-  workflow.</Text>
-           </Stack>
-           <Stack w={'60%'}>
-            <Image w={'300px'} src='https://cdn-m.timecamp.com/img/greenbranding/features/timeTracking.png'/>
-            <Text color={'blue.400'}>Time tracking</Text>
-            <Text fontWeight={'semibold'}>
-            Why You Should Use Time Tracking for Your Business</Text>
-           </Stack>
+        <Box bgColor={"gray.100"} my={10} px={[4, 8, 16, 32, 64]}>
+          <Container maxW={"7xl"} py={16} as={Stack} spacing={12}>
+            <Stack spacing={0} align={"center"}>
+              <Heading>You might be interested in these blog posts</Heading>
+            </Stack>
+            <Stack
+              direction={{ base: "column", md: "row" }}
+              spacing={{ base: 10, md: 4, lg: 10 }}
+            >
+              <Flex gap={8} direction={{ base: "column", md: "row" }}>
+                <Stack w={"60%"}>
+                  <Image
+                    w={"300px"}
+                    src="https://cdn-m.timecamp.com/img/customer-stories/saatchi/saatchi.jpg"
+                  />
+                  <Text color={"blue.400"}>M&C SAATCHI</Text>
+                  <Text fontWeight={"semibold"}>
+                    How to Blend in TimeCamp to an Already Established Workflow.
+                    Some Insights From M&C Saatchi
+                  </Text>
+                </Stack>
+                <Stack w={"60%"}>
+                  <Image
+                    w={"300px"}
+                    src="https://cdn-m.timecamp.com/img/customer-stories/tense/tensegroup.jpg"
+                  />
+                  <Text color={"blue.400"}>Grupa TENSE</Text>
+                  <Text fontWeight={"semibold"}>
+                    How TimeCamp helped a thriving digital agency by automating
+                    its workflow.
+                  </Text>
+                </Stack>
+                <Stack w={"60%"}>
+                  <Image
+                    w={"300px"}
+                    src="https://cdn-m.timecamp.com/img/greenbranding/features/timeTracking.png"
+                  />
+                  <Text color={"blue.400"}>Time tracking</Text>
+                  <Text fontWeight={"semibold"}>
+                    Why You Should Use Time Tracking for Your Business
+                  </Text>
+                </Stack>
               </Flex>
-          </Stack>
-        </Container>
-      </Box>
-      <Container maxW={"7xl"} my={8} p={[4,8,16]}>
+            </Stack>
+          </Container>
+        </Box>
+        <Container maxW={"7xl"} my={8} p={[4, 8, 16]}>
           <Image
             src="https://cdn-m.timecamp.com/img/greenbranding/greenSmallSkewCircle.svg"
-            mx={[0,20, 40, 60, 80]}
+            mx={[0, 20, 40, 60, 80]}
             mb={-8}
           />
           <Image
             src="https://cdn-m.timecamp.com/img/greenbranding/redSmallCircle.svg"
-            mx={[100,200, 400, 600, 800]}
+            mx={[100, 200, 400, 600, 800]}
             mb={-2}
           />
           <Stack
@@ -1213,8 +1259,7 @@ import {
             p={10}
             rounded={16}
           >
-  
-              <Stack spacing={4} textAlign={"center"} px={[2,4,8,16,32]}>
+            <Stack spacing={4} textAlign={"center"} px={[2,4,8,16,32]}>
                 <Heading fontWeight={[400,600,700]} fontSize={['2xl','4xl']}>
                 One simple tool to measure everything your business needs.
                 </Heading>
@@ -1251,7 +1296,6 @@ import {
                   Contact Sales
                 </Button>
               </Flex>
-          
           </Stack>
           <Image
             src="https://cdn-m.timecamp.com/img/greenbranding/blueSmallCircle.svg"

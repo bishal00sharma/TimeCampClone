@@ -1,8 +1,7 @@
 import { Button, Flex, Table, TableCaption, TableContainer, Thead } from '@chakra-ui/react';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {FaRegUserCircle} from "react-icons/fa";
-import {MdDeleteForever} from "react-icons/md";
-import axios from "axios";
+import {MdDeleteForever} from "react-icons/md"
 import {
    Tbody,
     Tfoot,
@@ -12,56 +11,27 @@ import {
     
   } from '@chakra-ui/react'
 import UserAdd from './UserAdd';
+const arr=[
+    {
+  "user":"bishalsharma",
+  "project":2,
+  "role":'Admin'
+    },
+    {
+     "user":"sharma",
+     "project":1,
+      "role":'user'
+      },{
+       "user":"masai",
+       "project":1,
+       "role":'normal'
+         },
+]
 
 const UserTable = () => {
-
-  const [show, setShow] =useState(false);
-  const [data, setData]=useState([]);
-  const [loading, setLoading] =useState(false)
-  const [value, setValue]=useState("");
-  const [get, setGet]=useState(false)
-
-  async function getData(){
-      try {
-        const response = await fetch("http://localhost:8080/projects", {
-          method: 'GET', 
-          headers: {
-            "token":"6336ce76b22c509b0ee3e3d9:lokesh0910@gmail.com:lokesh0910",
-            'Content-Type': 'application/json'
-          }        });
-       return (response.json());
-      }
-    
-    catch (e) {
-      console.log(e);
-  }}
-  console.log(data)
-
-  
-  async function userDelete(id){
-    try {
-      const response = await fetch(`http://localhost:8080/projects/${id}` ,{
-        method: 'DELETE', 
-        headers: {
-          "token":"6336ce76b22c509b0ee3e3d9:lokesh0910@gmail.com:lokesh0910",
-          'Content-Type': 'application/json'
-        }        });
-        setGet(!get)
-     return (response.json());
-    }
-  
-  catch (e) {
-    console.log(e);
-}}
-function changeGet(){
-  setGet(!get)
-}
-
-useEffect(()=>{
-  getData().then(res=>(setData(res)))
-  
-},[get]);
-
+  function userDelete(){
+    alert("Yes")
+  }
   return (
     <Box marginTop="20px">
       <TableContainer>
@@ -71,32 +41,38 @@ useEffect(()=>{
       <Tr>
         <Th color="blue.300" fontSize="15px">users/groups</Th>
         <Th color="blue.300" fontSize="15px">involved in</Th>
-        <Th color="blue.300" fontSize="15px">assign</Th>
+        <Th color="blue.300" fontSize="15px">role</Th>
         <Th color="blue.300" fontSize="15px">external id</Th>
       </Tr>
     </Thead>
     <Tbody>
     <Tr>
         <Flex>
-        <Td mb="15px" fontWeight="800" color='teal' fontSize="18px">Project</Td>
-         <UserAdd  changeGet={changeGet}/>
+        <Td mb="15px" fontWeight="800" color='teal' fontSize="18px">People (1 user)</Td>
+         <UserAdd />
         </Flex>
         <Td></Td>
         <Td ></Td>
         <Td ></Td>
       </Tr>
       {
-        data?.map((item)=>(
+        arr.map((item)=>(
             <Tr >
-            <Td > <Flex><Box marginLeft="25px" paddingRight="15px"><FaRegUserCircle color='skyblue' fontSize="23px"/></Box> {item.title}<Button onClick={()=>userDelete(item._id)} ml="35px" bgColor="red.100"><MdDeleteForever color='red' fontSize="20px"/></Button></Flex></Td>
-            {/* <Td>{item.tags?item.tags:"0"} Tags</Td> */}
-            {/* <Td >{item.user.email}</Td> */}
+            <Td > <Flex><Box marginLeft="25px" paddingRight="15px"><FaRegUserCircle color='skyblue' fontSize="23px"/></Box> {item.user}<Button onClick={userDelete} ml="35px" bgColor="red.100"><MdDeleteForever color='red' fontSize="20px"/></Button></Flex></Td>
+            <Td>{item.project} Projects</Td>
+            <Td >{item.role}</Td>
             <Td ></Td>
           </Tr>
         ))
       }
     </Tbody>
-   
+    {/* <Tfoot>
+      <Tr>
+        <Th>To convert</Th>
+        <Th>into</Th>
+        <Th >multiply by</Th>
+      </Tr>
+    </Tfoot> */}
   </Table>
 </TableContainer>
     </Box>

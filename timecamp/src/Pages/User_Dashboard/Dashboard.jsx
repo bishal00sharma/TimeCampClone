@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Heading, Image, StackDivider, Text, VStack } from '@chakra-ui/react';
+import { Box, Button, Flex, Heading, Image, Text } from '@chakra-ui/react';
 import React from 'react'
 import { HiOutlineExclamationCircle} from 'react-icons/hi';
 import { GrDownload} from 'react-icons/gr';
