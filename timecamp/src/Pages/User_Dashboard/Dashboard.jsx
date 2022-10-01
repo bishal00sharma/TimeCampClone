@@ -5,10 +5,14 @@ import { GrDownload} from 'react-icons/gr';
 import { BsWindows} from 'react-icons/bs';
 import { BsApple} from 'react-icons/bs';
 import { FaUbuntu} from 'react-icons/fa';
+import Navbar from '../../Components/Dashboard/Navbar';
+import Sidebar from '../../Components/Dashboard/Sidebar';
+
 const Dashboard = () => {
     
   return (
-    
+    <Box>
+    <Navbar />
     <Flex justifyContent="space-evenly">
         <hr />
     <Box textAlign="left">
@@ -33,7 +37,7 @@ const Dashboard = () => {
 
     </Box>
     <Box width="40%" padding="10px" bgColor="teal.100" mt="20px" borderRadius="20px">
-        <Image width="95%" margin="auto" src="https://cdn.timecamp.com/res/css/dashboard/timesheet-activities.1664285842.png"/>
+        <Image width="95%" margin="auto" src={require("../../Resources/timesheet-app-act.webp")}/>
        <Flex><HiOutlineExclamationCircle fontSize="70px" color="blue"/><Text padding="15px">By default all above features are activated. If you have any privacy concerns you can easily change desktop app behaviour by going to Settings  Add-ons  Desktop App Settings page.</Text></Flex>  
       
       <Box>
@@ -47,6 +51,7 @@ const Dashboard = () => {
     </Box>
     
    </Flex>
+   </Box>
   )
 }
 export default Dashboard;

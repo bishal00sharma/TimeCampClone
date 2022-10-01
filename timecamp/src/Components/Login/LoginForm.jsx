@@ -1,6 +1,6 @@
 import { Button, Input, Stack, Text } from "@chakra-ui/react";
 import { useState } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {login} from "../../Store/auth/auth.actions"
 import { useEffect } from "react";
@@ -11,6 +11,14 @@ export default function LoginForm () {
     const [ InputError, setError] = useState("");
     const dispatch = useDispatch();
     const {token,error} = useSelector((store)=> store.auth)
+    const navigate = useNavigate();
+
+
+    useEffect(()=>{
+        if(token!==""){
+            navigate("/dashboard/timesheet");
+        }
+    },[navigate,token])
 
     const handleChange = (e) => {
         const {name, value} = e.target;
@@ -46,7 +54,7 @@ export default function LoginForm () {
             InputError!=="" && <Text color="red" backgroundColor="rgba(255, 0, 0, 0.088)" p="5px">{InputError}</Text>
         }
         {
-            token!=="" && <Text color="green">Successfully logged in</Text>
+            token!=="" && <Text> Successfully logged in</Text>
         }
         <Stack >
             <Input placeholder="Email" name="email" onChange={handleChange}/>
