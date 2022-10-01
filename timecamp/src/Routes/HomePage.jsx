@@ -714,7 +714,7 @@ const HomePage = () => {
           })}
         </SimpleGrid>
       </div>
-      {/* f********************** */}
+      {/******** ********* price *****************/}
       <div className={style.pricee}>
         <div>
           <Text color="#25CF60" fontSize="16" textAlign="center" as="b">
@@ -949,41 +949,6 @@ const HomePage = () => {
       </div> */}
 
       {/*  *************faq*************/}
-      {/* <Accordion allowToggle>
-        <AccordionItem>
-          <h2>
-            <AccordionButton>
-              <Box flex="1" textAlign="left">
-                Section 1 title
-              </Box>
-              <AccordionIcon />
-            </AccordionButton>
-          </h2>
-          <AccordionPanel pb={4}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </AccordionPanel>
-        </AccordionItem>
-
-        <AccordionItem>
-          <h2>
-            <AccordionButton>
-              <Box flex="1" textAlign="left">
-                Section 2 title
-              </Box>
-              <AccordionIcon />
-            </AccordionButton>
-          </h2>
-          <AccordionPanel pb={4}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </AccordionPanel>
-        </AccordionItem>
-      </Accordion> */}
       <Text fontSize="5xl" marginTop={"5%"} marginBottom="10">FAQ</Text>
       <Accordion maxW={"6xl"} marginLeft="5%" allowMultiple>
         <AccordionItem>

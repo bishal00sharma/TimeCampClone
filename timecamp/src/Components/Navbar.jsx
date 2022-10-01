@@ -37,13 +37,15 @@ const Navbar = () => {
             </MenuButton>
             <MenuList color="black" display="flex">
               <Box>
-                <MenuItem _hover={{ bgColor: "#25CF60" }}>
-                  <img
-                    style={{ marginRight: "10px" }}
-                    src="https://cdn-m.timecamp.com/img/greenbranding/features/icons-menu/automatic-time-tracking.svg"
-                  />
-                  Autotime Tracking
-                </MenuItem>
+                <Link to="Automatic.jsx">
+                  <MenuItem _hover={{ bgColor: "#25CF60" }}>
+                    <img
+                      style={{ marginRight: "10px" }}
+                      src="https://cdn-m.timecamp.com/img/greenbranding/features/icons-menu/automatic-time-tracking.svg"
+                    />
+                    Autotime Tracking
+                  </MenuItem>
+                </Link>
                 <MenuItem _hover={{ bgColor: "#25CF60" }}>
                   <img
                     style={{ marginRight: "10px" }}
