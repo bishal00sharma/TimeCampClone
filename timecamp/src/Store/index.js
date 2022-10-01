@@ -3,10 +3,10 @@ import { legacy_createStore, combineReducers,compose, applyMiddleware} from "red
 import thunk from "redux-thunk";
 import { authReducer } from "./auth/auth.reducer";
 import { projectReducer } from "./Projects/projects.reducer";
-
 const rootReducer = combineReducers( {
     auth : authReducer,
     projects: projectReducer,
+    tasks : tasksReducer,
 })
 
 const createComposer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
