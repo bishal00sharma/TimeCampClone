@@ -1,0 +1,25 @@
+.controller{
+    gap: 10px;
+}
+
+.controller > div
+{
+    border: 1px solid rgba(128, 128, 128, 0.288);
+    height: 100%;
+    gap: 5px;
+}
+.controller > div{
+    padding: 10px;
+}
+
+.controller > img{
+    border: 1px solid red;
+}
+.controller >div:first-child >p {
+    width: 100px;
+    padding: 0 5px;
+}
+
+.controller >div:first-child > p:first-child{
+    border-right: 1px solid red;
+}
