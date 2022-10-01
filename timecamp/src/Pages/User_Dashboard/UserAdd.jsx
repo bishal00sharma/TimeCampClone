@@ -22,31 +22,24 @@ import { useState } from "react";
 
 export default function UserAdd({changeGet}) {
   const [value, setValue]=useState("");
+  const { isOpen, onOpen, onClose } = useDisclosure()
+
   function handleChange(e){
     setValue(e.target.value);
     console.log(value)
    }
 
-async function addTask(value){
-  try {
-    const response = await fetch(`http://localhost:8080/projects` ,{
-      method: 'POST', 
-      headers: {
-        "token":"6336ce76b22c509b0ee3e3d9:lokesh0910@gmail.com:lokesh0910",
-        'Content-Type': 'application/json'
-      },
-    body:(JSON.stringify({"title":value})),});
-    onClose();
-    changeGet()
-   return (response.json());
-  }
+function userAdd(value){
+  localStorage.setItem("token","63344372e20682bebf2433eb:bishal@gmail.com:no");
+  let token=localStorage.getItem("token");
+  let [id]=token.split(":");
+  axios.patch(`http://localhost:8080/users/${id}/clients/`,{"clients":value})
+  
+  changeGet()
+  setValue("")
+}
 
-catch (e) {
-  console.log(e);
-}}
-   
 
-    const { isOpen, onOpen, onClose } = useDisclosure()
     return (
       <>
         
@@ -84,7 +77,7 @@ catch (e) {
               <Button colorScheme='blue' mr={3} onClick={onClose}>
                 Close
               </Button>
-              <Button bgColor="green.400" color="white" variant='ghost' onClick={()=>addTask(value)}>Add Project</Button>
+              <Button bgColor="green.400" color="white" variant='ghost' onClick={()=>userAdd(value)}>Add Project</Button>
             </ModalFooter>
           </ModalContent>
         </Modal>
