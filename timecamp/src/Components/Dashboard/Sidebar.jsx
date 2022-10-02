@@ -1,9 +1,9 @@
-import { Box, Button, Flex, Grid, Img, MenuButton, MenuItem, MenuList, Text, useDisclosure,Divider } from "@chakra-ui/react";
+import { Box,  Flex, Grid, Img, MenuButton, MenuItem, MenuList, Text, useDisclosure,Divider } from "@chakra-ui/react";
 import { Menu,} from '@chakra-ui/react'
+import { Link } from "react-router-dom"
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
 import LogoBar from "../../Components/Login/Logo-bar"
-import { Link } from "react-router-dom";
-import { FaSearchPlus } from "react-icons/fa"
+
 
 export default function Sidebar() {
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -15,10 +15,11 @@ export default function Sidebar() {
                 <Grid h="fit-content"  >
                     <Text>TRACK</Text>
                     <Flex>
-                        <Img src={require("../../Resources/icons/dashboard/timesheet.png")} alt="TimeSheet" />
-                        <Text>TimeSheet</Text>
+                      <Link to="/dashboard/timesheet">
+                          <Img src={require("../../Resources/icons/dashboard/timesheet.png")} alt="TimeSheet" />
+                          <Text>TimeSheet</Text>
+                        </Link>
                     </Flex>
-                    
                 </Grid>
                 <Grid>
                     <Text>ANALYZE</Text>
@@ -26,7 +27,7 @@ export default function Sidebar() {
                         <Img src={require("../../Resources/icons/dashboard/dashboard.png")} alt="TimeSheet" />
                         <Text>Dashboard</Text>
                     </Flex>
-                    <Menu isOpen={isOpen}>
+                    <Menu isOpen={isOpen} sidebar_div>
                         <MenuButton onMouseEnter={onOpen} onMouseLeave={onClose}>
                         <Flex className="menu">
                             <Img src={require("../../Resources/icons/dashboard/reports.png")} alt="TimeSheet" />

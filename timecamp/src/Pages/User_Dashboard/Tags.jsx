@@ -19,18 +19,16 @@ import Sidebar from '../../Components/Dashboard/Sidebar';
   function change(){
     setShow(!show)
   }
-  async function getData(){//give user id here
-    // localStorage.setItem("token","63344372e20682bebf2433eb:bishal@gmail.com:no");
-    let token=(localStorage.getItem("token")) || "";
-    let [id]=token.split(":");
-    let dataa= await fetch(`http://localhost:8080/users/tags/${id}`);
-    let res= await dataa.json();
-    setData(res.tags)
+  async function getData(){
+    let token=JSON.parse(localStorage.getItem("userToken")) || "";
+    let id=token.split(":")[0];
+
+    let response = await axios.get(`http://localhost:8080/users/tags/${id}`,{headers : {"token": token}});
+    setData(response.data.tags)
     setTimeout(()=>{
       setLoading(true)
     },1000)
     
-
   }
   function addList(value){
    //localStorage.setItem("token","63344372e20682bebf2433eb:bishal@gmail.com:no");

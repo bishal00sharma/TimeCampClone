@@ -43,7 +43,8 @@
   height: 25px;
 }
 
-#sidebar> div{
+#sidebar> div ,
+.sidebar_div{
   border-top: 1px solid rgba(128, 128, 128, 0.49);
   padding: 20px 10px;
 }
