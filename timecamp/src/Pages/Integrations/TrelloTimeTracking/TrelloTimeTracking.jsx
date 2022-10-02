@@ -1,4 +1,8 @@
 import {
+  Accordion,
+  AccordionButton,
+  AccordionItem,
+  AccordionPanel,
   Box,
    Button, 
    Container,  
@@ -15,20 +19,23 @@ import {
 import { AiOutlineGoogle } from "react-icons/ai";
 import React from 'react';
 import styles from "../TrelloTimeTracking/TrelloTimeTracking.module.css"
+import Footer from '../../../Components/Footer';
+import Navbar from '../../../Components/Navbar';
 
 const TrelloTimeTracking = () => {
   return (
     <>
+    <Navbar />
       <Container
         maxW="100%"   
         pt="96px" 
         pb="128px" 
-        px="12%"
+        px={["0%","8","12%"]}
         >
           <Container 
             maxW="100%"  
             h="100%" 
-            px="10%"
+            px={["0%","6","10%"]}
           >
             <Stack 
               direction={["column","column","row"]}  
@@ -74,6 +81,8 @@ const TrelloTimeTracking = () => {
                 <Stack 
                   spacing={{ base: -8, sm: -10 }} 
                   direction={["column", "column", "row"]}
+                  alignItems={"center"}
+                  justifyContent={"center"}
                 >
                   <Flex 
                     gap={["10px","10px","0px"]} 
@@ -81,8 +90,9 @@ const TrelloTimeTracking = () => {
                     w="100%" 
                     mt="30px" 
                     display="flex" 
-                    pr="30px"
+                    pr={["0px","0px","30px"]}
                     alignItems={["center"]} 
+                    justifyContent={"center"}
                   >
                     <Input
                       w={["85%","85%","55%"]}
@@ -172,29 +182,34 @@ const TrelloTimeTracking = () => {
       <Container
         maxW={"100%"}
         pb={"75px"}
-        px={"12%"}
+        px={["6%","8%","12%"]}
       >
         <Box
           h={"100%"}
           maxW="100%"
         >
-          <Box
+          <Flex
             h={"60%"}
             pt={"32px"}
             pb="16px"
+            display={"flex"}
+            direction={"column"}
+            alignItems={"center"}
+            justifyContent={"center"}
             borderBottom={"1px"}
             borderColor="lightgray"
           >
             <Text
               textAlign={"center"}
               fontWeight={600}
-              fontSize={"md"}
+              fontSize={["md", "lg"]}
             >
               Trusted by 18,000 teams from all over the world (and still growing!)
             </Text>
             <SimpleGrid
               columns={[1,1,3,6]}
               h="80%"
+              m={"auto"}
               alignItems={"center"}
               justifyContent={"center"}
             >
@@ -219,7 +234,7 @@ const TrelloTimeTracking = () => {
                 <Image src={"https://cdn-m.timecamp.com/img/greenbranding/social-proof-section/g2crowd.svg"} />
               </Box>
             </SimpleGrid>
-          </Box>
+          </Flex>
           <Box
             h="40%"
             pt="28px"
@@ -249,14 +264,13 @@ const TrelloTimeTracking = () => {
         maxW={"100%"}
         backgroundColor={"#F3F3F3"}
         pt={"80px"}
-        px="12%"
+        px={["2%", "6%", "12%"]}
       >
         <Container
           maxW={"100%"}
           h="100%"
           pt={"64px"}
-          pl={"72px"}
-          pr={"120px"}
+          px={["2%", "6%", "12%"]}
         >
           <Stack
             maxW={"100%"}
@@ -286,23 +300,22 @@ const TrelloTimeTracking = () => {
               justifyContent={"center"}
             >
               <Button
-                w={"34%"}
+                w={["100%","80%","34%"]}
                 backgroundColor= {"#3c91e6"}
                 borderRadius={"26px"}
                 px={["15px","20px","40px"]}
                 py={["9px","12px","15px"]}
                 h={"70px"}
-                
               >
                 <Stack
-                  direction={["column", "column","row","row"]}
+                  direction={"row"}
                   alignItems={"center"}
-                  justifyContent={["center","left","left"]}
+                  justifyContent={["left","left","left"]}
                   gap={["8px","12px","16px"]}
                 >
                   <Image maxW={"20%"} maxH={"80%"} src='https://cdn-m.timecamp.com/img/integrations/chrome.png'></Image>
                   <Text
-                    fontSize={["0.2rem","0.5rem","0.5rem","1rem"]}
+                    fontSize={["1rem"]}
                     fontWeight={700} 
                     lineHeight={["0.8","1.1","1.5"]}
                     color={"white"}
@@ -316,7 +329,7 @@ const TrelloTimeTracking = () => {
               justifyContent={"center"}
             >
               <Button
-               w={"34%"}
+               w={["100%","80%","34%"]}
                backgroundColor= {"#3c91e6"}
                borderRadius={"26px"}
                px={["15px","20px","40px"]}
@@ -324,14 +337,14 @@ const TrelloTimeTracking = () => {
                h={"70px"}
               >
                 <Stack
-                  direction={["column", "column","row","row"]}
+                  direction={"row"}
                   alignItems={"center"}
-                  justifyContent={["center","left","left"]}
+                  justifyContent={["left","left","left"]}
                   gap={["8px","12px","16px"]}
                 >
                   <Image maxW={"30%"} maxH={"80%px"} src='https://cdn-m.timecamp.com/img/integrations/edge.svg'></Image>
                   <Text
-                    fontSize={["0.2rem","0.5rem","0.5rem","1rem"]}
+                    fontSize={["1rem"]}
                     fontWeight={700} 
                     lineHeight={["0.8","1.1","1.5"]}
                     color={"white"}
@@ -349,7 +362,7 @@ const TrelloTimeTracking = () => {
                   <Text
                     px={"22px"}
                     pb={"16px"}
-                    textAlign={"left"}
+                    textAlign={["center","center","left"]}
                     fontSize={"16px"}
                     fontWeight={700}
                     lineHeight={1.1}
@@ -359,19 +372,22 @@ const TrelloTimeTracking = () => {
                   <Text
                     px={"28px"}
                     pb={"16px"}
-                    textAlign={"left"}
+                    textAlign={["center","center","left"]}
                     fontSize={"16px"}
                     fontWeight={600}
                     lineHeight={1.5}
                   >
-                    No need to switch between two or more apps. Now, with our TimeCamp Trello Power-Up you're able to take your Trello experience to the next level. Add a time tracking button to your Trello cards and analyze time reports for every task. If you forget to start the timer, don't worry. Just add time manually or edit time reports.
+                    No need to switch between two or more apps. Now, 
+                    with our TimeCamp Trello Power-Up you're able to take your Trello experience to the next level. 
+                    Add a time tracking button to your Trello cards and analyze time reports for every task. 
+                    If you forget to start the timer, don't worry. Just add time manually or edit time reports.
                   </Text>
                 </Box>
                 <Box px={"15px"} pt={"80px"}>
                   <Text
                     px={"22px"}
                     pb={"16px"}
-                    textAlign={"left"}
+                    textAlign={["center","center","left"]}
                     fontSize={"16px"}
                     fontWeight={700}
                     lineHeight={1.1}
@@ -381,18 +397,21 @@ const TrelloTimeTracking = () => {
                   <Text
                     px={"28px"}
                     pb={"16px"}
-                    textAlign={"left"}
+                    textAlign={["center","center","left"]}
                     fontSize={"16px"}
                     fontWeight={600}
                     lineHeight={1.5}
                   >
-                    Select the boards that you want to integrate with TimeCamp. You're in charge! Your project management and productivity will improve with the time tracker that helps identify bottlenecks and redundant activities.                  </Text>
+                    Select the boards that you want to integrate with TimeCamp. 
+                    You're in charge! Your project management and productivity 
+                    will improve with the time tracker that helps identify bottlenecks and redundant activities. 
+                  </Text>
                 </Box>
                 <Box px={"15px"} pt={"80px"}>
                   <Text
                     px={"22px"}
                     pb={"16px"}
-                    textAlign={"left"}
+                    textAlign={["center","center","left"]}
                     fontSize={"16px"}
                     fontWeight={700}
                     lineHeight={1.1}
@@ -402,18 +421,22 @@ const TrelloTimeTracking = () => {
                   <Text
                     px={"28px"}
                     pb={"16px"}
-                    textAlign={"left"}
+                    textAlign={["center","center","left"]}
                     fontSize={"16px"}
                     fontWeight={600}
                     lineHeight={1.5}
                   >
-                    Whatever you're working on in Trello, TimeCamp will automatically assign the right projects, categories and track time to them. TimeCamp integrates with Trello seamlessly, so you can focus on your work.</Text>
+                    Whatever you're working on in Trello, 
+                    TimeCamp will automatically assign the right projects, 
+                    categories and track time to them. TimeCamp integrates with Trello seamlessly, 
+                    so you can focus on your work.
+                  </Text>
                 </Box>
                 <Box px={"15px"} pt={"80px"}>
                   <Text
                     px={"22px"}
                     pb={"16px"}
-                    textAlign={"left"}
+                    textAlign={["center","center","left"]}
                     fontSize={"16px"}
                     fontWeight={700}
                     lineHeight={1.1}
@@ -423,12 +446,14 @@ const TrelloTimeTracking = () => {
                   <Text
                     px={"28px"}
                     pb={"16px"}
-                    textAlign={"left"}
+                    textAlign={["center","center","left"]}
                     fontSize={"16px"}
                     fontWeight={600}
                     lineHeight={1.5}
                   >
-                    Discover how the Trello extension will take your task management experience to the next level. A time tracking integration that takes minimum time to set up in Trello. See for yourself!</Text>
+                    Discover how the Trello extension will take your task management experience to the next level. 
+                    A time tracking integration that takes minimum time to set up in Trello. See for yourself!
+                  </Text>
                 </Box>
               </SimpleGrid>
             </Box>
@@ -440,7 +465,7 @@ const TrelloTimeTracking = () => {
       </Container>
       <Container
         py={"64px"}
-        px={"12%"}
+        px={["2%", "6%", "12%"]}
         // border={"1px"}
         // borderColor={"black"}
         maxW={"100%"}
@@ -469,7 +494,7 @@ const TrelloTimeTracking = () => {
             <Text
               pt={"16px"}
               fontSize={"18px"}
-              px={"20%"}
+              px={["2%", "6%", "12%"]}
               fontWeight={600}
               textAlign={"center"}
               lineHeight={1.5}
@@ -478,7 +503,7 @@ const TrelloTimeTracking = () => {
             </Text>
             <Text
               fontSize={"18px"}
-              px={"20%"}
+              px={["2%", "6%", "12%"]}
               fontWeight={600}
               textAlign={"center"}
               lineHeight={1.5}
@@ -492,7 +517,7 @@ const TrelloTimeTracking = () => {
             justifyContent={"center"}
             direction={["column","column","row"]}
             spacing={[10,12,14]}
-            px={"10%"}
+            px={["2%", "6%", "12%"]}
             width={"100%"}
             // border={"1px"}
             // borderColor={"black"}
@@ -501,20 +526,20 @@ const TrelloTimeTracking = () => {
               display={"flex"}
               alignItems={"center"}
               justifyContent={"center"}
-              w={"30%"}
+              w={["90%","60%","30%"]}
             >
               <Image src='https://cdn-m.timecamp.com/img/greenbranding/automaticMode.png' ></Image>
             </Box>
             <Stack
-              w={"70%"}
-              px={"15px"}
+              w={["100%","90%","70%"]}
+              px={["2%", "6%", "12%"]}
               // border={"1px"}
               // borderColor={"magenta"}
               display={"flex"}
               alignItems={"center"}
               justifyContent={"center"}
               direction={["column"]}
-              spacing={["100","80px","64px"]}
+              spacing={["64px","32px","28px"]}
             >
               <Stack
                 // border={"1px"}
@@ -622,6 +647,225 @@ const TrelloTimeTracking = () => {
           </Stack>
         </Container>
       </Container>
+      <Box margin={"auto"} maxW={"76%"} >
+      <Text fontSize="4xl" fontWeight={700} textAlign={"center"} marginTop={"5%"} marginBottom="10">Benefits include</Text>
+        <Accordion maxW={"6xl"} marginLeft="5%" allowMultiple>
+          <AccordionItem>
+            {({ isExpanded }) => (
+              <>
+                <h2>
+                  <AccordionButton>
+                    {isExpanded ? <Box>➖</Box> : <Box>➕</Box>}
+                    <Box
+                      height={"12"}
+                      flex="1"
+                      marginTop={"6"}
+                      marginLeft="4"
+                      fontSize={"20"}
+                      textAlign="start"
+                      fontWeight={"500"}
+                    >
+                      Time tracking in just one app
+                    </Box>
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={3} textAlign="start">
+                  With this free extension, you can start tracking time to all your Trello activities without 
+                  having to waste time switching between apps. Stay focused on your project and maintain your 
+                  current workflow by using TimeCamp's time tracking feature inside of Trello.
+                  <br />
+                  <br />
+                  This makes TimeCamp one of the most useful apps for Trello to take your projects to the next level!
+                </AccordionPanel>
+              </>
+            )}
+          </AccordionItem>
+        </Accordion>
+        <Accordion maxW={"6xl"} marginLeft="5%" allowMultiple>
+          <AccordionItem>
+            {({ isExpanded }) => (
+              <>
+                <h2>
+                  <AccordionButton>
+                    {isExpanded ? <Box>➖</Box> : <Box>➕</Box>}
+                    <Box
+                      height={"12"}
+                      flex="1"
+                      marginTop={"6"}
+                      marginLeft="4"
+                      fontSize={"20"}
+                      textAlign="start"
+                      fontWeight={"500"}
+                    >
+                      Seamless Integration
+                    </Box>
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={3} textAlign="start">
+                  You don't have to be a senior software engineer to set up this extension. 
+                  All you need to do is follow our 3-step guide and you're good to go! Get ready, 
+                  because your next project will be your best so far.
+                  <br />
+                  <br />
+                  What's more, the Trello TimeCamp integration is now available as an official Trello Power-Up!
+                </AccordionPanel>
+              </>
+            )}
+          </AccordionItem>
+        </Accordion>
+        <Accordion maxW={"6xl"} marginLeft="5%" allowMultiple>
+          <AccordionItem>
+            {({ isExpanded }) => (
+              <>
+                <h2>
+                  <AccordionButton>
+                    {isExpanded ? <Box>➖</Box> : <Box>➕</Box>}
+                    <Box
+                      height={"12"}
+                      flex="1"
+                      marginTop={"6"}
+                      marginLeft="4"
+                      fontSize={"20"}
+                      textAlign="start"
+                      fontWeight={"500"}
+                    >
+                      Customizable data
+                    </Box>
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={3} textAlign="start">
+                  If you're working on multiple Trello boards across different projects
+                  and you only have certain tasks or boards that you'd like to track time to, 
+                  this Trello time tracking integration is a must-have for you. By connecting Trello with TimeCamp, 
+                  you can also define which boards, projects, or tasks will be available to track time.
+                </AccordionPanel>
+              </>
+            )}
+          </AccordionItem>
+        </Accordion>
+        <Accordion maxW={"6xl"} marginLeft="5%" allowMultiple>
+          <AccordionItem>
+            {({ isExpanded }) => (
+              <>
+                <h2>
+                  <AccordionButton>
+                    {isExpanded ? <Box>➖</Box> : <Box>➕</Box>}
+                    <Box
+                      height={"12"}
+                      flex="1"
+                      marginTop={"6"}
+                      marginLeft="4"
+                      fontSize={"20"}
+                      textAlign="start"
+                      fontWeight={"500"}
+                    >
+                      Track your time and fill out timesheets
+                    </Box>
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={3} textAlign="start">
+                  TimeCamp is a lot more than a simple Trello time tracking integration. 
+                  Besides timer for Trello boards, we offer feature-rich software that can track 
+                  billable and non-billable hours, calculate unproductive time, and manage employee 
+                  payroll based on timesheets.
+                </AccordionPanel>
+              </>
+            )}
+          </AccordionItem>
+        </Accordion>
+        <Accordion maxW={"6xl"} marginLeft="5%" allowMultiple>
+          <AccordionItem>
+            {({ isExpanded }) => (
+              <>
+                <h2>
+                  <AccordionButton>
+                    {isExpanded ? <Box>➖</Box> : <Box>➕</Box>}
+                    <Box
+                      height={"12"}
+                      flex="1"
+                      marginTop={"6"}
+                      marginLeft="4"
+                      fontSize={"20"}
+                      textAlign="start"
+                      fontWeight={"500"}
+                    >
+                      Detailed reports
+                    </Box>
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={3} textAlign="start">
+                  If you log working time in Trello, 
+                  you can also import time entries to TimeCamp to get access to our reporting module. 
+                  Analyze data in reports like people by tasks, billable, unbillable, 
+                  invoiced time or create your custom report. 
+                  Export reports to share them with clients or your team. 
+                  If you use the desktop app, you get access to productivity reports to check which tools 
+                  you use the most and which web pages you browse.
+                </AccordionPanel>
+              </>
+            )}
+          </AccordionItem>
+        </Accordion>
+        <Accordion maxW={"6xl"} marginLeft="5%" allowMultiple>
+          <AccordionItem>
+            {({ isExpanded }) => (
+              <>
+                <h2>
+                  <AccordionButton>
+                    {isExpanded ? <Box>➖</Box> : <Box>➕</Box>}
+                    <Box
+                      height={"12"}
+                      flex="1"
+                      marginTop={"6"}
+                      marginLeft="4"
+                      fontSize={"20"}
+                      textAlign="start"
+                      fontWeight={"500"}
+                    >
+                      Time tracking app for every industry
+                    </Box>
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={3} textAlign="start">
+                  TimeCamp is an easy-to-use software that can be beneficial for every industry. 
+                  Especially if you work on multiple projects and with many clients. 
+                  Time tracking allows you to compare different project management systems and improve team performance in IT, 
+                  marketing, sales and other departments.
+                </AccordionPanel>
+              </>
+            )}
+          </AccordionItem>
+        </Accordion>
+        <Accordion maxW={"6xl"} marginLeft="5%" allowMultiple>
+          <AccordionItem>
+            {({ isExpanded }) => (
+              <>
+                <h2>
+                  <AccordionButton>
+                    {isExpanded ? <Box>➖</Box> : <Box>➕</Box>}
+                    <Box
+                      height={"12"}
+                      flex="1"
+                      marginTop={"6"}
+                      marginLeft="4"
+                      fontSize={"20"}
+                      textAlign="start"
+                      fontWeight={"500"}
+                    >
+                      Free Trello time tracking
+                    </Box>
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={3} textAlign="start">
+                  TimeCamp's free version is available for unlimited users and tasks and with one integration, 
+                  that you can use for Trello. If you want to integrate with more tools, 
+                  try our premium plans and TimeCamp browser extensions for Chrome and Edge.
+                </AccordionPanel>
+              </>
+            )}
+          </AccordionItem>
+        </Accordion>
+      </Box>
       <Container maxW={"7xl"} my={8} p={[4,8,16]}>
           <Image
             src="https://cdn-m.timecamp.com/img/greenbranding/greenSmallSkewCircle.svg"
@@ -692,6 +936,7 @@ const TrelloTimeTracking = () => {
             mt={-2}
           />
         </Container>
+        <Footer />
     </>
   )
 }
