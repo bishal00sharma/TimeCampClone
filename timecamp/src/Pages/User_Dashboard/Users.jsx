@@ -2,11 +2,19 @@ import { Box, Text, Flex, Button, Input, Link } from '@chakra-ui/react';
 import React from 'react'
 import {BiUserPlus} from "react-icons/bi";
 import {FiMail} from "react-icons/fi"
+import Navbar from '../../Components/Dashboard/Navbar';
+import Sidebar from '../../Components/Dashboard/Sidebar';
 import UserTable from './UserTable';
 
 const Users = () => {
   return (
-    <Box width="85%" m="auto" mt="50px">
+    <Flex>
+      <Box>
+         <Sidebar />
+      </Box>
+      <Box>
+        <Navbar />
+      <Box  ml="60px" mt="50px">
         <Flex borderRadius="10px" color="blue" bgColor="blue.100" padding="5px">
               < BiUserPlus style={{fontSize:"40px",marginLeft:"10px"}} />
             <Text  style={{fontSize:"17px",marginTop:"6px",marginLeft:"8px"}}> You can now invite guests like clients, vendors, or contractors. You can add them free of charge. Invite guest</Text>
@@ -28,6 +36,9 @@ const Users = () => {
         <UserTable/>
 
     </Box>
+      </Box>
+    </Flex>
+   
 
   )
 }

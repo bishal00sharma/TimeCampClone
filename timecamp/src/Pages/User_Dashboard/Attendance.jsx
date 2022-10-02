@@ -2,6 +2,7 @@ import { Box, Flex, Grid, GridItem, Heading, Image, Select, Text } from '@chakra
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import Navbar from '../../Components/Dashboard/Navbar';
+import Sidebar from '../../Components/Dashboard/Sidebar';
 import Usermenu from './CommonNavbar';
 
 const Attendance = () => {
@@ -26,14 +27,19 @@ const Attendance = () => {
         },[])
         console.log(data)
   return (
-    <Box>
+    
+      <Flex>
+        <Box>
+           <Sidebar />
+        </Box>
+        <Box>
         <Navbar />
         <Usermenu title="Attendance"/>
     
     <Box width="90%" margin="auto" mt="30px">
         <Text fontSize="24px" mb="40px" textAlign="left" fontWeight="500"></Text>
        
-        <Select w="30%" placeholder='Select People'>
+        <Select w="30%" placeholder='All People'>
          
               {clients.map((item)=>(
                 <option value='option1'>{item}</option>
@@ -68,6 +74,8 @@ const Attendance = () => {
        
     </Box>
     </Box>
+      </Flex>
+      
   )
 }
 export default Attendance;

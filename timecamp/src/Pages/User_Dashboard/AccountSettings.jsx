@@ -1,29 +1,68 @@
 import { Box, Button, Checkbox, Flex, Heading, Image, Input, Link, Select, Stack, Text } from '@chakra-ui/react';
-import React from 'react'
+import React, { useEffect } from 'react'
 import { VscAccount } from 'react-icons/vsc';
 import { VscDebugRestart } from 'react-icons/vsc';
 import {AiOutlineQuestionCircle } from 'react-icons/ai';
 import { useState } from 'react';
+import Sidebar from '../../Components/Dashboard/Sidebar';
+import axios from "axios";
 const AccountSettings = () => {
     const [show, setShow] =useState(false)
-    const [value, setValue] =useState("")
+    const [value, setValue] =useState("");
+    const [data, setData]=useState([]);
+     const [get, setGet]=useState(false);
+
     function change(){
        setShow(!show)
     }
+
+    async function getData(){
+        // localStorage.setItem("token","63387a816d061c145a44452d:jonSnow@gmail.com:jon");
+        let token=localStorage.getItem("token");
+        let [id]=token.split(":");
+        let res =await axios.get(`http://localhost:8080/users/${id}`,{headers:{ "token": token}});
+        setData(res.data[0].email)
+        setGet(!get)
+    }
+
+   
+    console.log(data)
+    function changeUserName(value){
+        //localStorage.setItem("token","63387a816d061c145a44452d:jonSnow@gmail.com:jon");
+           let token=(localStorage.getItem("token") ) || "";
+           let [id,user,pass]=token.split(":");
+           axios.patch(`http://localhost:8080/users/${id}`,{"email":value},{headers:{ "token": token}})
+        //    setGet(!get)
+           setValue("");
+           localStorage.setItem("token",`${id}:${value}:${pass}`);
+           setGet(!get)
+           setShow(!show)
+         }
+
     function getValue(e){
         setValue(e.target.value);
+       
     }
+
+    useEffect(()=>{
+        getData()
+    },[get]);
   return (
-    <Box width="40%" textAlign="left" marginLeft="30px" marginTop="30px">
+    <Flex>
+        <Box>
+          <Sidebar />
+        </Box>
+        <Box>
+        <Box  textAlign="left" marginLeft="30px" marginTop="30px">
         <Heading  as='h3' size='lg' color="green">Settings</Heading>
         <Box boxShadow="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px" paddingBottom="10px" paddingTop="10px">
             <Text marginTop="20px" fontWeight="500">User Settings</Text>
             <Flex marginTop="30px" justifyContent="space-evenly">
                 <Box width="30%"><Image width="90%" height="160px" borderRadius="50%" src={require("../../Resources/profile_image_dummy.jpg")} /></Box>
                 <Box width="60%">
-                    <Text fontSize="20px" marginTop="10px">b17ece014@cit.ac.in</Text>
+                    <Text fontSize="20px" marginTop="10px">{data}</Text>
                     <Link color='blue' onClick={change}>Change your email</Link>
-                    {show && <Input type="text" onChange={getValue} value={value} /> }
+                    {show && <Box> <Input type="text" onChange={getValue} value={value} /><Button onClick={()=>changeUserName(value)}>Change</Button></Box> }
                     <Flex marginTop="10px">
                         <Box marginTop="5px"><VscAccount /></Box>
                         <Box marginLeft="5px">Account Owner</Box>
@@ -132,6 +171,9 @@ const AccountSettings = () => {
         </Button>
        </Flex>
     </Box>
+        </Box>
+    </Flex>
+   
   )
 }
 export default AccountSettings;
