@@ -22,8 +22,9 @@
 }
 .div1>p{
     margin-top: 3%;
-    font-size: 12px;
-    margin-left: 25%;
+    font-size: 14px;
+    margin-left: 8%;
+    text-align: start;
 }
 .div1{
     height:70%; 
@@ -39,11 +40,12 @@
     opacity: 95%;
 }
 .div1>h1{
-    font-size: 44px;
-    font-weight:700;
-    gap:5px;
+    font-size: 50px;
+    font-family: 'Roboto', sans-serif;
+    font-weight:500;
+    gap:1px;
     margin-top: 2%;
-    margin-right: 27%;
+    margin-right: 15%;
     margin-left: 8%;
 }
 .div1>div{
@@ -51,37 +53,38 @@
 }
 .div2{
     /* height:70%; */
-    width:34%;
+    width:45%;
+
     background-color: whitesmoke;
     /* border: 2px solid red; */
     margin-top: 19%;
     opacity: 95%;
-    margin-left: 10%;
+    margin-left: 4%;
     margin-bottom: 9%;
-    padding-bottom: 2%;
+    padding-bottom: 5%;
      border-radius: 2%;
 }
 .div2>.img1{
-    height: 25%;
+    height: 28%;
     margin-left:45%;
-    width: 13%;
+    width: 11%;
     margin-top: -7%;
-    border-radius: 45%;
+    border-radius: 50%;
 }
 .div2>h4{
     font-size: 13px;
     font-weight: 500;
-    margin-top: 6%;
+    margin-top: 7%;
     color: black;
     /* margin-right: 27%; */
 }
 .div2>p{
     margin-top: 5%;
     margin-left: 10%;
-    font-size: 10px;
+    font-size: 13px;
     margin-right:10%;
     font-weight: 500;
-    color: rgb(79, 76, 76);
+    color: rgb(50, 49, 49);
 }
 .div2>.img2{
       height: 10%;
@@ -116,10 +119,11 @@
     color: white;
 }
 .profatibility_subpart1>h1{
-    font-size: 49px;
+    font-size: 46px;
     text-align: start;
     margin-left: 10%;
-    margin-right: 13%;
+    /* margin-right: 13%; */
+    font-weight: 500;
     margin-top: 10%;
 }
 .profatibility_subpart2{
@@ -131,9 +135,9 @@
     width:100%;
 }
 .prod_tour{
-    height:420px;
+    height:450px;
     width:100%;
-    background-color: #1b1b20;
+    background-color: black;
     display: flex;
         margin-top: -20%;
     margin-top: -2%;
@@ -151,10 +155,9 @@
     margin-top: 6%;
 }
 .prod_tour_subpart1>p{
-    font-size: 18px;
+    font-size: 17px;
     text-align: start;
     margin-left: 10%;
-    margin-right: 3%;
     margin-top: 6%;
 }
 .prod_tour_subpart2{
@@ -190,7 +193,7 @@
     margin-top: 5%;
 }
 .integration_subpart1>p{
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 400;
     text-align: start;
     margin-left: 10%;
