@@ -73,7 +73,7 @@ export default function Usermenu({title}) {
                         <Img src={require("../../Resources/icons/dashboard/user-menu/profile.png")} alt="profile"  />
                     </MenuButton>
                     <MenuList>
-                        <Link to="/dashboard/users">
+                        <Link to="/dashboard/accountSettings">
                             <MenuItem>
                                 <Img src={require("../../Resources/icons/dashboard/user-menu/user.png")} alt="download"  mr="10px" />
                                 {user}

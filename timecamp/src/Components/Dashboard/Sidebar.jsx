@@ -52,7 +52,7 @@ export default function Sidebar() {
                     <Link to="/dashboard/tags">
                     <Flex>
                         <Img src={require("../../Resources/icons/dashboard/tags.png")} alt="TimeSheet" />
-                        <Text>Tags</Text>
+                       <Link to="/dashboard/tags">  <Text>Tags</Text> </Link>
                     </Flex>
                     </Link>
                 </Grid>
@@ -61,13 +61,13 @@ export default function Sidebar() {
                     <Link to="/dashboard/users">
                     <Flex>
                         <Img src={require("../../Resources/icons/dashboard/users.png")} alt="TimeSheet" />
-                        <Text>Users</Text>
+                        <Link to="/dashboard/users">  <Text>Users</Text> </Link>
                     </Flex>
                     </Link>
                     <Link to="/dashboard/attendance">
                     <Flex>
                         <Img src={require("../../Resources/icons/dashboard/attendance.png")} alt="TimeSheet" />
-                        <Text>Attendance</Text>
+                        <Link to="/dashboard/attendance">  <Text>Attendance</Text> </Link>
                     </Flex>
                     </Link>
                 </Grid>

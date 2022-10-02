@@ -23,17 +23,17 @@ const AccountSettings = () => {
         setData(res.data[0].email)
         setGet(!get)
     }
-
+console.log(data)
    
     console.log(data)
     function changeUserName(value){
         //localStorage.setItem("token","63387a816d061c145a44452d:jonSnow@gmail.com:jon");
-           let token=(localStorage.getItem("token") ) || "";
+           let token=(localStorage.getItem("userToken") ) || "";
            let [id,user,pass]=token.split(":");
            axios.patch(`http://localhost:8080/users/${id}`,{"email":value},{headers:{ "token": token}})
         //    setGet(!get)
            setValue("");
-           localStorage.setItem("token",`${id}:${value}:${pass}`);
+           (localStorage.setItem("userToken",`${id}:${value}:${pass}`));
            setGet(!get)
            setShow(!show)
          }

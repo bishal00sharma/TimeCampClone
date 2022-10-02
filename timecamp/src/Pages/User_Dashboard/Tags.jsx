@@ -30,11 +30,12 @@ import Sidebar from '../../Components/Dashboard/Sidebar';
     },1000)
     
   }
+  console.log(data)
   function addList(value){
-   //localStorage.setItem("token","63344372e20682bebf2433eb:bishal@gmail.com:no");
-    let token=(localStorage.getItem("token") ) || "";
-    let [id]=token.split(":");
-    axios.patch(`http://localhost:8080/users/tags/${id}`,{"tags":value},{headers:{ "token": token}})
+   //localStorage.setItem("userToken","63344372e20682bebf2433eb:bishal@gmail.com:no");
+    let userToken=(localStorage.getItem("userToken") ) || "";
+    let [id]=userToken.split(":");
+    axios.patch(`http://localhost:8080/users/tags/${id}`,{"tags":value},{headers:{ "token": userToken}})
     setGet(!get)
     setValue("")
   }
