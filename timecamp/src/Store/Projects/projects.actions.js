@@ -9,7 +9,7 @@ import {
 } from "./projects.type";
 
 
-const token = (localStorage.getItem("userToken")) 
+const token = JSON.parse(localStorage.getItem("userToken")) || "" 
 export const fetchProject = () => async(dispatch) => {
     if(token!==""){
         dispatch({type:PROJECT_FETCH_LOADING});

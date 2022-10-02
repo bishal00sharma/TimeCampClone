@@ -264,6 +264,7 @@ const Navbar = () => {
       </div>
       <div>
         <Menu>
+          <Link to="/book">
           <MenuButton
             borderRadius="none"
             _hover={{ color: "#25CF60" }}
@@ -276,6 +277,7 @@ const Navbar = () => {
           >
             Book a Demo
           </MenuButton>
+          </Link>
         </Menu>
         <Menu>
           <Link to="/auth/login">

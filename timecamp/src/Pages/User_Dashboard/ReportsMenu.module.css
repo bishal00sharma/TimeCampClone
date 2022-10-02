@@ -1,7 +1,7 @@
 .menudiv>div>div> a >div{
     border:1px solid rgba(0, 0, 0, 0.349);
     height: 50px;
-    width: 150px;
+    width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;

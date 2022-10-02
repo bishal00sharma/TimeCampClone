@@ -4,7 +4,7 @@ import Navbar from '../../Components/Dashboard/Navbar';
 import Usermenu from './CommonNavbar';
 
 
-const Summary = () => {
+const Detailed = () => {
     const [data, setData]=useState([]);
 
     async function getData(){
@@ -92,4 +92,4 @@ const Summary = () => {
     </div>
   )
 }
-export default Summary; 
+export default Detailed; 

@@ -1,6 +1,5 @@
 import React from 'react'
 import { AspectRatio, Box, Button, Container,Flex,Heading,Image,SimpleGrid,Stack, Text } from '@chakra-ui/react';
-import Calendar from 'react-calendar'
 import Navbar from '../../Components/Navbar';
 import Footer from '../../Components/Footer';
 
