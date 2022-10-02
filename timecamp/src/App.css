@@ -72,6 +72,19 @@
 #user-menu img {
   width: 30px;
   height: 30px;
-
   cursor: pointer;
+}
+
+#user-menu>div img {
+  width: 20px;
+  height: 20px;
+}
+
+#user-menu>div>div>button{
+  padding:10px 10px;
+}
+
+#timesheet-menu img{
+  width: 20px;
+  height: 20px;
 }
