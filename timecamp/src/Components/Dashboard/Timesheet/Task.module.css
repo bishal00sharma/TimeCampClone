@@ -1,0 +1,24 @@
+.TaskDiv{
+    padding: 20px;
+    border: 1px solid rgba(128, 128, 128, 0.353);
+
+}
+
+.TaskDiv>div:first-child>p:nth-child(2) {
+    font-size: 10px;
+    letter-spacing: 1px;
+    border: 1px solid rgba(128, 128, 128, 0.153);
+    width: fit-content;
+    padding: 2px 4px;
+    border-radius: 20px;
+}
+
+.TaskDiv button{
+    border-radius: 0px;
+    background-color: white;
+    border: 1px solid rgba(128, 128, 128, 0.295);
+}
+.TaskDiv button:hover {
+    background-color: green;
+    color: white;
+}

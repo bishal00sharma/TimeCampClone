@@ -15,10 +15,13 @@ import {
   } from "@chakra-ui/react";
 import React from 'react'
 import { AiOutlineGoogle,AiOutlineArrowRight } from "react-icons/ai";
+import Footer from "../../Components/Footer";
+import Navbar from "../../Components/Navbar";
 
 const Automatic = () => {
   return (
     <>
+    <Navbar/>
     <Container maxW={"7xl"} my={10}>
           <Stack
             align={"center"}
@@ -102,7 +105,7 @@ const Automatic = () => {
               <Box
                 position={"relative"}
                 rounded={"2xl"}
-                boxShadow={"2xl"}
+                // boxShadow={"2xl"}
                 width={"full"}
               >
                 <Image
@@ -242,7 +245,7 @@ const Automatic = () => {
               <Box
                 position={"relative"}
                 rounded={"2xl"}
-                boxShadow={"2xl"}
+                // boxShadow={"2xl"}
                 width={"full"}
               >
                 <Image
@@ -276,7 +279,7 @@ const Automatic = () => {
               <Box
                 position={"relative"}
                 rounded={"2xl"}
-                boxShadow={"2xl"}
+                // boxShadow={"2xl"}
                 width={"full"}
               >
                 <Image
@@ -354,7 +357,7 @@ const Automatic = () => {
               <Box
                 position={"relative"}
                 rounded={"2xl"}
-                boxShadow={"2xl"}
+                // boxShadow={"2xl"}
                 width={"full"}
               >
                 <Image
@@ -388,7 +391,7 @@ const Automatic = () => {
               <Box
                 position={"relative"}
                 rounded={"2xl"}
-                boxShadow={"2xl"}
+                // boxShadow={"2xl"}
                 width={"full"}
               >
                 <Image
@@ -495,6 +498,7 @@ const Automatic = () => {
             mt={-2}
           />
         </Container>
+        <Footer/>
     </>
   )
 }

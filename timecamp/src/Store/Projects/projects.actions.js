@@ -6,12 +6,11 @@ import {
     PROJECT_FETCH_SUCCESS,
     ADD_PROJECT,
     DELETE_PROJECT,
-    UPDATE_PROJECT
 } from "./projects.type";
 
 
-const token = JSON.parse(localStorage.getItem("token")) || "";
-export const fetchProject = () =>  async (dispatch) => {
+const token = JSON.parse(localStorage.getItem("userToken")) || "6333f7c01cc7acad26c89dcb:example@gmail.com:123";
+export const fetchProject = () => async(dispatch) => {
     if(token!==""){
         dispatch({type:PROJECT_FETCH_LOADING});
         try{
@@ -41,7 +40,7 @@ export const deleteProject = (id) => async (dispatch) => {
 export const addProject = (data) => async (dispatch) => {
     if(token!=="") {
         try{
-            let response = await axios.delete(`http://localhost:8080/projects`,data,{headers:{ "token": token}});
+            let response = await axios.post(`http://localhost:8080/projects`,data,{headers:{ "token": token}});
             dispatch({type:ADD_PROJECT, payload: response.data})
             return response.data;
         } catch (e) {

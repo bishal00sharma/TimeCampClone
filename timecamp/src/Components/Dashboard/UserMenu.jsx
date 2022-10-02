@@ -1,4 +1,4 @@
-import {  Button, Flex, Image, Img, Menu, MenuButton, MenuItem, MenuList, Text } from "@chakra-ui/react"
+import {  Flex, Img, Menu, MenuButton, MenuItem, MenuList, Text } from "@chakra-ui/react"
 import { useDispatch } from "react-redux"
 import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../../Store/auth/auth.actions";
@@ -11,7 +11,7 @@ export default function Usermenu({title}) {
         dispatch(logout());
         navigate("/");
     }
-    const token = JSON.parse(localStorage.getItem("token")) || "";
+    const token = JSON.parse(localStorage.getItem("userToken")) || "6333f7c01cc7acad26c89dcb:example@gmail.com:jnxsjxbn";
     const user = token.split(":")[1] ;
     return (
         <Flex justifyContent="space-between" alignItems="center" px="50px" h="60px" borderBottom="1px solid rgba(128, 128, 128, 0.490)">
@@ -73,10 +73,12 @@ export default function Usermenu({title}) {
                         <Img src={require("../../Resources/icons/dashboard/user-menu/profile.png")} alt="profile"  />
                     </MenuButton>
                     <MenuList>
-                        <MenuItem>
-                            <Img src={require("../../Resources/icons/dashboard/user-menu/user.png")} alt="download"  mr="10px" />
-                            {user}
-                        </MenuItem>
+                        <Link to="/dashboard/users">
+                            <MenuItem>
+                                <Img src={require("../../Resources/icons/dashboard/user-menu/user.png")} alt="download"  mr="10px" />
+                                {user}
+                            </MenuItem>
+                        </Link>
                         <hr />
                         <MenuItem>      
                             <Img src={require("../../Resources/icons/dashboard/user-menu/download.png")} alt="download"  mr="10px" />

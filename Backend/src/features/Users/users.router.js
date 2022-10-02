@@ -25,11 +25,11 @@ app.get("/",authMiddleware, async (req,res)=>{
     let u = await users.find()
     res.send(u);
 })
-// app.get("/:id",authMiddleware, async (req,res)=>{
-//     let id=req.params.id ;
-//     let u = await users.find({_id})
-//     res.send(u);
-// })
+app.get("/:id",authMiddleware, async (req,res)=>{
+    let id=req.params.id ;
+    let u = await users.find({_id:id})
+    res.send(u);
+})
 
 // API request to delete User Id
 app.delete("/", authMiddleware, async(req,res)=>{
@@ -42,7 +42,12 @@ app.delete("/", authMiddleware, async(req,res)=>{
 app.patch("/", authMiddleware, async(req,res)=>{
     let id = req.userId;
     let update = await users.updateOne({"_id":id},{$set: {...req.body}});
-    res.send("User Details Updated Successfully!");
+    res.send("User Details Updated Successfully!"+ update);
+})
+app.patch("/:id", authMiddleware, async(req,res)=>{
+    let id = req.userId;
+    let update = await users.updateOne({"_id":id},{$set: {...req.body}});
+    res.send(update);
 })
 
 // API request to User signing up

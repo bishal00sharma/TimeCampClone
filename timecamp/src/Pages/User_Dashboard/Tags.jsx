@@ -5,6 +5,9 @@ import { useEffect } from 'react';
 import { BiPlus} from 'react-icons/bi';
 import { BsArchive } from 'react-icons/bs';
 import axios from "axios";
+import Navbar from '../../Components/Dashboard/Navbar';
+import Usermenu from '../../Components/Dashboard/UserMenu';
+import Sidebar from '../../Components/Dashboard/Sidebar';
 
  const Tags = () => {
   const [show, setShow] =useState(false);
@@ -17,8 +20,8 @@ import axios from "axios";
     setShow(!show)
   }
   async function getData(){//give user id here
-    localStorage.setItem("token","63344372e20682bebf2433eb:bishal@gmail.com:no");
-    let token=localStorage.getItem("token");
+    // localStorage.setItem("token","63344372e20682bebf2433eb:bishal@gmail.com:no");
+    let token=(localStorage.getItem("token")) || "";
     let [id]=token.split(":");
     let dataa= await fetch(`http://localhost:8080/users/tags/${id}`);
     let res= await dataa.json();
@@ -30,10 +33,10 @@ import axios from "axios";
 
   }
   function addList(value){
-    localStorage.setItem("token","63344372e20682bebf2433eb:bishal@gmail.com:no");
-    let token=localStorage.getItem("token");
+   //localStorage.setItem("token","63344372e20682bebf2433eb:bishal@gmail.com:no");
+    let token=(localStorage.getItem("token") ) || "";
     let [id]=token.split(":");
-    axios.patch(`http://localhost:8080/users/tags/${id}`,{"tags":value})
+    axios.patch(`http://localhost:8080/users/tags/${id}`,{"tags":value},{headers:{ "token": token}})
     setGet(!get)
     setValue("")
   }
@@ -49,8 +52,13 @@ import axios from "axios";
   },[get]);
 
   return (
-    <Box>
-        <Box style={{width:"50%",marginLeft:"50px"}}>
+    <Flex><Box>
+       <Sidebar />
+    </Box>
+      <Box>
+      <Navbar />
+        <Usermenu title="Tags" />
+        <Box style={{width:"50%",marginLeft:"50px",marginTop:"50px"}}>
             <Button style={{marginLeft:"550px",marginBottom:"20px"}} bgColor="green" color="white" onClick={change}>+Add Tag List</Button>
             <Text>Manage your tags, like list of customers or activities. All workspace members can assign tags to time entries, when they track time. Project managers can set lists of tags for projects. Reports can be filtered and grouped by tags.</Text>
          {show&&<Flex style={{marginBottom:"50px",marginTop:"50px"}}>
@@ -62,7 +70,7 @@ import axios from "axios";
             </Flex>}
             {!loading && <Spinner thickness='4px'speed='1.65s'emptyColor='gray.200'color='blue.500'size='xl'/>}
             {loading&&
-              data.map((item)=>(
+              data?.map((item)=>(
                 <Flex key={item} bgColor="gray.100" padding="10px" borderRadius="15px" justifyContent="space-evenly" marginTop="10px">
                   <Box> <Text fontSize="18px">{item}</Text></Box>
                   <Box>
@@ -85,8 +93,8 @@ import axios from "axios";
         </Box>
         </Box>
         <hr style={{marginTop:"50px"}}/>
-        
-    </Box>
+        </Box>
+    </Flex>
   )
 }
 export default Tags;

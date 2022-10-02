@@ -1,19 +1,27 @@
 import {
-    Menu,
-    MenuButton,
-    MenuList,
-    MenuItem,
-    Button,
-    Box,
-} from '@chakra-ui/react'
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  Button,
+  Box,
+  color,
+  useDisclosure,
+} from "@chakra-ui/react";
+
 
 import { TriangleDownIcon } from "@chakra-ui/icons";
 
-import style from "../Components/nav.module.css"
-import { Link } from 'react-router-dom'
+import style from "../Components/nav.module.css";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
-
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const {
+    isOpen: menu2isOpen,
+    onOpen: menu2onOpen,
+    onClose: menu2onClose,
+  } = useDisclosure();
   return (
     <div className={style.nav}>
       <div className={style.comp}>
@@ -26,20 +34,34 @@ const Navbar = () => {
           </Link>
         </div>
         <div className={style.box}>
-          <Menu>
-            <MenuButton
-              borderRadius="none"
-              _hover={{ color: "#25CF60" }}
-              bg="white"
-              marginLeft="80px"
-              as={Button}
-              rightIcon={<TriangleDownIcon fontSize="2xs" />}
+          <Menu isOpen={isOpen}>
+            <Link to="/features">
+              <MenuButton
+                borderRadius="none"
+                _hover={{ color: "#25CF60", border: "2px solid white" }}
+                bg="white"
+                color={"black"}
+                fontSize="14px"
+                fontWeight="400"
+                marginLeft="80px"
+                border={"2px solid white"}
+                as={Button}
+                rightIcon={<TriangleDownIcon fontSize="2xs" />}
+                onMouseEnter={onOpen}
+                onMouseLeave={onClose}
+              >
+                Features
+              </MenuButton>
+            </Link>
+            <MenuList
+              color="black"
+              display="flex"
+              onMouseEnter={onOpen}
+              onMouseLeave={onClose}
             >
-              Features
-            </MenuButton>
-            <MenuList color="black" display="flex">
+            <MenuList color="black" display="flex" onMouseEnter={onOpen} onMouseLeave={onClose}>
               <Box>
-                <Link to="/Automatic">
+                <Link to="/automatic">
                   <MenuItem _hover={{ bgColor: "#25CF60" }}>
                     <img
                       style={{ marginRight: "10px" }}
@@ -89,22 +111,26 @@ const Navbar = () => {
                     Invoicing
                   </MenuItem>
                 </Link>
-                <MenuItem _hover={{ bgColor: "#25CF60" }}>
-                  <img
-                    style={{ marginRight: "10px" }}
-                    src="https://cdn-m.timecamp.com/img/greenbranding/features/icons-menu/billing-rates.svg"
-                    alt=""
-                  />
-                  Billing rates & budgeting
-                </MenuItem>
-                <MenuItem _hover={{ bgColor: "#25CF60" }}>
-                  <img
-                    style={{ marginRight: "10px" }}
-                    src="https://cdn-m.timecamp.com/img/greenbranding/features/icons-menu/attendance-tracking.svg"
-                    alt=""
-                  />
-                  Time off & attendance
-                </MenuItem>
+                <Link to="/billing">
+                  <MenuItem _hover={{ bgColor: "#25CF60" }}>
+                    <img
+                      style={{ marginRight: "10px" }}
+                      src="https://cdn-m.timecamp.com/img/greenbranding/features/icons-menu/billing-rates.svg"
+                      alt=""
+                    />
+                    Billing rates & budgeting
+                  </MenuItem>
+                </Link>
+                <Link to="/timeoff">
+                  <MenuItem _hover={{ bgColor: "#25CF60" }}>
+                    <img
+                      style={{ marginRight: "10px" }}
+                      src="https://cdn-m.timecamp.com/img/greenbranding/features/icons-menu/attendance-tracking.svg"
+                      alt=""
+                    />
+                    Time off & attendance
+                  </MenuItem>
+                </Link>
               </Box>
             </MenuList>
           </Menu>
@@ -114,6 +140,9 @@ const Navbar = () => {
                 borderRadius="none"
                 _hover={{ color: "#25CF60" }}
                 bg="none"
+                color={"black"}
+                fontSize="14px"
+                fontWeight="400"
                 marginLeft="5px"
                 as={Button}
               >
@@ -121,20 +150,35 @@ const Navbar = () => {
               </MenuButton>
             </Link>
           </Menu>
-          <Menu>
+
+            
+
+          <Menu isOpen={menu2isOpen}>
+
             <MenuButton
               rightIcon={<TriangleDownIcon fontSize="2xs" />}
               borderRadius="none"
               _hover={{ color: "#25CF60" }}
               bg="white"
+              color={"black"}
+              fontSize="14px"
+              fontWeight="400"
               marginLeft="5px"
               as={Button}
+              onMouseEnter={menu2onOpen}
+              onMouseLeave={menu2onClose}
               //   rightIcon={<TriangleDownIcon fontSize="2xs" />}
             >
               Integrations
             </MenuButton>
-            <MenuList color="black" display="flex">
+            <MenuList
+              color="black"
+              display="flex"
+              onMouseEnter={menu2onOpen}
+              onMouseLeave={menu2onClose}
+            >
               <Box>
+              <Link to="/trello">
                 <MenuItem _hover={{ bgColor: "#25CF60" }}>
                   <img
                     style={{ marginRight: "10px" }}
@@ -143,6 +187,8 @@ const Navbar = () => {
                   />
                   Trello
                 </MenuItem>
+                </Link>
+                <Link to="/googleCalender">
                 <MenuItem _hover={{ bgColor: "#25CF60" }}>
                   <img
                     style={{ marginRight: "10px" }}
@@ -151,6 +197,7 @@ const Navbar = () => {
                   />
                   Google Calendar
                 </MenuItem>
+                </Link>
                 <MenuItem _hover={{ bgColor: "#25CF60" }}>
                   <img
                     style={{ marginRight: "10px" }}
@@ -183,28 +230,35 @@ const Navbar = () => {
                   />
                   Jira
                 </MenuItem>
+                <Link to="/allIntegrations">
                 <MenuItem _hover={{ bgColor: "#25CF60" }}>
                   <img
                     style={{ marginRight: "10px" }}
-                    src="https://cdn-m.timecamp.com/img/greenbranding/features/icons-menu/attendance-tracking.svg"
+                    src="https://cdn-m.timecamp.com/img/greenbranding/features/icons-menu/all-integrations.svg"
                     alt=""
                   />
-                  Time off & attendance
+                  All Integrations
                 </MenuItem>
+                </Link>
               </Box>
             </MenuList>
           </Menu>
 
           <Menu>
-            <MenuButton
-              borderRadius="none"
-              _hover={{ color: "#25CF60" }}
-              bg="none"
-              as={Button}
-              marginLeft="5px"
-            >
-              Blog
-            </MenuButton>
+            <Link to="/blog">
+              <MenuButton
+                color={"black"}
+                fontSize="14px"
+                fontWeight="400"
+                borderRadius="none"
+                _hover={{ color: "#25CF60" }}
+                bg="none"
+                as={Button}
+                marginLeft="5px"
+              >
+                Blog
+              </MenuButton>
+            </Link>
           </Menu>
         </div>
       </div>
@@ -215,20 +269,28 @@ const Navbar = () => {
             _hover={{ color: "#25CF60" }}
             bg="none"
             as={Button}
+            color={"black"}
+            fontSize="14px"
+            fontWeight="400"
             borderRight="1px solid #25CF60"
           >
             Book a Demo
           </MenuButton>
         </Menu>
         <Menu>
+          <Link to="/auth/login">
           <MenuButton
             borderRadius="none"
             _hover={{ color: "#25CF60" }}
+            color={"black"}
+            fontSize="14px"
+            fontWeight="400"
             bg="none"
             as={Button}
           >
             Signin
           </MenuButton>
+          </Link>
         </Menu>
       </div>
       <div className={style.comp2}>
@@ -237,7 +299,8 @@ const Navbar = () => {
           bg="#EAAA00"
           color="white"
           height="50px"
-          fontSize="17px"
+          fontWeight="400"
+          fontSize="15px"
           width="145px"
           borderRadius="3xl"
           mr="50px"
@@ -247,6 +310,5 @@ const Navbar = () => {
       </div>
     </div>
   );
-}
-
+};
 export default Navbar

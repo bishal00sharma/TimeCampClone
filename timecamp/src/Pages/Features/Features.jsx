@@ -15,6 +15,8 @@ import {
   } from "@chakra-ui/react";
   import React, { useState } from "react";
   import { AiOutlineGoogle,AiOutlineArrowRight } from "react-icons/ai";
+import Footer from "../../Components/Footer";
+import Navbar from "../../Components/Navbar";
   
   
   export default function Feature() {
@@ -22,26 +24,24 @@ import {
     const [two, setTwo] = useState(false);
     const [three, setThree] = useState(false);
     const handleOne = (e) => {
-      console.log("one", one, "two", two, "three", three);
       setOne(true);
       setTwo(false);
       setThree(false);
     };
     const handleTwo = (e) => {
-      console.log("one", one, "two", two, "three", three);
       setOne(false);
       setTwo(true);
       setThree(false);
     };
     const handleThree = (e) => {
-      console.log("one", one, "two", two, "three", three);
       setOne(false);
       setTwo(false);
       setThree(true);
     };
     return (
       <>
-        <Container maxW={"7xl"} my={10}>
+      <Navbar/>
+        <Container maxW={"7xl"} my={10} textAlign="left">
           <Stack
             align={"center"}
             spacing={{ base: 8, md: 10 }}
@@ -78,7 +78,6 @@ import {
                   size={"lg"}
                   fontSize={"sm"}
                   px={10}
-                  w={60}
                   color={"white"}
                   bg={"#37c266"}
                   _hover={"#42f87f"}
@@ -125,7 +124,6 @@ import {
               <Box
                 position={"relative"}
                 rounded={"2xl"}
-                boxShadow={"2xl"}
                 width={"full"}
               >
                 <Image
@@ -394,7 +392,6 @@ import {
                   size={"lg"}
                   fontSize={"sm"}
                   px={10}
-                  w={60}
                   color={"white"}
                   bg={"gray.400"}
                   _hover={"grey"}
@@ -413,7 +410,6 @@ import {
               <Box
                 position={"relative"}
                 rounded={"2xl"}
-                boxShadow={"2xl"}
                 width={"full"}
               >
                 <Image
@@ -447,7 +443,6 @@ import {
               <Box
                 position={"relative"}
                 rounded={"2xl"}
-                boxShadow={"2xl"}
                 width={"full"}
               >
                 <Image
@@ -553,7 +548,6 @@ import {
               <Box
                 position={"relative"}
                 rounded={"2xl"}
-                boxShadow={"2xl"}
                 width={"full"}
               >
                 <Image
@@ -587,7 +581,6 @@ import {
               <Box
                 position={"relative"}
                 rounded={"2xl"}
-                boxShadow={"2xl"}
                 width={"full"}
               >
                 <Image
@@ -693,7 +686,6 @@ import {
               <Box
                 position={"relative"}
                 rounded={"2xl"}
-                boxShadow={"2xl"}
                 width={"full"}
               >
                 <Image
@@ -727,7 +719,6 @@ import {
               <Box
                 position={"relative"}
                 rounded={"2xl"}
-                boxShadow={"2xl"}
                 width={"full"}
               >
                 <Image
@@ -833,7 +824,6 @@ import {
               <Box
                 position={"relative"}
                 rounded={"2xl"}
-                boxShadow={"2xl"}
                 width={"full"}
               >
                 <Image
@@ -1308,6 +1298,7 @@ import {
             mt={-2}
           />
         </Container>
+        <Footer/>
       </>
     );
   }
