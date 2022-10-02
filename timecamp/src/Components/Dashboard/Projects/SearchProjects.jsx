@@ -5,7 +5,7 @@ import { addProject, fetchProject } from "../../../Store/Projects/projects.actio
 import style from "./Search.module.css";
 
 const initState = {
-    title: "",
+    title: "Project",
     role: "Administrator",
     description: "",
     budget: 0,
