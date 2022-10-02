@@ -6,12 +6,11 @@ import {
     PROJECT_FETCH_SUCCESS,
     ADD_PROJECT,
     DELETE_PROJECT,
-    UPDATE_PROJECT
 } from "./projects.type";
 
 
-const token = JSON.parse(localStorage.getItem("token")) || "";
-export const fetchProject = () =>  async (dispatch) => {
+const token = (localStorage.getItem("token")) || "";
+export const fetchProject = () => async(dispatch) => {
     if(token!==""){
         dispatch({type:PROJECT_FETCH_LOADING});
         try{

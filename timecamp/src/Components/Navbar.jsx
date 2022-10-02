@@ -131,7 +131,10 @@ const Navbar = () => {
               </MenuButton>
             </Link>
           </Menu>
+            
+
           <Menu isOpen={menu2isOpen}>
+
             <MenuButton
               rightIcon={<TriangleDownIcon fontSize="2xs" />}
               borderRadius="none"
@@ -147,6 +150,7 @@ const Navbar = () => {
             </MenuButton>
             <MenuList color="black" display="flex" onMouseEnter={menu2onOpen} onMouseLeave={menu2onClose}>
               <Box>
+              <Link to="/trello">
                 <MenuItem _hover={{ bgColor: "#25CF60" }}>
                   <img
                     style={{ marginRight: "10px" }}
@@ -155,6 +159,8 @@ const Navbar = () => {
                   />
                   Trello
                 </MenuItem>
+                </Link>
+                <Link to="/googleCalender">
                 <MenuItem _hover={{ bgColor: "#25CF60" }}>
                   <img
                     style={{ marginRight: "10px" }}
@@ -163,6 +169,7 @@ const Navbar = () => {
                   />
                   Google Calendar
                 </MenuItem>
+                </Link>
                 <MenuItem _hover={{ bgColor: "#25CF60" }}>
                   <img
                     style={{ marginRight: "10px" }}
@@ -195,14 +202,16 @@ const Navbar = () => {
                   />
                   Jira
                 </MenuItem>
+                <Link to="/allIntegrations">
                 <MenuItem _hover={{ bgColor: "#25CF60" }}>
                   <img
                     style={{ marginRight: "10px" }}
-                    src="https://cdn-m.timecamp.com/img/greenbranding/features/icons-menu/attendance-tracking.svg"
+                    src="https://cdn-m.timecamp.com/img/greenbranding/features/icons-menu/all-integrations.svg"
                     alt=""
                   />
-                  Time off & attendance
+                  All Integrations
                 </MenuItem>
+                </Link>
               </Box>
             </MenuList>
           </Menu>

@@ -22,6 +22,7 @@ import {
   UnorderedList,
 } from "@chakra-ui/react";
 import Carousels from "../Components/Carousel";
+import Navbar from "../Components/Navbar";
 
 const HomePage = () => {
   const reviewsImgapi = [
@@ -77,8 +78,49 @@ const HomePage = () => {
       img: "https://cdn-m.timecamp.com/img/greenbranding/integrations/xero.png",
     },
   ];
+
+  const timeApi = [
+    {
+      desc: "The primary reason I chose TimeCamp was the direct timekeeping-to-invoicing function, which has been a tremendoustimesaver. I love the way it shows me what I'm spending my time on even when I'm not logging billable hours.",
+      name: "Kathryn",
+    },
+    {
+      desc: "Great asset to managing our marketing agency. We love the ease it takes to input times. We never have to worry about time record keeping because TimeCamp does it so accurately. It makes creating our invoices at the end of each month so much easier.",
+      name: "Revierw from getApp.com",
+    },
+    {
+      desc: "Our business problem was simple - at any given time we have 20 or so contractors working on a handful of differentprojects and we needed to be scientific about knowing how many of whose hours were being spent on which project.TimeCamp solved this problem well and simply.",
+      name: "Noah",
+    },
+    // {
+    //   desc: "We've tried a lot of tools and the integration, flexibility and fast array of features that come with TimeCamp have really made this tool stand out and pay for itself. It connects to a number of tools we use like our in house project management tools, our client's project management tools and our accounting software.",
+    //   name: "Jakes",
+    // },
+  ];
+
+  const blogApi = [
+    {
+      img: "https://www.timecamp.com/blog/wp-content/uploads/2019/08/time-tracking-for-architects-400x219.jpg",
+      title: "13 Best Time Tracking",
+      desc:"Software for Architects",
+      read: "Read more",
+    },
+    {
+      img: "https://www.timecamp.com/blog/wp-content/uploads/2022/09/remote-work-automation-header-400x219.jpg",
+      title: "What is automatipon for",
+      desc:"Remote Workers",
+      read: "Read more",
+    },
+    {
+      img: "https://www.timecamp.com/blog/wp-content/uploads/2018/05/project-time-tracking-min-300x164.jpg",
+      title: "13 Best Tools for Project",
+      desc:"Time Tracking",
+      read: "Read more",
+    },
+  ];
   return (
     <>
+    <Navbar />
       <div className={style.herodiv}>
         <div className={style.div1}>
           <p style={{ color: "black", fontWeight: "bold" }}>
@@ -624,7 +666,61 @@ const HomePage = () => {
         Time tracking software for businesses across all industries and sizes
       </Heading>
       {/* carousel */}
-
+      <SimpleGrid marginTop={"4%"} columns={[1, null, 4]} spacing="40px">
+        <Box height="80px">
+          <Text>Marketing agencies</Text>
+        </Box>
+        <Box height="80px">
+          <Text>IT & Software houses</Text>
+        </Box>
+        <Box height="80px">
+          <Text>Designers</Text>
+        </Box>
+        <Box height="80px">
+          <Text>Accounting</Text>
+        </Box>
+      </SimpleGrid>
+      <SimpleGrid
+        columns={[1, null, 3]}
+        marginTop="2"
+        spacing="40px"
+        marginLeft={"50px"}
+        overflowWrap="anywhere"
+      >
+        {timeApi.map((el) => {
+          return (
+            <>
+              <Box
+                backgroundColor={"white"}
+                width="auto"
+                height="300px"
+                borderRadius={"10px"}
+                boxShadow="rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"
+              >
+                <Text
+                  fontSize="15px"
+                  marginLeft={"5%"}
+                  marginRight="8%"
+                  marginTop={"15%"}
+                  textAlign={"start"}
+                >
+                  {el.desc}
+                </Text>
+                <Text
+                  fontSize={"14px"}
+                  marginLeft={"5%"}
+                  marginRight="5%"
+                  marginTop={"5%"}
+                  textAlign={"start"}
+                  fontWeight="bold"
+                >
+                  {el.name}
+                </Text>
+              </Box>
+            </>
+          );
+        })}
+      </SimpleGrid>
       {/* reiews images */}
       <SimpleGrid
         columns={[1, null, 4]}
@@ -642,9 +738,7 @@ const HomePage = () => {
           );
         })}
       </SimpleGrid>
-
       {/* quick integrations */}
-
       <div className={style.integration}>
         <div className={style.integration_subpart1}>
           <h4 style={{ marginTop: "14%" }}>TIME TRACKING INTEGRATIONS</h4>
@@ -935,7 +1029,6 @@ const HomePage = () => {
           SSL Secure Payment
         </Text>
       </div>
-
       {/* *************************************************** */}
       {/* <div className={style.timecamp}>
         <div className={style.timecamp_subpart1}>
@@ -947,9 +1040,10 @@ const HomePage = () => {
           <div className={style.divcamp}></div>
         </div>
       </div> */}
-
       {/*  *************faq*************/}
-      <Text fontSize="5xl" marginTop={"5%"} marginBottom="10">FAQ</Text>
+      <Text fontSize="5xl" marginTop={"3%"} marginBottom="10">
+        FAQ
+      </Text>
       <Accordion maxW={"6xl"} marginLeft="5%" allowMultiple>
         <AccordionItem>
           {({ isExpanded }) => (
@@ -1115,18 +1209,127 @@ const HomePage = () => {
               </h2>
               <AccordionPanel pb={3} textAlign="start">
                 There is nothing better than having your timesheet filled out
-                automatically!<br/> TimeCamp’s non-intrusive desktop app works in the
+                automatically!
+                <br /> TimeCamp’s non-intrusive desktop app works in the
                 background so you and your team can focus on what really
                 matters, while the time tracker collects all the data for
-                timesheets.<br/> Edit your time logs any time or add time manually
-                for even more accuracy. Approve your team’s daily or weekly
-                timesheets with one click without effort.<br/> Quick, easy, and
-                painless timesheet management!
+                timesheets.
+                <br /> Edit your time logs any time or add time manually for
+                even more accuracy. Approve your team’s daily or weekly
+                timesheets with one click without effort.
+                <br /> Quick, easy, and painless timesheet management!
               </AccordionPanel>
             </>
           )}
         </AccordionItem>
       </Accordion>
+
+      {/* *************************** blog **************/}
+      <div
+        style={{
+          width: "100%",
+          height: "auto",
+          marginTop: "12%",
+          // border: "1px solid red",
+          backgroundColor:"#F3F3F3"
+        }}
+      >
+        <div
+          style={{
+            width: "88.5%",
+            height: "auto",
+            margin: "auto",
+            marginTop:"7%",
+            // border: "1px solid red",
+          }}
+        >
+          <Text color={"#25cf60;"} fontSize="20px" textAlign="start">
+            Blogs
+          </Text>
+          <Flex>
+            <Box p="1">
+              <Text marginTop="4%" fontSize={"43px"} fontWeight="600" textAlign="start">
+                Check the latest blog updates
+              </Text>
+            </Box>
+            <Spacer />
+            <Box p="4">
+              {" "}
+              <Button
+                backgroundColor="#25CF60"
+                height="12"
+                marginLeft={"2"}
+                marginTop={"2"}
+                _hover="#25CF60;"
+                color="white"
+                borderRadius="22px"
+              >
+                Check all articles
+              </Button>
+            </Box>
+          </Flex>
+          <SimpleGrid
+            columns={[1, null, 3]}
+            marginTop="10"
+            spacing="30px"
+            overflowWrap="anywhere"
+          >
+            {blogApi.map((el) => {
+              return (
+                <>
+                  <Box
+                    backgroundColor={"white"}
+                    width="auto"
+                    height="auto"
+                    borderRadius={"10px"}
+                    boxShadow="rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"
+                  >
+                    <Image
+                      width={"100%"}
+                      height="180px"
+                      objectFit="cover"
+                      src={el.img}
+                      alt="Dan Abramov"
+                    />
+                    <Text
+                      fontSize={"20px"}
+                      marginLeft={"5%"}
+                      marginRight="5%"
+                      marginTop={"5%"}
+                      textAlign={"start"}
+                      fontWeight="bold"
+                    >
+                      {el.title}
+                    </Text>
+                    <Text
+                      fontSize={"20px"}
+                      marginLeft={"5%"}
+                      marginRight="5%"
+                      marginTop={"0%"}
+                      textAlign={"start"}
+                      fontWeight="bold"
+                    >
+                      {el.desc}
+                    </Text>
+                    <Text
+                      fontSize="15px"
+                      marginLeft={"5%"}
+                      marginRight="8%"
+                      marginTop={"4%"}
+                      textAlign={"start"}
+                      marginBottom="3%"
+                      color={"#25cf60;"}
+                    >
+                      {el.read}
+                    </Text>
+                  </Box>
+                </>
+              );
+            })}
+          </SimpleGrid>
+        </div>
+      </div>
+      {/* *************************************** */}
     </>
   );
 };

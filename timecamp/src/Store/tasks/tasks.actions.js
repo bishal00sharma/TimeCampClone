@@ -8,10 +8,12 @@ import {
 } from "./tasks.type";
 
 
+
+const token = JSON.parse(localStorage.getItem("token")) || "";
 export const getTasks = () =>  async (dispatch) => {
     dispatch({type:TASKS_FETCH_LOADING});
     try{
-        let response = await axios.get("http://localhost:8080/tasks");
+        let response = await axios.get("http://localhost:8080/tasks",{headers:{ "token": token}});
         dispatch({type:TASKS_FETCH_SUCCESS, payload: response.data})
         return response.data;
     } catch (e) {
@@ -22,7 +24,7 @@ export const getTasks = () =>  async (dispatch) => {
 export const postTask = (creds) =>  async (dispatch) => {
     dispatch({type:TASKS_FETCH_LOADING});
     try{
-        let response = await axios.post("http://localhost:8080/tasks", { email: creds.email, password: creds.password});
+        let response = await axios.post("http://localhost:8080/tasks", { email: creds.email, password: creds.password},{headers:{ "token": token}});
         dispatch({type:TASKS_FETCH_SUCCESS, payload: response.data})
         return response.data;
     } catch (e) {
@@ -30,10 +32,10 @@ export const postTask = (creds) =>  async (dispatch) => {
     }
 }
 
-export const deleteTask = (creds) =>  async (dispatch) => {
+export const deleteTask = (id) =>  async (dispatch) => {
     dispatch({type:TASKS_FETCH_LOADING});
     try{
-        let response = await axios.post("http://localhost:8080/tasks", { id:creds.id});
+        let response = await axios.post(`http://localhost:8080/tasks${id}`,{headers:{ "token": token}});
         dispatch({type:TASKS_DELETE})
         return response.data;
     } catch (e) {
