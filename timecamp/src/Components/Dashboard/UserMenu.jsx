@@ -11,7 +11,7 @@ export default function Usermenu({title}) {
         dispatch(logout());
         navigate("/");
     }
-    const token = (localStorage.getItem("token")) || "";
+    const token = JSON.parse(localStorage.getItem("userToken")) || "6333f7c01cc7acad26c89dcb:example@gmail.com:jnxsjxbn";
     const user = token.split(":")[1] ;
     return (
         <Flex justifyContent="space-between" alignItems="center" px="50px" h="60px" borderBottom="1px solid rgba(128, 128, 128, 0.490)">

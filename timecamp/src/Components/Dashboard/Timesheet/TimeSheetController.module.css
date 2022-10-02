@@ -2,14 +2,12 @@
     gap: 10px;
 }
 
-.controller > div
+.options
 {
     border: 1px solid rgba(128, 128, 128, 0.288);
     border-radius: 5px;
     height: 100%;
     gap: 5px;
-}
-.controller > div{
     padding: 10px;
 }
 

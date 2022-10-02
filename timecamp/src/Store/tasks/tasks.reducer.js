@@ -2,7 +2,9 @@ import {
     TASKS_FETCH_ERROR,
     TASKS_FETCH_LOADING,
     TASKS_FETCH_SUCCESS,
-    TASKS_DELETE
+    TASKS_DELETE,
+    TASKS_UPDATE,
+    ADD_TASK
 } from "./tasks.type";
 
 
@@ -35,14 +37,24 @@ export const tasksReducer = (state = initState, {type, payload}) =>{
                 error: "",
                 data : payload,
             }
-            case TASKS_DELETE:
-                 return {
-                    ...state,
-                    loading: false,
-                    error :""
-                   }
-          
-     
+        case ADD_TASK : 
+            return {
+                ...state,
+                loading: true,
+                error:"",
+            }
+        case TASKS_DELETE:
+            return {
+                ...state,
+                loading: false,
+                error :""
+            }
+        case TASKS_UPDATE : 
+            return {
+                ...state,
+                loading: false,
+                error : ""
+            }
         default :
             return state;
     }
