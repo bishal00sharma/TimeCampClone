@@ -30,10 +30,10 @@ export default function UserAdd({changeGet}) {
    }
 
 function userAdd(value){
-  localStorage.setItem("token","63344372e20682bebf2433eb:bishal@gmail.com:no");
+  //localStorage.setItem("token","63344372e20682bebf2433eb:bishal@gmail.com:no");
   let token=localStorage.getItem("token");
   let [id]=token.split(":");
-  axios.patch(`http://localhost:8080/users/${id}/clients/`,{"clients":value})
+  axios.patch(`http://localhost:8080/users/${id}/clients/`,{"clients":value},{headers:{ "token": token}})
   
   changeGet()
   setValue("")
@@ -54,7 +54,7 @@ function userAdd(value){
               <Text color="blue.600">Each person's email address:</Text>
               <hr />
               <Text mt="20px" mb="20px" color="teal.600">Each person will receive an email with their login information and a link to your account</Text>
-              <Input value={value} onChange={handleChange} bgColor="gray.200" type="text" placeholder="Enter new person's details"/>
+              <Input value={value} onChange={handleChange} bgColor="gray.200" type="text" placeholder="Enter new project here"/>
                <Text fontSize="14px" mt="20px" mb="20px">Project assignment:</Text>
               <Button bgColor="red.200" color="white">Cancel</Button>
               <Box mt="20px">
@@ -77,7 +77,7 @@ function userAdd(value){
               <Button colorScheme='blue' mr={3} onClick={onClose}>
                 Close
               </Button>
-              <Button bgColor="green.400" color="white" variant='ghost' onClick={()=>userAdd(value)}>Add User</Button>
+              <Button bgColor="green.400" color="white" variant='ghost' onClick={()=>userAdd(value)}>Add Project</Button>
             </ModalFooter>
           </ModalContent>
         </Modal>
