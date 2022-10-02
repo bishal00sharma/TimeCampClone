@@ -11,6 +11,19 @@ import {
   Image,
   ListItem,
   UnorderedList,
+  SimpleGrid,
+  TableContainer,
+  Table,
+  TableCaption,
+  Thead,
+  Tr,
+  Th,
+  Tbody,
+  Td,
+  Accordion,
+  AccordionPanel,
+  AccordionButton,
+  AccordionItem,
 } from "@chakra-ui/react";
 import style from "../Routes/home.module.css";
 
@@ -473,7 +486,8 @@ const Pricing = () => {
           </Thead>
           <Tbody>
             <Tr>
-              <Td fontSize={"14px"}>Time entries</Td>
+              <Td
+               fontSize={"14px"}>Time entries</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>

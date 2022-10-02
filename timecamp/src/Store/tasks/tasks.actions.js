@@ -35,7 +35,7 @@ export const postTask = (creds) =>  async (dispatch) => {
 export const deleteTask = (id) =>  async (dispatch) => {
     dispatch({type:TASKS_FETCH_LOADING});
     try{
-        let response = await axios.post(`http://localhost:8080/tasks${id}`,{headers:{ "token": token}});
+        let response = await axios.delete(`http://localhost:8080/tasks/${id}`,{headers:{ "token": token}});
         dispatch({type:TASKS_DELETE})
         return response.data;
     } catch (e) {
