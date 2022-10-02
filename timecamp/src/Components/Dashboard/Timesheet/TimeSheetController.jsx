@@ -2,7 +2,7 @@ import { ChevronDownIcon } from "@chakra-ui/icons";
 import { Box,  Flex, Icon, Img, Input, Menu, MenuButton, MenuItem, MenuList, Text } from "@chakra-ui/react";
 import style from "./TimeSheetController.module.css";
 export default function TimeSheetController() {
-    const user =JSON.parse(localStorage.getItem('token')).split(":")[1];
+    const user =JSON.parse(localStorage.getItem('userToken')).split(":")[1];
     return (
         <Flex className={style.controller}>
             <Flex className={style.options}>
