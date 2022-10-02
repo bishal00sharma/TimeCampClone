@@ -2,6 +2,7 @@ import { Box, Button, Flex, Grid, Img, MenuButton, MenuItem, MenuList, Text } fr
 import { Menu,} from '@chakra-ui/react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
 import LogoBar from "../../Components/Login/Logo-bar"
+import { Link } from "react-router-dom";
 
 export default function Sidebar() {
     return (
@@ -42,14 +43,14 @@ export default function Sidebar() {
                     </Flex>
                     <Flex>
                         <Img src={require("../../Resources/icons/dashboard/tags.png")} alt="TimeSheet" />
-                        <Text>Tags</Text>
+                       <Link to="/dashboard/tags">  <Text>Tags</Text> </Link>
                     </Flex>
                 </Grid>
                 <Grid>
                     <Text>TEAM</Text>
                     <Flex>
                         <Img src={require("../../Resources/icons/dashboard/users.png")} alt="TimeSheet" />
-                        <Text>Users</Text>
+                        <Link to="/dashboard/users">  <Text>Users</Text> </Link>
                     </Flex>
                     <Flex>
                         <Img src={require("../../Resources/icons/dashboard/attendance.png")} alt="TimeSheet" />
