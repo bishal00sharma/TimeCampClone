@@ -5,8 +5,8 @@ import {
     TASKS_FETCH_ERROR,
     TASKS_FETCH_LOADING,
     TASKS_FETCH_SUCCESS,
+    TASKS_UPDATE,
 } from "./tasks.type";
-
 
 
 const token = JSON.parse(localStorage.getItem("token")) || "";
@@ -37,6 +37,18 @@ export const deleteTask = (id) =>  async (dispatch) => {
     try{
         let response = await axios.delete(`http://localhost:8080/tasks/${id}`,{headers:{ "token": token}});
         dispatch({type:TASKS_DELETE})
+        return response.data;
+    } catch (e) {
+        dispatch({type:TASKS_FETCH_ERROR,payload:e.response.data});
+    }
+}
+
+
+export const updateTask = ({id,status}) =>  async (dispatch) => {
+    dispatch({type:TASKS_FETCH_LOADING});
+    try{
+        let response = await axios.patch(`http://localhost:8080/tasks/${id}`,{isBillingStatus: status},{headers:{ "token": token}});
+        dispatch({type:TASKS_UPDATE})
         return response.data;
     } catch (e) {
         dispatch({type:TASKS_FETCH_ERROR,payload:e.response.data});

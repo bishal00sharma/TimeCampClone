@@ -2,7 +2,9 @@ import { DeleteIcon } from "@chakra-ui/icons";
 import { Box, Button, Flex, Icon, Text } from "@chakra-ui/react";
 import { BsCurrencyDollar, BsFillPlayFill } from "react-icons/bs"
 import { useDispatch } from "react-redux";
-import { deleteTask, getTasks } from "../../../Store/tasks/tasks.actions";
+import { deleteTask, getTasks, updateTask } from "../../../Store/tasks/tasks.actions";
+import { msToTime } from "../../Utils/msTohrs";
+import { Link } from "react-router-dom"
 import style from "./Task.module.css";
 export default function TaskDiv({t}) {
     const dispatch = useDispatch();
@@ -12,15 +14,22 @@ export default function TaskDiv({t}) {
         dispatch(getTasks());
     }
 
+    async function handleUpdate(id,status) {
+        await dispatch(updateTask({id,status}))
+        dispatch(getTasks());
+    }
     return (
         <Flex justifyContent="space-between" alignItems='center' className={style.TaskDiv}>
             <Box>
-                <Text>{t.task}</Text>
-                <Text>add a Tag</Text>
+                <Flex gap="5px">
+                    <Text>{t.task}</Text>
+                    <Text color="green">{t.isBillingStatus ? "$" : "   "}</Text>
+                </Flex>
+                    <Text>add a Tag</Text>
             </Box>
             <Text>{t.note}</Text>  
             <Flex gap="10px">
-                <Button size="sm">
+                <Button size="sm" onClick={()=>handleUpdate(t._id, !t.isBillingStatus)}>
                     <Icon as={BsCurrencyDollar} w={5} h={5} />
                 </Button>
                 
@@ -29,13 +38,15 @@ export default function TaskDiv({t}) {
                 </Button>
             </Flex>
             <Flex gap="50px">
-                <Flex gap="10px">
-                    <Text>{t.startTime}</Text>
+                <Flex gap="10px" color="grey">
+                    <Text>{msToTime(t.startTime)}</Text>
                     <Text> - </Text>
-                    <Text>{t.endTime}</Text>
+                    <Text>{msToTime(t.endTime)}</Text>
                 </Flex>
                 <Text>
-                    0h: 00m
+                    {
+                       msToTime(Number(t.endTime) - Number(t.startTime)) 
+                    }
                 </Text>
             </Flex>
             <Flex gap="5px">

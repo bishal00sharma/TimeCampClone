@@ -19,5 +19,6 @@
     border: 1px solid rgba(128, 128, 128, 0.295);
 }
 .TaskDiv button:hover {
-    background-color: rgba(0, 128, 0, 0.377);
+    background-color: green;
+    color: white;
 }
