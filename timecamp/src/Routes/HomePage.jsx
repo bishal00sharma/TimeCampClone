@@ -22,6 +22,7 @@ import {
   UnorderedList,
 } from "@chakra-ui/react";
 import Carousels from "../Components/Carousel";
+import Navbar from "../Components/Navbar";
 
 const HomePage = () => {
   const reviewsImgapi = [
@@ -119,6 +120,7 @@ const HomePage = () => {
   ];
   return (
     <>
+    <Navbar />
       <div className={style.herodiv}>
         <div className={style.div1}>
           <p style={{ color: "black", fontWeight: "bold" }}>

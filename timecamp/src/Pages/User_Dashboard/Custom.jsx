@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import {Box, Select,Text} from "@chakra-ui/react"
 import Navbar from '../../Components/Dashboard/Navbar';
-import Usermenu from '../../Components/Dashboard/UserMenu';
+import Usermenu from './CommonNavbar';
 
 
-const Summary = () => {
+const Custom = () => {
     const [data, setData]=useState([]);
 
     async function getData(){
@@ -25,7 +25,7 @@ const Summary = () => {
         <Navbar />
         <Usermenu title="Custom"/>
       
-        <Box display="flex" style={{justifyContent:"space-between",width:"80%",margin:"auto"}}>
+        <Box display="flex" style={{justifyContent:"space-between",width:"80%",margin:"auto", marginTop:"50px"}}>
          <Box>
          <Text color="gray">Date Range</Text>
          <Select style={{marginRight:"10px"}} placeholder='This Month'>
@@ -93,4 +93,4 @@ const Summary = () => {
     </div>
   )
 }
-export default Summary; 
+export default Custom; 

@@ -2,10 +2,8 @@ import { Button, Flex, Table, TableCaption, TableContainer, Thead } from '@chakr
 import React, { useEffect, useState } from 'react';
 import {FaRegUserCircle} from "react-icons/fa";
 import {MdDeleteForever} from "react-icons/md";
-import axios from "axios";
 import {
    Tbody,
-    Tfoot,
     Tr,Box,
     Th,
     Td,
@@ -22,7 +20,7 @@ const UserTable = () => {
   const [get, setGet]=useState(false)
 
   async function getData(){
-    localStorage.setItem("token","63344372e20682bebf2433eb:bishal@gmail.com:no");
+    // localStorage.setItem("token","63344372e20682bebf2433eb:bishal@gmail.com:no");
     let token=localStorage.getItem("token");
     let [id]=token.split(":");
     let dataa= await fetch(`http://localhost:8080/users/${id}/clients`);
@@ -30,33 +28,7 @@ const UserTable = () => {
     setData(res.clients)
 
   }
-   
-  
- 
 
-  
-//   async function userDelete(item){
-//     localStorage.setItem("token","63344372e20682bebf2433eb:bishal@gmail.com:no");
-//     let token=localStorage.getItem("token");
-//     let [id]=token.split(":");
-//     let arr = ge.filter(function(it) {
-//       return it !== item
-//   })
-//     try {
-//       const response = await fetch(`http://localhost:8080/users/clients/${id}` ,{
-//         method: 'PATCH', 
-//         headers: {
-//           "token":token,
-//           'Content-Type': 'application/json'
-//         },
-//         body:{"clients":arr}       });
-//         setGet(!get)
-//     //  return (response.json());
-//     }
-  
-//   catch (e) {
-//     console.log(e);
-// }}
 function changeGet(){
   setGet(!get)
 }
@@ -89,7 +61,7 @@ console.log(data);
         <Td></Td>
         <Td ></Td>
         <Td ></Td>
-      </Tr>            {/* <Td > <Flex><Box marginLeft="25px" paddingRight="15px"><FaRegUserCircle color='skyblue' fontSize="25px"/></Box> {item}<Button onClick={()=>userDelete(item._id)} ml="55px" bgColor="red.100"><MdDeleteForever color='red' fontSize="18px"/></Button></Flex></Td> */}
+       </Tr>           
 
       {
         data?.map((item)=>(
