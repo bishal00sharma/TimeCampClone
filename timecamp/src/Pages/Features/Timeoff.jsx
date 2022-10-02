@@ -15,10 +15,13 @@ import {
   } from "@chakra-ui/react";
 import React from 'react'
 import { AiOutlineGoogle,AiOutlineArrowRight } from "react-icons/ai";
+import Footer from "../../Components/Footer";
+import Navbar from "../../Components/Navbar";
 
 const Timeoff = () => {
   return (
     <>
+    <Navbar/>
     <Container maxW={"7xl"} my={10}>
           <Stack
             align={"center"}
@@ -491,6 +494,7 @@ const Timeoff = () => {
             mt={-2}
           />
         </Container>
+        <Footer/>
     </>
   )
 }
