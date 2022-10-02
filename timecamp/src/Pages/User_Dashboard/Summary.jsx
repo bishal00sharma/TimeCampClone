@@ -22,7 +22,9 @@ const Summary = () => {
 
   return (
     <div>
-        <Box display="flex" style={{justifyContent:"space-between",width:"80%",margin:"auto"}}>
+        <Navbar />
+        <Usermenu title="Summary"/>
+        <Box display="flex" style={{justifyContent:"space-between",width:"80%",margin:"auto", marginTop:"50px"}}>
          <Box>
          <Text color="gray">Date Range</Text>
          <Select style={{marginRight:"10px"}} placeholder='This Month'>
