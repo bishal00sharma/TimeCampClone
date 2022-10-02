@@ -44,7 +44,6 @@ const AllRoutes = () => {
         <Route path="/dashboard/users" element={<PrivateRouter> <Users/></PrivateRouter>} />
         <Route path="/dashboard/tags" element={<PrivateRouter> <Tags/></PrivateRouter>} />
         <Route path="/dashboard/reports/menu" element={<PrivateRouter> <ReportsMenu/></PrivateRouter>} />
-        
         <Route path="/trello" element={<TrelloTimeTracking/>} />
         <Route path="/googleCalender" element={<GoogleCalender />} />
         <Route path="/allIntegrations" element={<AllIntegrations />} />
