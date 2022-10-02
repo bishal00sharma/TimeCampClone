@@ -105,5 +105,28 @@ app.get("/tags/:id", async(req,res) => {
     }
 })
 
+app.patch("/:id/clients", async(req,res)=>{
+    let {id} =req.params;
+     await users.updateOne({ "_id" :id },{
+     $push : {
+          "clients" :  req.body.clients
+             }
+               
+      });
+      res.send("Patched done")
+});
+    
+app.get("/:id/clients", async(req,res) => {
+    try{
+    let {id} = req.params ; 
+    let user= await users.findOne( { "_id" :id } );
+    res.send(user);
+    }
+    catch(err){
+        res.status(500).send(err.message);
+    }
+})
+
+
 
 module.exports = app;

@@ -9,14 +9,7 @@ import {
   Stack,
   Text,
   Image,
-  SimpleGrid,
   ListItem,
-  Accordion,
-  AccordionIcon,
-  MinusIcon,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
   UnorderedList,
 } from "@chakra-ui/react";
 import style from "../Routes/home.module.css";
