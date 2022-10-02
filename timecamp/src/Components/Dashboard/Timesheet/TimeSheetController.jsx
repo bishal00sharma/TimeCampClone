@@ -1,25 +1,35 @@
 import { ChevronDownIcon } from "@chakra-ui/icons";
-import { Box, Flex, Icon, Img, Text } from "@chakra-ui/react";
+import { Box,  Flex, Icon, Img, Input, Menu, MenuButton, MenuItem, MenuList, Text } from "@chakra-ui/react";
 import style from "./TimeSheetController.module.css";
 export default function TimeSheetController() {
+    const user =JSON.parse(localStorage.getItem('token')).split(":")[1];
     return (
         <Flex className={style.controller}>
-            <Flex>
+            <Flex className={style.options}>
                 <Text>Day</Text>
                 <Text>Calendar</Text>
             </Flex>
-            <Box>
+            <Box className={style.options}>
                 <Img src={require("../../../Resources/icons/dashboard/user-menu/refresh.png")}/>
             </Box>
-            <Flex>
-                <Img src={require("../../../Resources/icons/dashboard/user-menu/user.png")}/>
-                <Icon as={ChevronDownIcon} w={6} h={6} />
-            </Flex>
-            <Flex>
+
+            <Menu>
+                <MenuButton>
+                    <Flex className={style.options}>
+                        <Img src={require("../../../Resources/icons/dashboard/user-menu/user.png")}/>
+                        <Icon as={ChevronDownIcon} w={6} h={6} />
+                    </Flex>
+                </MenuButton>
+                <MenuList>
+                        <Input placeholder="Search" />
+                    <MenuItem>{ user }</MenuItem>
+                </MenuList>
+            </Menu>
+            <Flex className={style.options}>
                 <Img src={require("../../../Resources/icons/dashboard/user-menu/edit.png")}/>
                 <Text>Bulk Edit</Text>
             </Flex>
-            <Box>
+            <Box className={style.options}>
                 <Img src={require("../../../Resources/icons/dashboard/user-menu/more.png")}/>
             </Box>
 

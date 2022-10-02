@@ -6,3 +6,5 @@ export const TASKS_DELETE = "tasks/delete"
 
 export const TASKS_UPDATE = "tasks/update"
 
+export const ADD_TASK = "tasks/add"
+

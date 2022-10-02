@@ -1,10 +1,9 @@
 import { DeleteIcon } from "@chakra-ui/icons";
-import { Box, Button, Flex, Icon, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Grid, Icon, Text } from "@chakra-ui/react";
 import { BsCurrencyDollar, BsFillPlayFill } from "react-icons/bs"
 import { useDispatch } from "react-redux";
 import { deleteTask, getTasks, updateTask } from "../../../Store/tasks/tasks.actions";
 import { msToTime } from "../../Utils/msTohrs";
-import { Link } from "react-router-dom"
 import style from "./Task.module.css";
 export default function TaskDiv({t}) {
     const dispatch = useDispatch();
@@ -19,15 +18,15 @@ export default function TaskDiv({t}) {
         dispatch(getTasks());
     }
     return (
-        <Flex justifyContent="space-between" alignItems='center' className={style.TaskDiv}>
+        <Grid justifyContent="space-between" alignItems='center' className={style.TaskDiv} templateColumns="1fr 1fr 1fr 2fr 0.5fr">
             <Box>
-                <Flex gap="5px">
+                <Flex gap="10px">
                     <Text>{t.task}</Text>
                     <Text color="green">{t.isBillingStatus ? "$" : "   "}</Text>
                 </Flex>
                     <Text>add a Tag</Text>
             </Box>
-            <Text>{t.note}</Text>  
+            <Text>{t.note.substring(0,10)}</Text>  
             <Flex gap="10px">
                 <Button size="sm" onClick={()=>handleUpdate(t._id, !t.isBillingStatus)}>
                     <Icon as={BsCurrencyDollar} w={5} h={5} />
@@ -56,6 +55,6 @@ export default function TaskDiv({t}) {
                 </Button>
                 
             </Flex>
-        </Flex>
+        </Grid>
     )
 }

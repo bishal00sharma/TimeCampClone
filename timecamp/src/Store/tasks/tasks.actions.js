@@ -1,6 +1,7 @@
 import axios from "axios";
 
 import {    
+    ADD_TASK,
     TASKS_DELETE,
     TASKS_FETCH_ERROR,
     TASKS_FETCH_LOADING,
@@ -21,11 +22,11 @@ export const getTasks = () =>  async (dispatch) => {
     }
 }
 
-export const postTask = (creds) =>  async (dispatch) => {
+export const postTask = (taskDetails) =>  async (dispatch) => {
     dispatch({type:TASKS_FETCH_LOADING});
     try{
-        let response = await axios.post("http://localhost:8080/tasks", { email: creds.email, password: creds.password},{headers:{ "token": token}});
-        dispatch({type:TASKS_FETCH_SUCCESS, payload: response.data})
+        let response = await axios.post("http://localhost:8080/tasks", taskDetails,{headers:{ "token": token}});
+        dispatch({type:ADD_TASK})
         return response.data;
     } catch (e) {
         dispatch({type:TASKS_FETCH_ERROR,payload:e.response.data});
