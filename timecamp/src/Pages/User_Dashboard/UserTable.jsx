@@ -22,7 +22,7 @@ const UserTable = () => {
 
   async function getData(){
     // localStorage.setItem("token","63344372e20682bebf2433eb:bishal@gmail.com:no");
-    let token=localStorage.getItem("token");
+    let token=JSON.parse(localStorage.getItem("userToken"));
     const [id,user]=token.split(":");
     setUser(user)
     let dataa= await fetch(`http://localhost:8080/users/${id}/clients`);

@@ -13,7 +13,7 @@ const Attendance = () => {
 
     async function getData(){//give user id here
         // localStorage.setItem("token","63344372e20682bebf2433eb:bishal@gmail.com:no");
-        let token=localStorage.getItem("token");
+        let token=JSON.parse(localStorage.getItem("userToken"));
         let [id]=token.split(":");
         let dataRes= await fetch(`http://localhost:8080/users/tags/${id}`);
         let res= await dataRes.json();

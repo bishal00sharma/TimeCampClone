@@ -245,6 +245,7 @@ const Navbar = () => {
           </MenuButton>
         </Menu>
         <Menu>
+          <Link to="/auth/login">
           <MenuButton
             borderRadius="none"
             _hover={{ color: "#25CF60" }}
@@ -253,6 +254,7 @@ const Navbar = () => {
           >
             Signin
           </MenuButton>
+          </Link>
         </Menu>
       </div>
       <div className={style.comp2}>

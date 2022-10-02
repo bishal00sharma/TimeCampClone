@@ -31,12 +31,13 @@ export default function UserAdd({changeGet}) {
 
 function userAdd(value){
   //localStorage.setItem("token","63344372e20682bebf2433eb:bishal@gmail.com:no");
-  let token=localStorage.getItem("token");
+  let token=JSON.parse(localStorage.getItem("userToken"));
   let [id]=token.split(":");
   axios.patch(`http://localhost:8080/users/${id}/clients/`,{"clients":value},{headers:{ "token": token}})
   
   changeGet()
   setValue("")
+
 }
 
 
@@ -77,7 +78,7 @@ function userAdd(value){
               <Button colorScheme='blue' mr={3} onClick={onClose}>
                 Close
               </Button>
-              <Button bgColor="green.400" color="white" variant='ghost' onClick={()=>userAdd(value)}>Add Project</Button>
+              <Button bgColor="green.400" color="white" variant='ghost' onClick={()=>{userAdd(value);onClose()}}>Add User</Button>
             </ModalFooter>
           </ModalContent>
         </Modal>
