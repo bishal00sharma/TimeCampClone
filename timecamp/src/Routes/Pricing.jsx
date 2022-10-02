@@ -24,6 +24,19 @@ import {
   Tr,
   Td,
   UnorderedList,
+  SimpleGrid,
+  TableContainer,
+  Table,
+  TableCaption,
+  Thead,
+  Tr,
+  Th,
+  Tbody,
+  Td,
+  Accordion,
+  AccordionPanel,
+  AccordionButton,
+  AccordionItem,
 } from "@chakra-ui/react";
 import style from "../Routes/home.module.css";
 import PriceComp from './PriceComp';

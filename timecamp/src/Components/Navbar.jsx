@@ -9,6 +9,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 
+
 import { TriangleDownIcon } from "@chakra-ui/icons";
 
 import style from "../Components/nav.module.css";
@@ -58,6 +59,7 @@ const Navbar = () => {
               onMouseEnter={onOpen}
               onMouseLeave={onClose}
             >
+            <MenuList color="black" display="flex" onMouseEnter={onOpen} onMouseLeave={onClose}>
               <Box>
                 <Link to="/automatic">
                   <MenuItem _hover={{ bgColor: "#25CF60" }}>
@@ -148,7 +150,11 @@ const Navbar = () => {
               </MenuButton>
             </Link>
           </Menu>
+
+            
+
           <Menu isOpen={menu2isOpen}>
+
             <MenuButton
               rightIcon={<TriangleDownIcon fontSize="2xs" />}
               borderRadius="none"
@@ -172,6 +178,7 @@ const Navbar = () => {
               onMouseLeave={menu2onClose}
             >
               <Box>
+              <Link to="/trello">
                 <MenuItem _hover={{ bgColor: "#25CF60" }}>
                   <img
                     style={{ marginRight: "10px" }}
@@ -180,6 +187,8 @@ const Navbar = () => {
                   />
                   Trello
                 </MenuItem>
+                </Link>
+                <Link to="/googleCalender">
                 <MenuItem _hover={{ bgColor: "#25CF60" }}>
                   <img
                     style={{ marginRight: "10px" }}
@@ -188,6 +197,7 @@ const Navbar = () => {
                   />
                   Google Calendar
                 </MenuItem>
+                </Link>
                 <MenuItem _hover={{ bgColor: "#25CF60" }}>
                   <img
                     style={{ marginRight: "10px" }}
@@ -220,14 +230,16 @@ const Navbar = () => {
                   />
                   Jira
                 </MenuItem>
+                <Link to="/allIntegrations">
                 <MenuItem _hover={{ bgColor: "#25CF60" }}>
                   <img
                     style={{ marginRight: "10px" }}
-                    src="https://cdn-m.timecamp.com/img/greenbranding/features/icons-menu/attendance-tracking.svg"
+                    src="https://cdn-m.timecamp.com/img/greenbranding/features/icons-menu/all-integrations.svg"
                     alt=""
                   />
-                  Time off & attendance
+                  All Integrations
                 </MenuItem>
+                </Link>
               </Box>
             </MenuList>
           </Menu>
@@ -266,6 +278,7 @@ const Navbar = () => {
           </MenuButton>
         </Menu>
         <Menu>
+          <Link to="/auth/login">
           <MenuButton
             borderRadius="none"
             _hover={{ color: "#25CF60" }}
@@ -277,6 +290,7 @@ const Navbar = () => {
           >
             Signin
           </MenuButton>
+          </Link>
         </Menu>
       </div>
       <div className={style.comp2}>

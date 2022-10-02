@@ -394,7 +394,7 @@ const BookADemo = () => {
                 <Heading
                     mb={"8px"}
                     py={"32px"}
-                    px={"224px"}
+                    px={["56px","112px","224px"]}
                     fontWeight={600}
                 >
                     Want a quick overview of TimeCamp?

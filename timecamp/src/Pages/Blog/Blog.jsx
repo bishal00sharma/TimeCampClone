@@ -4,16 +4,14 @@ import { Box, SimpleGrid,Container,
   Flex,
   Heading,
   Text,
-  Button,
   Image,
-  IconButton,
-  Input,
-  HStack,
-  Center } from '@chakra-ui/react'
+   } from '@chakra-ui/react'
 import axios from 'axios'
-import BlogsCard from './BlogCard'
+import BlogCard from './BlogCard'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import Footer from '../../Components/Footer'
+import Navbar from '../../Components/Navbar'
 
 
 const Blog = () => {
@@ -27,6 +25,7 @@ const Blog = () => {
     },[])
   return (
     <>
+    <Navbar/>
     <Container maxW={"7xl"} my={10} w={["100%","95%","85%"]}>
           <Stack
             align={"center"}
@@ -61,7 +60,7 @@ const Blog = () => {
               <Text color={"black"} textAlign="left" mb="10px">
               Time tracking software for architects can help you better plan your work, manage projects at every stage, and stay profitable. Check our list of the best tools for architects!
               </Text>
-              <Button color={"blue"} bg="white" border={"1px solid blue"} borderRadius="20px" ml="0">Read the story</Button>
+              {/* <Button color={"blue"} bg="white" border={"1px solid blue"} borderRadius="20px" ml="0">Read the story</Button> */}
               
             </Box>
             </Flex>
@@ -136,7 +135,7 @@ const Blog = () => {
               <Text color={"white"} mb="10px">
               Due to the COVID-19 pandemic, many organizations started offering their employees to work remotely. However, this comes with many challenges that can complicate business processes.
               </Text>
-              <Button color={"blue"} bg="white" border={"1px solid blue"} borderRadius="20px" bgColor={"black"}>Read more</Button>
+              {/* <Button color={"blue"} bg="white" border={"1px solid blue"} borderRadius="20px" bgColor={"black"}>Read more</Button> */}
               </Box>
             </Flex>
             <Flex
@@ -174,7 +173,7 @@ const Blog = () => {
               <Text color={"white"} mb="10px">
               Different projects require different approaches to working hours tracking and measuring team performance.  A good project time tracking app can help 
               </Text>
-              <Button color={"blue"} bg="white" border={"1px solid blue"} borderRadius="20px" bgColor={"black"}>Read more</Button>
+              {/* <Button color={"blue"} bg="white" border={"1px solid blue"} borderRadius="20px" bgColor={"black"}>Read more</Button> */}
               </Box>
             </Flex>
           </Stack>
@@ -182,15 +181,17 @@ const Blog = () => {
     <Box w={{sm:"100%",md:"90%",lg:"80%"}} m="auto">
         <SimpleGrid columns={[1,1, 2,2, 3]} spacing="10" mt="5" mb="5">
           {blog&&blog.map((el, index) => (
-            <BlogsCard
-              key={index + 1}
+            <BlogCard
+              key={el.id}
               image={el.image}
               name={el.title}
               des={el.description}
+              id={el.id}
             />
           ))}
         </SimpleGrid>
     </Box>
+    <Footer/>
     </>
   )
 }

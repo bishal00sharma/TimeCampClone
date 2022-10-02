@@ -10,14 +10,19 @@ import Reporting from "../Pages/Features/Reporting";
 import Timesheet from "../Pages/Features/Timesheet";
 import Timeoff from "../Pages/Features/Timeoff";
 import Billing from "../Pages/Features/Billing"
-import Blog from "./Blog/Blog";
+import Blog from "../Pages/Blog/Blog";
+import BlogPage from "./Blog/BlogPage";
+import Login from "./Login";
+import Signup from "./Signup";
 const AllRoutes = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={ <HomePage />} />
+        <Route path="/auth/signup" element={ <Signup />} />
+        <Route path="/auth/login" element={ <Login />} />
         <Route path="/Pricing" element={<Pricing />} />
-        <Route path="/features" element={<Feature />} />
+        <Route path="/features" element={<Feature/>} />
         <Route path="/automatic" element={<Automatic />} />
         <Route path="/invoicing" element={<Invoicing />} />
         <Route path="/productivity" element={<Productivity />} />
@@ -26,6 +31,7 @@ const AllRoutes = () => {
         <Route path="/timeoff" element={<Timeoff />} />
         <Route path="/billing" element={<Billing />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" element={<BlogPage/>}/>
       </Routes>
     </div>
   );
