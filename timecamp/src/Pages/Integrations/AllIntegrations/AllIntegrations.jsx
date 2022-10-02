@@ -1,6 +1,8 @@
 import React from 'react'
 import styles from "../AllIntegrations/AllIntegrations.module.css"
 import { Box, Button, Container, Flex, Heading, Image, SimpleGrid, Stack, Text } from '@chakra-ui/react';
+import Navbar from '../../../Components/Navbar';
+import Footer from '../../../Components/Footer';
 
 const data = [
     {
@@ -249,9 +251,11 @@ const AllIntegrations = () => {
 
   return (
     <>
+        <Navbar />
         <Container
-            py={"96px"}
-            px={"12%"}
+            pt={"96px"}
+            pb={["0px","56px","96px"]}
+            px={["0%","8%","12%"]}
             maxW={"100%"}
         >
             <Container
@@ -264,10 +268,10 @@ const AllIntegrations = () => {
                     justifyContent={["center","center","left"]}
                     w={"100%"}
                     h={"100%"}
-                    spacing={[16]}
+                    spacing={[16,16,16]}
                 >
                     <Stack
-                        w={"50%"}
+                        w={["100%","100%","50%"]}
                         h={"100%"}
                     >
                         <Heading
@@ -297,7 +301,7 @@ const AllIntegrations = () => {
                             justifyContent={["center","center","left"]}
                         >
                             <Button
-                                w={"70%"}
+                                w={["100%","80%","70%"]}
                                 backgroundColor= {"#3c91e6"}
                                 borderRadius={"26px"}
                                 px={["15px","20px","40px"]}
@@ -305,14 +309,14 @@ const AllIntegrations = () => {
                                 h={"70px"}
                             >
                                 <Stack
-                                    direction={["column", "column","row","row"]}
+                                    direction={"row"}
                                     alignItems={"center"}
-                                    justifyContent={["center","left","left"]}
+                                    justifyContent={["left","left","left"]}
                                     gap={["8px","12px","16px"]}
                                 >
                                     <Image maxW={"15%"} maxH={"80%"} src='https://cdn-m.timecamp.com/img/integrations/chrome.png'></Image>
                                     <Text
-                                        fontSize={["0.2rem","0.5rem","0.5rem","1rem"]}
+                                        fontSize={["1rem"]}
                                         fontWeight={700} 
                                         lineHeight={["0.8","1.1","1.5"]}
                                         color={"white"}
@@ -327,32 +331,32 @@ const AllIntegrations = () => {
                             justifyContent={["center","center","left"]}
                         >
                             <Button
-                                w={"70%"}
-                                backgroundColor= {"#3c91e6"}
-                                borderRadius={"26px"}
-                                px={["15px","20px","40px"]}
-                                py={["9px","12px","15px"]}
-                                h={"70px"}
+                                 w={["100%","80%","70%"]}
+                                 backgroundColor= {"#3c91e6"}
+                                 borderRadius={"26px"}
+                                 px={["15px","20px","40px"]}
+                                 py={["9px","12px","15px"]}
+                                 h={"70px"}
                             >
                                 <Stack
-                                    direction={["column", "column","row","row"]}
+                                    direction={"row"}
                                     alignItems={"center"}
-                                    justifyContent={["center","left","left"]}
+                                    justifyContent={["left","left","left"]}
                                     gap={["8px","12px","16px"]}
                                 >
-                                    <Image maxW={"30%"} maxH={"80%px"} src='https://cdn-m.timecamp.com/img/integrations/edge.svg'></Image>
+                                    <Image maxW={"30%"}  src='https://cdn-m.timecamp.com/img/integrations/edge.svg'></Image>
                                     <Text
-                                        fontSize={["0.2rem","0.5rem","0.5rem","1rem"]}
-                                        fontWeight={700} 
-                                        lineHeight={["0.8","1.1","1.5"]}
-                                        color={"white"}
+                                       fontSize={["1rem"]}
+                                       fontWeight={700} 
+                                       lineHeight={["0.8","1.1","1.5"]}
+                                       color={"white"}
                                     >Track time in Edge</Text>
                                 </Stack> 
                             </Button>
                         </Box>
                     </Stack>
                     <Box
-                        w={"50%"}
+                        w={["100%","100%","50%"]}
                     >
                         <Image w={"100%"} src='https://cdn-m.timecamp.com/img/greenbranding/rightHero.png' ></Image>
                     </Box>
@@ -361,7 +365,7 @@ const AllIntegrations = () => {
         </Container>
         <Container
             pt={"64px"}
-            px={"12%"}
+            px={["0%","8%","12%"]}
             maxW={"100%"}
         >
             <Container
@@ -422,7 +426,7 @@ const AllIntegrations = () => {
         </Container>
         <Container
             pt={"96px"}
-            px={"12%"}
+            px={["0%","8%","12%"]}
             maxW={"100%"}
             backgroundColor={"#fcfcfc"}
         >
@@ -519,6 +523,7 @@ const AllIntegrations = () => {
               mt={-2}
             />
           </Container>
+          <Footer />
     </>
   )
 }
