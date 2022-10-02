@@ -22,6 +22,7 @@ import Timeoff from "../Pages/Features/Timeoff";
 import Blog from "../Pages/Blog/Blog";
 import BlogPage from "../Pages/Blog/BlogPage";
 import Tags from "../Pages/User_Dashboard/Tags";
+import ReportsMenu from "../Pages/User_Dashboard/ReportsMenu";
 const AllRoutes = () => {
   return (
     <div>
@@ -42,11 +43,14 @@ const AllRoutes = () => {
         <Route path="/dashboard/projects" element={<PrivateRouter> <Projects/></PrivateRouter>} />
         <Route path="/dashboard/users" element={<PrivateRouter> <Users/></PrivateRouter>} />
         <Route path="/dashboard/tags" element={<PrivateRouter> <Tags/></PrivateRouter>} />
+        <Route path="/dashboard/reports/menu" element={<PrivateRouter> <ReportsMenu/></PrivateRouter>} />
+        
         <Route path="/trello" element={<TrelloTimeTracking/>} />
         <Route path="/googleCalender" element={<GoogleCalender />} />
         <Route path="/allIntegrations" element={<AllIntegrations />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogPage/>}/>
+
       </Routes>
     </div>
   );
