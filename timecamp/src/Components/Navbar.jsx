@@ -5,7 +5,6 @@ import {
     MenuItem,
     Button,
     Box,
-    color,
     useDisclosure,
 } from '@chakra-ui/react'
 
@@ -31,18 +30,19 @@ const Navbar = () => {
         <div className={style.box}>
           <Menu isOpen={isOpen}>
             <Link to="/features">
-            <MenuButton
-              borderRadius="none"
-              _hover={{ color: "#25CF60" }}
-              bg="white"
-              marginLeft="80px"
-              as={Button}
-              rightIcon={<TriangleDownIcon fontSize="2xs" />}
-              onMouseEnter={onOpen}
-              onMouseLeave={onClose}
-            >
-              Features
-            </MenuButton></Link>
+              <MenuButton
+                borderRadius="none"
+                _hover={{ color: "#25CF60" }}
+                bg="white"
+                marginLeft="80px"
+                as={Button}
+                rightIcon={<TriangleDownIcon fontSize="2xs" />}
+                onMouseEnter={onOpen}
+                onMouseLeave={onClose}
+              >
+                Features
+              </MenuButton>
+            </Link>
             <MenuList color="black" display="flex" onMouseEnter={onOpen} onMouseLeave={onClose}>
               <Box>
                 <Link to="/automatic">
@@ -243,6 +243,7 @@ const Navbar = () => {
           </MenuButton>
         </Menu>
         <Menu>
+          <Link to="/auth/login">
           <MenuButton
             borderRadius="none"
             _hover={{ color: "#25CF60" }}
@@ -251,6 +252,7 @@ const Navbar = () => {
           >
             Signin
           </MenuButton>
+          </Link>
         </Menu>
       </div>
       <div className={style.comp2}>

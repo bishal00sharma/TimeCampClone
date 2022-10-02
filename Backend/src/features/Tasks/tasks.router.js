@@ -17,45 +17,6 @@ app.get("/", async(req,res)=>{
     }
    
 })
-app.get("/project/:id", async(req,res)=>{
-    let project = req.params.id;
-    try{
-         let user = req.userId
-         let p = await Task.find({user:user,project:project});
-         res.send(p);
-    }
-    catch(err){
-        res.status(500).send(err.message);
-    }
-   
-})
-app.post("/project/:id", async(req,res)=>{
-    let project = req.params.id;
-    try{
-         let user = req.userId
-         let p = await Task.create({...req.body, user: user,project:project});
-         res.send(p);
-    }
-    catch(err){
-        res.status(500).send(err.message);
-    }
-   
-})
-app.delete("/project/:id/:id", async(req,res)=>{
-    console.log(req.params)
-    let id = req.params.id;
-    try{
-        //  let user = req.userId
-         let p = await Task.deleteOne({_id:id});
-         res.send(p);
-    }
-    catch(err){
-        res.status(500).send(err.message);
-    }
-   
-})
-
-
 
 // API request to add new Task
 app.post("/", async (req,res)=>{
@@ -65,7 +26,7 @@ app.post("/", async (req,res)=>{
 module.exports = app;
 
 // API request to delete Task
-app.delete("/:id",async (req,res)=>{
+app.delete("/:id", async (req,res)=>{
     let id = req.params.id;
     let delete_Task = await Task.deleteOne({"_id":id});
     res.status(200).send("Task deleted")
