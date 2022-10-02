@@ -53,12 +53,12 @@ const Navbar = () => {
                 Features
               </MenuButton>
             </Link>
-            <MenuList
+            {/* <MenuList
               color="black"
               display="flex"
               onMouseEnter={onOpen}
               onMouseLeave={onClose}
-            >
+            > */}
             <MenuList color="black" display="flex" onMouseEnter={onOpen} onMouseLeave={onClose}>
               <Box>
                 <Link to="/automatic">
