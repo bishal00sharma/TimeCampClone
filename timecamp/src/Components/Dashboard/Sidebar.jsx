@@ -54,7 +54,7 @@ export default function Sidebar() {
                     </Flex>
                     <Flex>
                         <Img src={require("../../Resources/icons/dashboard/attendance.png")} alt="TimeSheet" />
-                        <Text>Attendance</Text>
+                        <Link to="/dashboard/attendance">  <Text>Attendance</Text> </Link>
                     </Flex>
                 </Grid>
             </Grid>

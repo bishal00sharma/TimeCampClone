@@ -23,6 +23,7 @@ import {
 } from "@chakra-ui/react";
 import Carousels from "../Components/Carousel";
 import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
 
 const HomePage = () => {
   const reviewsImgapi = [
@@ -1329,6 +1330,7 @@ const HomePage = () => {
           </SimpleGrid>
         </div>
       </div>
+      <Footer />
       {/* *************************************** */}
     </>
   );

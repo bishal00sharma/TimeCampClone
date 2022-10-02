@@ -12,14 +12,14 @@ export default function AllTasks() {
     },[dispatch])
 
     return (
-        <Grid gap="10px" px="100px" py="30px" >
+        <Grid gap="10px" px="100px" py="30px">
             {
-                data.length===0 ? 
+                data.length===0 ? loading ? <Text> ...loading </Text> : error ? <Text>Something went wrong</Text>  : 
                     <Grid justifyContent="center" alignItems="center" textAlign="center">
                         <Box>
                             <Img src={require("../../../Resources/no-data.png")} />
                         </Box>
-                        <Text fontSize="2xl" >No recent time entries </Text>
+                        <Text fontSize="2xl">No recent time entries </Text>
                         <Text>Seems like you haven’t tracked any time yet</Text>
                     </Grid>
                 :

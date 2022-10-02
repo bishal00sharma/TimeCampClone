@@ -18,6 +18,7 @@ import GoogleCalender from "../Pages/Integrations/GoogleCalender/GoogleCalender"
 import AllIntegrations from "../Pages/Integrations/AllIntegrations/AllIntegrations";
 import TrelloTimeTracking from "../Pages/Integrations/TrelloTimeTracking/TrelloTimeTracking";
 import Tags from "../Pages/User_Dashboard/Tags";
+import Attendance from "../Pages/User_Dashboard/Attendance";
 const AllRoutes = () => {
   return (
     <div>
@@ -39,6 +40,8 @@ const AllRoutes = () => {
         <Route path="/dashboard/projects" element={<PrivateRouter> <Projects/></PrivateRouter>} />
         <Route path="/dashboard/users" element={<PrivateRouter> <Users/></PrivateRouter>} />
         <Route path="/dashboard/tags" element={<PrivateRouter><Tags /></PrivateRouter>} />
+        <Route path="/dashboard/attendance" element={<PrivateRouter><Attendance /></PrivateRouter>} />
+
       </Routes>
     </div>
   );

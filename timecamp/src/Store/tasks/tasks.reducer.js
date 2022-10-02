@@ -36,10 +36,10 @@ export const tasksReducer = (state = initState, {type, payload}) =>{
                 data : payload,
             }
             case TASKS_DELETE:
-                 let newTasks = state.filter((task) => task.id !==payload.id)
                  return {
                     ...state,
-                    tasks: newTasks
+                    loading: false,
+                    error :""
                    }
           
      
