@@ -10,7 +10,7 @@ import {
 } from "./tasks.type";
 
 
-const token = JSON.parse(localStorage.getItem("userToken")) || "13242424:example@gmail.com:123";
+const token = JSON.parse(localStorage.getItem("userToken")) || "6333f7c01cc7acad26c89dcb:example@gmail.com:123";
 export const getTasks = () =>  async (dispatch) => {
     dispatch({type:TASKS_FETCH_LOADING});
     try{

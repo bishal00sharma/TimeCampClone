@@ -26,11 +26,11 @@
   border-radius:30px;
 }
 
-.App a{
+.App .routes{
   color: green;
 }
 
-.App a:hover {
+.App .routes:hover {
   text-decoration: underline;
 }
 

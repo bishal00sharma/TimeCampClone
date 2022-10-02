@@ -73,10 +73,12 @@ export default function Usermenu({title}) {
                         <Img src={require("../../Resources/icons/dashboard/user-menu/profile.png")} alt="profile"  />
                     </MenuButton>
                     <MenuList>
-                        <MenuItem>
-                            <Img src={require("../../Resources/icons/dashboard/user-menu/user.png")} alt="download"  mr="10px" />
-                            {user}
-                        </MenuItem>
+                        <Link to="/dashboard/users">
+                            <MenuItem>
+                                <Img src={require("../../Resources/icons/dashboard/user-menu/user.png")} alt="download"  mr="10px" />
+                                {user}
+                            </MenuItem>
+                        </Link>
                         <hr />
                         <MenuItem>      
                             <Img src={require("../../Resources/icons/dashboard/user-menu/download.png")} alt="download"  mr="10px" />
