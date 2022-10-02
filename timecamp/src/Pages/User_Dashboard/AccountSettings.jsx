@@ -17,8 +17,7 @@ const AccountSettings = () => {
     }
 
     async function getData(){
-        // localStorage.setItem("token","63387a816d061c145a44452d:jonSnow@gmail.com:jon");
-        let token=localStorage.getItem("token");
+        let token=localStorage.getItem("userToken") || "";
         let [id]=token.split(":");
         let res =await axios.get(`http://localhost:8080/users/${id}`,{headers:{ "token": token}});
         setData(res.data[0].email)
