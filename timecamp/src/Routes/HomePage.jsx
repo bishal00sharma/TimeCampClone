@@ -12,16 +12,14 @@ import {
   Text,
   Image,
   SimpleGrid,
-  ListItem,
   Accordion,
-    AccordionIcon,
-    MinusIcon,
   AccordionItem,
   AccordionButton,
   AccordionPanel,
-  UnorderedList,
 } from "@chakra-ui/react";
-import Carousels from "../Components/Carousel";
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
+import PriceComp from "./PriceComp";
 
 const HomePage = () => {
   const reviewsImgapi = [
@@ -99,33 +97,41 @@ const HomePage = () => {
 
   const blogApi = [
     {
-      img: "https://www.timecamp.com/blog/wp-content/uploads/2019/08/time-tracking-for-architects-400x219.jpg",
-      title: "13 Best Time Tracking",
-      desc:"Software for Architects",
+      img: "https://www.timecamp.com/blog/wp-content/uploads/2022/09/remote-work-automation-header-400x219.jpg",
+      title: "What is An Automation for",
+      desc: "Remote Workers",
       read: "Read more",
     },
     {
-      img: "https://www.timecamp.com/blog/wp-content/uploads/2022/09/remote-work-automation-header-400x219.jpg",
-      title: "What is automatipon for",
-      desc:"Remote Workers",
+      img: "https://www.timecamp.com/blog/wp-content/uploads/2019/08/time-tracking-for-architects-400x219.jpg",
+      title: "13 Best Time Tracking",
+      desc: "Software for Architects",
       read: "Read more",
     },
     {
       img: "https://www.timecamp.com/blog/wp-content/uploads/2018/05/project-time-tracking-min-300x164.jpg",
       title: "13 Best Tools for Project",
-      desc:"Time Tracking",
+      desc: "Time Tracking",
       read: "Read more",
     },
   ];
   return (
     <>
+      <Navbar />
       <div className={style.herodiv}>
         <div className={style.div1}>
-          <p style={{ color: "black", fontWeight: "bold" }}>
+          <p
+            style={{
+              marginTop: "8%",
+              color: "#1b1b20;",
+              fontWeight: "bold",
+              fontSize: "14px",
+            }}
+          >
             Free time tracking software
           </p>
           <h1>Happy to see you again!</h1>
-          <h1>Book TimeCamp set-up call</h1>
+          <h1>Book TimeCamp</h1>
           <p>✓ Showing how TimeCamp works in 15 minutes</p>
           <p>✓ Best practices from 5000+ implementations</p>
           <p>✓ Help with dedicated setup</p>
@@ -133,6 +139,9 @@ const HomePage = () => {
             <Button
               backgroundColor="#25CF60"
               size="lg"
+              color="white"
+              fontSize={"16px"}
+              fontWeight="500"
               marginRight="9%"
               borderRadius="22px"
               marginLeft="12%"
@@ -143,6 +152,9 @@ const HomePage = () => {
             <Button
               backgroundColor="#25CF60"
               size="lg"
+              color="white"
+              fontSize={"16px"}
+              fontWeight="500"
               borderRadius="22px"
               marginLeft="10%"
             >
@@ -203,7 +215,11 @@ const HomePage = () => {
             backgroundColor="#f7b801"
             size="lg"
             marginTop="10%"
-            marginLeft="-7%"
+            color="white"
+            height="50px"
+            fontWeight="500"
+            fontSize="15px"
+            marginLeft="-47%"
             borderRadius="22px"
           >
             Book a Demo
@@ -216,7 +232,12 @@ const HomePage = () => {
           />
         </div>
       </div>
-      <Heading marginLeft="28%" marginTop="3%" marginRight="28%">
+      <Heading
+        font-family="'Roboto', sans-serif;"
+        marginLeft="24%"
+        marginTop="3%"
+        marginRight="24%"
+      >
         Time tracking for everyone in your organization
       </Heading>
       {/* container 1 */}
@@ -229,7 +250,7 @@ const HomePage = () => {
         >
           <Stack flex={1} spacing={{ base: 5, md: 10 }}>
             <Stack spacing={"3"}>
-              <Text textAlign="start" fontWeight="bold" color="#25CF60">
+              <Text textAlign="start" fontWeight="500" color="#25CF60">
                 FOR EMPLOYEES
               </Text>
               <Heading
@@ -240,7 +261,13 @@ const HomePage = () => {
               >
                 Track your <br /> employees <br /> working time
               </Heading>
-              <Text fontWeight="bold" textAlign="start" color="gray.500">
+              <Text
+                fontWeight="500"
+                marginTop={"4%"}
+                opacity="90%"
+                textAlign="start"
+                fontSize={"14px"}
+              >
                 Log working hours of your employees automatically or <br />
                 manually and make sure they are billed fairly.
               </Text>
@@ -249,13 +276,21 @@ const HomePage = () => {
                   backgroundColor="white"
                   size="lg"
                   marginLeft="-3%"
+                  fontWeight={"500"}
                   borderBottom="1.5px solid #25CF60"
+                  fontSize={"16px"}
                   _hover={{ backgroundColor: "white" }}
                 >
-                  Check logged time on the handy timesheet
+                  Check logged time on the handy Timesheet
                 </Button>
               </Stack>
-              <Text textAlign="start">
+              <Text
+                fontWeight="400"
+                marginTop={"4%"}
+                opacity="90%"
+                textAlign="start"
+                fontSize={"14px"}
+              >
                 Enjoy the transparency - check your employees time records{" "}
                 <br />
                 with more detailed information on the handy timesheet or a{" "}
@@ -263,7 +298,7 @@ const HomePage = () => {
               </Text>
               <Text
                 textAlign="start"
-                fontSize="18px"
+                fontSize="15px"
                 fontWeight="400"
                 color="gray.500"
               >
@@ -271,7 +306,7 @@ const HomePage = () => {
               </Text>
               <Text
                 textAlign="start"
-                fontSize="18px"
+                fontSize="15px"
                 fontWeight="400"
                 color="gray.500"
               >
@@ -285,6 +320,8 @@ const HomePage = () => {
                 size="lg"
                 marginRight="9%"
                 borderRadius="22px"
+                fontSize={"15px"}
+                fontWeight={"500"}
                 marginLeft="2%"
                 _hover={{ backgroundColor: "#25CF60" }}
                 color="white"
@@ -352,7 +389,7 @@ const HomePage = () => {
           </Flex>
           <Stack flex={1} spacing={{ base: 5, md: 10 }}>
             <Stack marginLeft={"16"} marginRight={"14"} spacing={"3"}>
-              <Text textAlign="start" fontWeight="bold" color="#25CF60">
+              <Text textAlign="start" fontWeight="500" color="#25CF60">
                 FOR MANAGERS
               </Text>
               <Heading
@@ -363,7 +400,13 @@ const HomePage = () => {
               >
                 Track project time and budget easier than ever before
               </Heading>
-              <Text fontWeight="bold" textAlign="start" color="gray.500">
+              <Text
+                fontWeight="500"
+                marginTop={"4%"}
+                opacity="90%"
+                textAlign="start"
+                fontSize={"14px"}
+              >
                 Stay on top of your team’s performance and create accurate
                 <br />
                 resource estimates for all the projects.
@@ -373,13 +416,21 @@ const HomePage = () => {
                   backgroundColor="white"
                   size="lg"
                   marginLeft="-3%"
+                  fontWeight={"500"}
                   borderBottom="1.5px solid #25CF60"
+                  fontSize={"16px"}
                   _hover={{ backgroundColor: "white" }}
                 >
                   Ensure project profitability by analyzing reports
                 </Button>
               </Stack>
-              <Text textAlign="start">
+              <Text
+                fontWeight="400"
+                marginTop={"4%"}
+                opacity="90%"
+                textAlign="start"
+                fontSize={"14px"}
+              >
                 TimeCamp provides you with all the data you need to analyze the
                 projects’ performance to ensure your team always stays on track.
                 Look at the clear graphics and get a better view of the time
@@ -387,7 +438,7 @@ const HomePage = () => {
               </Text>
               <Text
                 textAlign="start"
-                fontSize="18px"
+                fontSize="15px"
                 fontWeight="400"
                 color="gray.500"
               >
@@ -395,7 +446,7 @@ const HomePage = () => {
               </Text>
               <Text
                 textAlign="start"
-                fontSize="18px"
+                fontSize="15px"
                 fontWeight="400"
                 color="gray.500"
               >
@@ -409,6 +460,8 @@ const HomePage = () => {
                 size="lg"
                 marginRight="9%"
                 borderRadius="22px"
+                fontSize={"15px"}
+                fontWeight={"500"}
                 marginLeft="12%"
                 _hover={{ backgroundColor: "#25CF60" }}
                 color="white"
@@ -430,7 +483,7 @@ const HomePage = () => {
         >
           <Stack flex={1} spacing={{ base: 5, md: 10 }}>
             <Stack spacing={"3"}>
-              <Text textAlign="start" fontWeight="bold" color="#25CF60">
+              <Text textAlign="start" fontWeight="500" color="#25CF60">
                 ENTERPRISE
               </Text>
               <Heading
@@ -442,7 +495,13 @@ const HomePage = () => {
                 Try enterprise <br /> time tracking at <br />
                 at highest level
               </Heading>
-              <Text fontWeight="bold" textAlign="start" color="gray.500">
+              <Text
+                fontWeight="500"
+                marginTop={"4%"}
+                opacity="90%"
+                textAlign="start"
+                fontSize={"14px"}
+              >
                 Custom needs? No problem! Contact us, and we will <br />
                 definitely find a perfect solution for your enterprise.
               </Text>
@@ -451,20 +510,28 @@ const HomePage = () => {
                   backgroundColor="white"
                   size="lg"
                   marginLeft="-3%"
+                  fontWeight={"500"}
                   borderBottom="1.5px solid #25CF60"
+                  fontSize={"16px"}
                   _hover={{ backgroundColor: "white" }}
                 >
                   Transfer multilevel project structures
                 </Button>
               </Stack>
-              <Text textAlign="start">
+              <Text
+                fontWeight="400"
+                marginTop={"4%"}
+                opacity="90%"
+                textAlign="start"
+                fontSize={"14px"}
+              >
                 No matter how many projects your team is currently
                 <br /> working on, with TimeCamp you'll be able to organize{" "}
                 <br /> work time without any problem.
               </Text>
               <Text
                 textAlign="start"
-                fontSize="18px"
+                fontSize="15px"
                 fontWeight="400"
                 color="gray.500"
               >
@@ -472,7 +539,7 @@ const HomePage = () => {
               </Text>
               <Text
                 textAlign="start"
-                fontSize="18px"
+                fontSize="15px"
                 fontWeight="400"
                 color="gray.500"
               >
@@ -486,10 +553,11 @@ const HomePage = () => {
                 size="lg"
                 marginRight="9%"
                 borderRadius="22px"
+                fontSize={"15px"}
+                fontWeight={"500"}
                 marginLeft="2%"
                 _hover={{ backgroundColor: "#25CF60" }}
                 color="white"
-                marginTop={"2%"}
               >
                 Contact for customized solution
               </Button>
@@ -555,7 +623,7 @@ const HomePage = () => {
           </Flex>
           <Stack flex={1} spacing={{ base: 5, md: 10 }}>
             <Stack marginLeft={"16"} marginRight={"14"} spacing={"3"}>
-              <Text textAlign="start" fontWeight="bold" color="#25CF60">
+              <Text textAlign="start" fontWeight="500" color="#25CF60">
                 FOR HR
               </Text>
               <Heading
@@ -566,7 +634,13 @@ const HomePage = () => {
               >
                 Check Timesheets and control attendance in one place
               </Heading>
-              <Text fontWeight="bold" textAlign="start" color="gray.500">
+              <Text
+                fontWeight="500"
+                marginTop={"4%"}
+                opacity="90%"
+                textAlign="start"
+                fontSize={"14px"}
+              >
                 With TimeCamp you can forget about endless stacks of papers!
                 Take advantage of convenient and easy to use tools to support
                 your daily HR and payroll work.
@@ -576,20 +650,28 @@ const HomePage = () => {
                   backgroundColor="white"
                   size="lg"
                   marginLeft="-3%"
+                  fontWeight={"500"}
                   borderBottom="1.5px solid #25CF60"
+                  fontSize={"16px"}
                   _hover={{ backgroundColor: "white" }}
                 >
                   Track attention automatically
                 </Button>
               </Stack>
-              <Text textAlign="start">
+              <Text
+                fontWeight="400"
+                marginTop={"4%"}
+                opacity="90%"
+                textAlign="start"
+                fontSize={"14px"}
+              >
                 TimeCamp allows both you and your employees to keep an eye on
                 their absence, sick days, or vacation leaves. Track attendance
                 and working hours easily as never before.
               </Text>
               <Text
                 textAlign="start"
-                fontSize="18px"
+                fontSize="15px"
                 fontWeight="400"
                 color="gray.500"
               >
@@ -597,7 +679,7 @@ const HomePage = () => {
               </Text>
               <Text
                 textAlign="start"
-                fontSize="18px"
+                fontSize="15px"
                 fontWeight="400"
                 color="gray.500"
               >
@@ -611,6 +693,8 @@ const HomePage = () => {
                 size="lg"
                 marginRight="9%"
                 borderRadius="22px"
+                fontSize={"15px"}
+                fontWeight={"500"}
                 marginLeft="12%"
                 _hover={{ backgroundColor: "#25CF60" }}
                 color="white"
@@ -629,16 +713,17 @@ const HomePage = () => {
             <br /> Here you can book a call demo with our expert.
           </h1>
           <p>
-            Learn all of the time tracking basics of TimeCamp and track time{" "}
-            <br />
+            Learn all of the time tracking basics of TimeCamp and track time
             like a true pro.
           </p>
           <Button
             marginBottom="15%"
             backgroundColor="#f7b801"
             size="lg"
-            marginTop="7%"
-            marginLeft="-7%"
+            marginTop="5%"
+            fontSize={"15px"}
+            fontWeight={"500"}
+            marginLeft="-50%"
             borderRadius="22px"
           >
             Book a Demo
@@ -696,9 +781,10 @@ const HomePage = () => {
                 boxShadow="rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"
               >
                 <Text
-                  fontSize="15px"
+                  fontSize="14px"
                   marginLeft={"5%"}
                   marginRight="8%"
+                  opacity={"80%"}
                   marginTop={"15%"}
                   textAlign={"start"}
                 >
@@ -753,16 +839,17 @@ const HomePage = () => {
           </p>
           <Button
             backgroundColor="#25CF60"
-            height="20"
+            height="16"
             marginTop="4%"
-            marginLeft="-7%"
+            marginLeft="-43%"
             _hover="#25CF60;"
             color="white"
+            fontWeight={"500"}
             borderRadius="22px"
-            fontSize="20"
+            fontSize="16"
           >
             <img
-              height="20px"
+              height="16px"
               marginRight="8px"
               src="https://cdn-m.timecamp.com/img/greenbranding/features/chrome-white.png"
               alt=""
@@ -807,237 +894,8 @@ const HomePage = () => {
         </SimpleGrid>
       </div>
       {/******** ********* price *****************/}
-      <div className={style.pricee}>
-        <div>
-          <Text color="#25CF60" fontSize="16" textAlign="center" as="b">
-            Pricing
-          </Text>
-          <Text
-            fontSize="4xl"
-            fontWeight={"bold"}
-            marginTop="5"
-            textAlign={"center"}
-          >
-            Your time costs more
-          </Text>
-          <Text
-            fontSize="18"
-            color="gray.500"
-            marginTop="4"
-            textAlign={"center"}
-          >
-            Use free forever plan or subscribe to a paid plan to get more
-            <br />
-            features!
-          </Text>
-        </div>
-        <Flex marginTop={"6"}>
-          <Spacer />
-          <Button
-            backgroundColor="#25CF60"
-            height="12"
-            marginLeft={"2"}
-            marginTop={"2"}
-            _hover="#25CF60;"
-            color="white"
-            borderRadius="22px"
-          >
-            Annualy 10% discount
-          </Button>
-          <Button
-            backgroundColor="aquawhite"
-            height="12"
-            width="32"
-            marginLeft={"2"}
-            marginTop={"2"}
-            color="#25CF60"
-            borderRadius="22px"
-          >
-            Monthly
-          </Button>
-          <Spacer />
-        </Flex>
-        <div id="price">
-          <div id="third">
-            <div id="launch">
-              <div id="launch_price">
-                <Text color="#25CF60" fontSize="5xl" textAlign="center" as="b">
-                  Free
-                </Text>
-                <Text fontSize="s" textAlign={"center"}>
-                  Free forever plan
-                </Text>
-              </div>
-              <hr />
-              <div>
-                <Text fontSize="s" textAlign={"start"}>
-                  Measure on which activities you spend time while working
-                </Text>
-              </div>
-              <Button
-                backgroundColor="#25CF60"
-                height="12"
-                marginLeft={"2"}
-                marginTop={"2"}
-                _hover="#25CF60;"
-                color="white"
-                borderRadius="22px"
-              >
-                Join for Free
-              </Button>
-              <div id="launch_list">
-                <UnorderedList textAlign={"start"}>
-                  <ListItem>Unlimited users</ListItem>
-                  <ListItem>Unlimited Projects & tasks</ListItem>
-                  <ListItem>Desktop & Mobile app</ListItem>
-                </UnorderedList>
-              </div>
-            </div>
-          </div>
-          {/* ************************** */}
-          <div id="third">
-            <div id="launch">
-              <div id="launch_price">
-                <Text fontSize="5xl" textAlign="center" as="b">
-                  $ 6.3
-                </Text>
-                <Text fontSize="s" textAlign={"center"}>
-                  user/mo
-                </Text>
-              </div>
-              <hr />
-              <div>
-                <Text fontSize="s" textAlign={"start"}>
-                  Be more transparent and gain customers' trust
-                </Text>
-              </div>
-              <Button
-                backgroundColor="#25CF60"
-                height="12"
-                marginLeft={"2"}
-                marginTop={"2"}
-                _hover="#25CF60;"
-                color="white"
-                borderRadius="22px"
-              >
-                Start your free trial
-              </Button>
-              <div id="launch_list">
-                <UnorderedList textAlign={"start"}>
-                  <ListItem>Time rounding</ListItem>
-                  <ListItem>Custom report</ListItem>
-                  <ListItem>Hide time from users</ListItem>
-                  <ListItem>Management roles</ListItem>
-                  <ListItem>Team productivity tracking</ListItem>
-                  <ListItem>XLS reports export</ListItem>
-                  <ListItem>Unlimited integrations</ListItem>
-                  <ListItem>Billable time & budgeting</ListItem>
-                </UnorderedList>
-              </div>
-            </div>
-          </div>
-          {/* **************************** */}
-          <div id="third">
-            <div id="launch" style={{ backgroundColor: "#25CF60" }}>
-              <div id="launch_price">
-                <Text color="white" fontSize="5xl" textAlign="center" as="b">
-                  $ 9
-                </Text>
-                <Text fontSize="s" textAlign={"center"}>
-                  user/mo
-                </Text>
-              </div>
-              <hr />
-              <div>
-                <Text color="white" fontSize="s" textAlign={"start"}>
-                  Get full control over your business
-                </Text>
-              </div>
-              <Button
-                color="#25CF60"
-                height="12"
-                marginLeft={"2"}
-                marginTop={"2"}
-                _hover="white"
-                backgroundColor={"white"}
-                borderRadius="22px"
-              >
-                Start your free trial
-              </Button>
-              <div>
-                <Text fontSize="20" color="white" textAlign={"start"}>
-                  Everything in basic plus
-                </Text>
-              </div>
-              <div id="launch_list">
-                <UnorderedList color="white" textAlign={"start"}>
-                  <ListItem>Custom user roles</ListItem>
-                  <ListItem>Billing rates</ListItem>
-                  <ListItem>Invoicing</ListItem>
-                  <ListItem>Timesheet approvals</ListItem>
-                  <ListItem>Screenshots</ListItem>
-                  <ListItem>SSO login</ListItem>
-                  <ListItem>2-factor authentication</ListItem>
-                </UnorderedList>
-              </div>
-            </div>
-          </div>
-          {/* **************************** */}
-          <div id="third">
-            <div id="launch">
-              <div id="launch_price">
-                <Text color="#25CF60" fontSize="s" textAlign="center" as="b">
-                  Free
-                </Text>
-                <Text fontSize="3xl" marginTop={"4"} textAlign={"center"}>
-                  Let's discuss
-                </Text>
-              </div>
-              <hr />
-              <div>
-                <Text fontSize="s" textAlign={"start"}>
-                  Customize TimeCamp to your custom needs
-                </Text>
-              </div>
-              <Button
-                backgroundColor="#25CF60"
-                height="12"
-                marginLeft={"2"}
-                marginTop={"2"}
-                _hover="#25CF60;"
-                color="white"
-                borderRadius="22px"
-              >
-                Contact us
-              </Button>
-              <Text fontSize="20" marginTop={"5"} textAlign={"center"}>
-                Everything in Pro plus
-              </Text>
-              <div id="launch_list">
-                <UnorderedList textAlign={"start"}>
-                  <ListItem>Personalized training</ListItem>
-                  <ListItem>Private cloud implementation</ListItem>
-                  <ListItem>Self hosted server</ListItem>
-                </UnorderedList>
-              </div>
-            </div>
-          </div>
-        </div>
-        <Text fontSize="18" color="gray.500" marginTop="6" textAlign={"center"}>
-          SSL Secure Payment
-        </Text>
-      </div>
-      {/* *************************************************** */}
-      {/* <div className={style.timecamp}>
-        <div className={style.timecamp_subpart1}>
-          <h1>Use TimeCamp to your advantage</h1>
-          <p>
-            If you’re struggling to keep track of your work across different
-            projects, you need a radical change. You need TimeCamp.
-          </p>
-          <div className={style.divcamp}></div>
-        </div>
-      </div> */}
+      <PriceComp />
+
       {/*  *************faq*************/}
       <Text fontSize="5xl" marginTop={"3%"} marginBottom="10">
         FAQ
@@ -1054,7 +912,7 @@ const HomePage = () => {
                     flex="1"
                     marginTop={"6"}
                     marginLeft="4"
-                    fontSize={"20"}
+                    fontSize={"18"}
                     textAlign="start"
                     fontWeight={"500"}
                   >
@@ -1090,7 +948,7 @@ const HomePage = () => {
                     flex="1"
                     marginTop={"6"}
                     marginLeft="4"
-                    fontSize={"20"}
+                    fontSize={"18"}
                     textAlign="start"
                     fontWeight={"500"}
                   >
@@ -1130,7 +988,7 @@ const HomePage = () => {
                     flex="1"
                     marginTop={"6"}
                     marginLeft="4"
-                    fontSize={"20"}
+                    fontSize={"18"}
                     textAlign="start"
                     fontWeight={"500"}
                   >
@@ -1165,7 +1023,7 @@ const HomePage = () => {
                     flex="1"
                     marginTop={"6"}
                     marginLeft="4"
-                    fontSize={"20"}
+                    fontSize={"18"}
                     textAlign="start"
                     fontWeight={"500"}
                   >
@@ -1197,7 +1055,7 @@ const HomePage = () => {
                     flex="1"
                     marginTop={"6"}
                     marginLeft="4"
-                    fontSize={"20"}
+                    fontSize={"18"}
                     textAlign="start"
                     fontWeight={"500"}
                   >
@@ -1229,7 +1087,7 @@ const HomePage = () => {
           height: "auto",
           marginTop: "12%",
           // border: "1px solid red",
-          backgroundColor:"#F3F3F3"
+          backgroundColor: "#F3F3F3",
         }}
       >
         <div
@@ -1237,16 +1095,27 @@ const HomePage = () => {
             width: "88.5%",
             height: "auto",
             margin: "auto",
-            marginTop:"7%",
+            marginTop: "7%",
             // border: "1px solid red",
           }}
         >
-          <Text color={"#25cf60;"} fontSize="20px" textAlign="start">
+          <Text
+            color={"#25cf60;"}
+            fontSize="20px"
+            textAlign="start"
+            marginTop={"4%"}
+          >
             Blogs
           </Text>
           <Flex>
             <Box p="1">
-              <Text marginTop="4%" fontSize={"43px"} fontWeight="600" textAlign="start">
+              <Text
+                marginTop="3%"
+                fontSize={"40px"}
+                fontWeight="550"
+                textAlign="start"
+                font-family="nunito sans,sans-serif;"
+              >
                 Check the latest blog updates
               </Text>
             </Box>
@@ -1258,6 +1127,7 @@ const HomePage = () => {
                 height="12"
                 marginLeft={"2"}
                 marginTop={"2"}
+                fontWeight="500"
                 _hover="#25CF60;"
                 color="white"
                 borderRadius="22px"
@@ -1268,7 +1138,8 @@ const HomePage = () => {
           </Flex>
           <SimpleGrid
             columns={[1, null, 3]}
-            marginTop="10"
+            backgroundColor="#F3F3F3"
+            marginTop="7"
             spacing="30px"
             overflowWrap="anywhere"
           >
@@ -1276,11 +1147,10 @@ const HomePage = () => {
               return (
                 <>
                   <Box
-                    backgroundColor={"white"}
                     width="auto"
                     height="auto"
+                    backgroundColor="#F3F3F3"
                     borderRadius={"10px"}
-                    boxShadow="rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"
                   >
                     <Image
                       width={"100%"}
@@ -1291,11 +1161,11 @@ const HomePage = () => {
                     />
                     <Text
                       fontSize={"20px"}
+                      fontWeight="500"
                       marginLeft={"5%"}
                       marginRight="5%"
                       marginTop={"5%"}
                       textAlign={"start"}
-                      fontWeight="bold"
                     >
                       {el.title}
                     </Text>
@@ -1305,7 +1175,8 @@ const HomePage = () => {
                       marginRight="5%"
                       marginTop={"0%"}
                       textAlign={"start"}
-                      fontWeight="bold"
+                      fontWeight="500"
+                      font-family="nunito sans,sans-serif"
                     >
                       {el.desc}
                     </Text>
@@ -1328,6 +1199,7 @@ const HomePage = () => {
         </div>
       </div>
       {/* *************************************** */}
+      <Footer />
     </>
   );
 };

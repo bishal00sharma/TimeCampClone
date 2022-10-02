@@ -9,10 +9,26 @@ import {
   Stack,
   Text,
   Image,
+  SimpleGrid,
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
   ListItem,
+  Th,
+  TableContainer,
+  Table,
+  TableCaption,
+  Thead,
+  Tbody,
+  Tr,
+  Td,
   UnorderedList,
 } from "@chakra-ui/react";
 import style from "../Routes/home.module.css";
+import PriceComp from './PriceComp';
+import Footer from '../Components/Footer';
+import Navbar from '../Components/Navbar';
 
 const Pricing = () => {
   
@@ -38,6 +54,7 @@ const Pricing = () => {
   ];
   return (
     <div>
+      <Navbar />
       <div
         style={{
           backgroundColor: "#F3F3F3",
@@ -70,226 +87,7 @@ const Pricing = () => {
       </div>
 
       {/* ********** price ************* */}
-      <div style={{ marginTop: "4%" }}>
-        <div>
-          <Text color="#25CF60" fontSize="16" textAlign="center" as="b">
-            Pricing
-          </Text>
-          <Text
-            fontSize="4xl"
-            fontWeight={"bold"}
-            marginTop="5"
-            textAlign={"center"}
-          >
-            Your time costs more
-          </Text>
-          <Text
-            fontSize="18"
-            color="gray.500"
-            marginTop="4"
-            textAlign={"center"}
-          >
-            Use free forever plan or subscribe to a paid plan to get more
-            <br />
-            features!
-          </Text>
-        </div>
-        <Flex marginTop={"6"}>
-          <Spacer />
-          <Button
-            backgroundColor="#25CF60"
-            height="12"
-            marginLeft={"2"}
-            marginTop={"2"}
-            _hover="#25CF60;"
-            color="white"
-            borderRadius="22px"
-          >
-            Annualy 10% discount
-          </Button>
-          <Button
-            backgroundColor="aquawhite"
-            height="12"
-            width="32"
-            marginLeft={"2"}
-            marginTop={"2"}
-            color="#25CF60"
-            borderRadius="22px"
-          >
-            Monthly
-          </Button>
-          <Spacer />
-        </Flex>
-        <div id="price">
-          <div id="third">
-            <div id="launch">
-              <div id="launch_price">
-                <Text color="#25CF60" fontSize="5xl" textAlign="center" as="b">
-                  Free
-                </Text>
-                <Text fontSize="s" textAlign={"center"}>
-                  Free forever plan
-                </Text>
-              </div>
-              <hr />
-              <div>
-                <Text fontSize="s" textAlign={"start"}>
-                  Measure on which activities you spend time while working
-                </Text>
-              </div>
-              <Button
-                backgroundColor="#25CF60"
-                height="12"
-                marginLeft={"2"}
-                marginTop={"2"}
-                _hover="#25CF60;"
-                color="white"
-                borderRadius="22px"
-              >
-                Join for Free
-              </Button>
-              <div id="launch_list">
-                <UnorderedList textAlign={"start"}>
-                  <ListItem>Unlimited users</ListItem>
-                  <ListItem>Unlimited Projects & tasks</ListItem>
-                  <ListItem>Desktop & Mobile app</ListItem>
-                </UnorderedList>
-              </div>
-            </div>
-          </div>
-          {/* ************************** */}
-          <div id="third">
-            <div id="launch">
-              <div id="launch_price">
-                <Text fontSize="5xl" textAlign="center" as="b">
-                  $ 6.3
-                </Text>
-                <Text fontSize="s" textAlign={"center"}>
-                  user/mo
-                </Text>
-              </div>
-              <hr />
-              <div>
-                <Text fontSize="s" textAlign={"start"}>
-                  Be more transparent and gain customers' trust
-                </Text>
-              </div>
-              <Button
-                backgroundColor="#25CF60"
-                height="12"
-                marginLeft={"2"}
-                marginTop={"2"}
-                _hover="#25CF60;"
-                color="white"
-                borderRadius="22px"
-              >
-                Start your free trial
-              </Button>
-              <div id="launch_list">
-                <UnorderedList textAlign={"start"}>
-                  <ListItem>Time rounding</ListItem>
-                  <ListItem>Custom report</ListItem>
-                  <ListItem>Hide time from users</ListItem>
-                  <ListItem>Management roles</ListItem>
-                  <ListItem>Team productivity tracking</ListItem>
-                  <ListItem>XLS reports export</ListItem>
-                  <ListItem>Unlimited integrations</ListItem>
-                  <ListItem>Billable time & budgeting</ListItem>
-                </UnorderedList>
-              </div>
-            </div>
-          </div>
-          {/* **************************** */}
-          <div id="third">
-            <div id="launch" style={{ backgroundColor: "#25CF60" }}>
-              <div id="launch_price">
-                <Text color="white" fontSize="5xl" textAlign="center" as="b">
-                  $ 9
-                </Text>
-                <Text fontSize="s" textAlign={"center"}>
-                  user/mo
-                </Text>
-              </div>
-              <hr />
-              <div>
-                <Text color="white" fontSize="s" textAlign={"start"}>
-                  Get full control over your business
-                </Text>
-              </div>
-              <Button
-                color="#25CF60"
-                height="12"
-                marginLeft={"2"}
-                marginTop={"2"}
-                _hover="white"
-                backgroundColor={"white"}
-                borderRadius="22px"
-              >
-                Start your free trial
-              </Button>
-              <div>
-                <Text fontSize="20" color="white" textAlign={"start"}>
-                  Everything in basic plus
-                </Text>
-              </div>
-              <div id="launch_list">
-                <UnorderedList color="white" textAlign={"start"}>
-                  <ListItem>Custom user roles</ListItem>
-                  <ListItem>Billing rates</ListItem>
-                  <ListItem>Invoicing</ListItem>
-                  <ListItem>Timesheet approvals</ListItem>
-                  <ListItem>Screenshots</ListItem>
-                  <ListItem>SSO login</ListItem>
-                  <ListItem>2-factor authentication</ListItem>
-                </UnorderedList>
-              </div>
-            </div>
-          </div>
-          {/* **************************** */}
-          <div id="third">
-            <div id="launch">
-              <div id="launch_price">
-                <Text color="#25CF60" fontSize="s" textAlign="center" as="b">
-                  Free
-                </Text>
-                <Text fontSize="3xl" marginTop={"4"} textAlign={"center"}>
-                  Let's discuss
-                </Text>
-              </div>
-              <hr />
-              <div>
-                <Text fontSize="s" textAlign={"start"}>
-                  Customize TimeCamp to your custom needs
-                </Text>
-              </div>
-              <Button
-                backgroundColor="#25CF60"
-                height="12"
-                marginLeft={"2"}
-                marginTop={"2"}
-                _hover="#25CF60;"
-                color="white"
-                borderRadius="22px"
-              >
-                Contact us
-              </Button>
-              <Text fontSize="20" marginTop={"5"} textAlign={"center"}>
-                Everything in Pro plus
-              </Text>
-              <div id="launch_list">
-                <UnorderedList textAlign={"start"}>
-                  <ListItem>Personalized training</ListItem>
-                  <ListItem>Private cloud implementation</ListItem>
-                  <ListItem>Self hosted server</ListItem>
-                </UnorderedList>
-              </div>
-            </div>
-          </div>
-        </div>
-        <Text fontSize="18" color="gray.500" marginTop="6" textAlign={"center"}>
-          SSL Secure Payment
-        </Text>
-      </div>
+      <PriceComp />
 
       {/* ************ Captera *********** */}
       <div className={style.pridiv2}>
@@ -350,7 +148,7 @@ const Pricing = () => {
               If you want a product tour, here you can book a call demo with our
               experts.
             </Heading>
-            <Text color={"gray.500"} fontSize={["sm", "md", "lg"]}>
+            <Text fontSize={"17px"}>
               Hop on a call with TimeCamp's top minds to get the best possible
               introduction to our product.
             </Text>
@@ -459,77 +257,176 @@ const Pricing = () => {
       </Text>
 
       {/* ******************** table ********************** */}
-      <TableContainer marginTop={"2%"} width="81%" margin={"auto"}>
-        <Table variant="striped" colorScheme="gray">
-          <TableCaption>Imperial to metric conversion factors</TableCaption>
+      <TableContainer marginTop={"80px"} width="75%" margin={"auto"}>
+        <Table marginTop={"80px"} variant="striped" colorScheme="gray">
           <Thead>
             <Tr>
-              <Th fontWeight={"600"}>Time tracking</Th>
-              <Th width={"30px"}>Free</Th>
-              <Th width={"30px"}>Basic</Th>
-              <Th width={"30px"}>Pro</Th>
-              <Th width={"30px"}>Enterprise</Th>
+              <Th></Th>
+              <Th
+                marginLeft={"30%"}
+                width={"30px"}
+                fontSize={"16px"}
+                color="red"
+                marginTop={"-4"}
+              >
+                Free
+                <Text
+                  color={"black"}
+                  marginTop="8"
+                  fontSize={"35px"}
+                  marginBottom="20"
+                >
+                  $0
+                </Text>
+              </Th>
+              <Th
+                marginLeft={"30%"}
+                width={"30px"}
+                fontSize={"16px"}
+                color="#f7b801;"
+              >
+                Basic
+                <Text color={"black"} marginTop="8" fontSize={"35px"}>
+                  $6.3
+                </Text>
+                <Text
+                  fontSize={"13px"}
+                  marginBottom="16"
+                  marginTop={"6"}
+                  color="gray.600"
+                  fontWeight={"500"}
+                >
+                  $7 billed monthly
+                </Text>
+              </Th>
+              <Th
+                marginLeft={"30%"}
+                width={"30px"}
+                fontSize={"16px"}
+                color="#00bf71"
+              >
+                Pro
+                <Text color={"black"} marginTop="8" fontSize={"35px"}>
+                  $9
+                </Text>
+                <Text
+                  fontSize={"13px"}
+                  marginBottom="16"
+                  marginTop={"6"}
+                  color="gray.600"
+                  fontWeight={"500"}
+                >
+                  $10 billed monthly
+                </Text>
+              </Th>
+              <Th
+                marginLeft={"30%"}
+                width={"230px"}
+                fontSize={"16px"}
+                color="#3c91e6;"
+              >
+                Enterprise
+                <br />
+                <Button
+                  _hover={{ opacity: "80%" }}
+                  marginTop="6"
+                  bg="#3c91e6;"
+                  color="white"
+                  marginLeft={"-2.5"}
+                  height="50px"
+                  fontWeight="400"
+                  marginBottom={"46%"}
+                  fontSize="15px"
+                  width="145px"
+                  borderRadius="3xl"
+                >
+                  Contact Us
+                </Button>
+              </Th>
             </Tr>
+          </Thead>
+          <Thead>
+            <Th width={"30px"} fontSize={"16px"} color="black">
+              Time Tracking
+            </Th>
           </Thead>
           <Tbody>
             <Tr>
-              <Td fontSize={"14px"}>Time entries</Td>
+              <Td fontSize={"12px"} fontWeight="500">
+                Time entries
+              </Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
             </Tr>
             <Tr>
-              <Td fontSize={"14px"}>Multi-platform tracking</Td>
+              <Td fontSize={"12px"} fontWeight="500">
+                Multi-platform tracking
+              </Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
             </Tr>
             <Tr>
-              <Td fontSize={"14px"}>Projects & Tasks</Td>
+              <Td fontSize={"12px"} fontWeight="500">
+                Projects & Tasks
+              </Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
             </Tr>
             <Tr>
-              <Td fontSize={"14px"}>Tags</Td>
+              <Td fontSize={"12px"} fontWeight="500">
+                Tags
+              </Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
             </Tr>
             <Tr>
-              <Td fontSize={"14px"}>Notes</Td>
+              <Td fontSize={"12px"} fontWeight="500">
+                Notes
+              </Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
             </Tr>
             <Tr>
-              <Td fontSize={"14px"}>Goals</Td>
+              <Td fontSize={"12px"} fontWeight="500">
+                Goals
+              </Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
             </Tr>
             <Tr>
-              <Td fontSize={"14px"}>Automatic time tracking</Td>
+              <Td fontSize={"12px"} fontWeight="500">
+                Automatic time tracking
+              </Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
             </Tr>
             <Tr>
-              <Td fontSize={"14px"}>Daily/weekly timesheet</Td>
+              <Td fontSize={"12px"} fontWeight="500">
+                Daily/weekly timesheet
+              </Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
             </Tr>
             <Tr>
-              <Td fontSize={"14px"}>Idle time tracking</Td>
+              <Td fontSize={"12px"} fontWeight="500">
+                Idle time tracking
+              </Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
@@ -539,49 +436,63 @@ const Pricing = () => {
               <Td fontWeight={"600"}>Reporting</Td>
             </Tr>
             <Tr>
-              <Td fontSize={"14px"}>Detailed projects & tasks</Td>
+              <Td fontSize={"12px"} fontWeight="500">
+                Detailed projects & tasks
+              </Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
             </Tr>
             <Tr>
-              <Td fontSize={"14px"}>GPS</Td>
+              <Td fontSize={"12px"} fontWeight="500">
+                GPS
+              </Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
             </Tr>
             <Tr>
-              <Td fontSize={"14px"}>Export data to PDF</Td>
+              <Td fontSize={"12px"} fontWeight="500">
+                Export data to PDF
+              </Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
             </Tr>
             <Tr>
-              <Td fontSize={"14px"}>Productivity reportss</Td>
+              <Td fontSize={"12px"} fontWeight="500">
+                Productivity reportss
+              </Td>
               <Td></Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
             </Tr>
             <Tr>
-              <Td fontSize={"14px"}>Export data to Excel</Td>
+              <Td ffontSize={"12px"} fontWeight="500">
+                Export data to Excel
+              </Td>
               <Td></Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
             </Tr>
             <Tr>
-              <Td fontSize={"14px"}>Time budget report</Td>
+              <Td fontSize={"12px"} fontWeight="500">
+                Time budget report
+              </Td>
               <Td></Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
             </Tr>
             <Tr>
-              <Td fontSize={"14px"}>Revenue, Cost, Margin </Td>
+              <Td fontSize={"12px"} fontWeight="500">
+                Revenue, Cost, Margin{" "}
+              </Td>
               <Td></Td>
               <Td></Td>
               <Td>✔️</Td>
@@ -591,35 +502,45 @@ const Pricing = () => {
               <Td fontWeight={"600"}>Billing & Invoicing</Td>
             </Tr>
             <Tr>
-              <Td fontSize={"14px"}>Billable & unbillable hours</Td>
+              <Td fontSize={"12px"} fontWeight="500">
+                Billable & unbillable hours
+              </Td>
               <Td></Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
             </Tr>
             <Tr>
-              <Td fontSize={"14px"}>Time estimations</Td>
+              <Td fontSize={"12px"} fontWeight="500">
+                Time estimations
+              </Td>
               <Td></Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
             </Tr>
             <Tr>
-              <Td fontSize={"14px"}>Time budget</Td>
+              <Td fontSize={"12px"} fontWeight="500">
+                Time budget
+              </Td>
               <Td></Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
             </Tr>
             <Tr>
-              <Td fontSize={"14px"}>Billing rates</Td>
+              <Td fontSize={"12px"} fontWeight="500">
+                Billing rates
+              </Td>
               <Td></Td>
               <Td></Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
             </Tr>
             <Tr>
-              <Td fontSize={"14px"}>Invoices</Td>
+              <Td fontSize={"12px"} fontWeight={"500"}>
+                Invoices
+              </Td>
               <Td></Td>
               <Td></Td>
               <Td>✔️</Td>
@@ -629,32 +550,49 @@ const Pricing = () => {
               <Td fontWeight={"600"}>Integrations & Add-ons</Td>
             </Tr>
             <Tr>
-              <Td fontSize={"14px"}>Detailed projects & tasks</Td>
+              <Td fontSize={"12px"} fontWeight="500">
+                Detailed projects & tasks
+              </Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
             </Tr>
             <Tr>
-              <Td fontSize={"14px"}>Desktop App</Td>
+              <Td fontSize={"12px"} fontWeight="500">
+                Desktop App
+              </Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
             </Tr>
             <Tr>
-              <Td fontSize={"14px"}>Mobile App</Td>
+              <Td fontSize={"12px"} fontWeight="500">
+                Mobile App
+              </Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
             </Tr>
             <Tr>
-              <Td fontSize={"14px"}>Integrations</Td>
-              <Td fontSize={"14px"}> One integration</Td>
-              <Td fontSize={"14px"}>Unlimited integrations</Td>
-              <Td fontSize={"14px"}>Unlimited integrations</Td>
-              <Td fontSize={"14px"}>Unlimited integrations</Td>
+              <Td fontSize={"12px"} fontWeight="500">
+                Integrations
+              </Td>
+              <Td fontSize={"12px"} fontWeight="500">
+                {" "}
+                One integration
+              </Td>
+              <Td fontSize={"12px"} fontWeight="500">
+                Unlimited integrations
+              </Td>
+              <Td fontSize={"12px"} fontWeight="500">
+                Unlimited integrations
+              </Td>
+              <Td fontSize={"12px"} fontWeight="500">
+                Unlimited integrations
+              </Td>
             </Tr>
             <Tr>
               <Td fontSize={"14px"}>Calendar integration</Td>
@@ -667,35 +605,45 @@ const Pricing = () => {
               <Td fontWeight={"600"}>Security</Td>
             </Tr>
             <Tr>
-              <Td fontSize={"14px"}>GDPR compliance</Td>
+              <Td fontSize={"12px"} fontWeight="500">
+                GDPR compliance
+              </Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
             </Tr>
             <Tr>
-              <Td fontSize={"14px"}>Advanced permission system</Td>
+              <Td fontSize={"12px"} fontWeight="500">
+                Advanced permission system
+              </Td>
               <Td></Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
             </Tr>
             <Tr>
-              <Td fontSize={"14px"}>SSO</Td>
+              <Td fontSize={"12px"} fontWeight="500">
+                SSO
+              </Td>
               <Td></Td>
               <Td></Td>
               <Td>✔️</Td>
               <Td>✔️</Td>
             </Tr>
             <Tr>
-              <Td fontSize={"14px"}>On-premise</Td>
+              <Td fontSize={"12px"} fontWeight="500">
+                On-premise
+              </Td>
               <Td></Td>
               <Td></Td>
               <Td></Td>
               <Td>✔️</Td>
             </Tr>
             <Tr>
-              <Td fontSize={"14px"}>Private SaaS</Td>
+              <Td fontSize={"12px"} fontWeight="500">
+                Private SaaS
+              </Td>
               <Td></Td>
               <Td></Td>
               <Td></Td>
@@ -766,9 +714,9 @@ const Pricing = () => {
 
       {/* ******************************************************** */}
       <Text
-        fontSize="3xl"
-        fontWeight={"500"}
-        marginTop={"3%"}
+        fontSize="30px"
+        fontWeight={"600"}
+        marginTop={"7%"}
         marginBottom="10"
       >
         Frequently Asked Questions
@@ -785,7 +733,7 @@ const Pricing = () => {
                     flex="1"
                     marginTop={"6"}
                     marginLeft="4"
-                    fontSize={"20"}
+                    fontSize={"18"}
                     textAlign="start"
                     fontWeight={"500"}
                   >
@@ -815,7 +763,7 @@ const Pricing = () => {
                     flex="1"
                     marginTop={"6"}
                     marginLeft="4"
-                    fontSize={"20"}
+                    fontSize={"18"}
                     textAlign="start"
                     fontWeight={"500"}
                   >
@@ -846,7 +794,7 @@ const Pricing = () => {
                     flex="1"
                     marginTop={"6"}
                     marginLeft="4"
-                    fontSize={"20"}
+                    fontSize={"18"}
                     textAlign="start"
                     fontWeight={"500"}
                   >
@@ -875,7 +823,7 @@ const Pricing = () => {
                     flex="1"
                     marginTop={"6"}
                     marginLeft="4"
-                    fontSize={"20"}
+                    fontSize={"18"}
                     textAlign="start"
                     fontWeight={"500"}
                   >
@@ -904,7 +852,7 @@ const Pricing = () => {
                     flex="1"
                     marginTop={"6"}
                     marginLeft="4"
-                    fontSize={"20"}
+                    fontSize={"18"}
                     textAlign="start"
                     fontWeight={"500"}
                   >
@@ -920,6 +868,7 @@ const Pricing = () => {
           )}
         </AccordionItem>
       </Accordion>
+      <Footer />
     </div>
   );
 }
