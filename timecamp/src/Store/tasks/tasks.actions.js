@@ -9,7 +9,7 @@ import {
 
 
 
-const token = JSON.parse(localStorage.getItem("token")) || "";
+const token =(localStorage.getItem("token")) || "";
 export const getTasks = () =>  async (dispatch) => {
     dispatch({type:TASKS_FETCH_LOADING});
     try{

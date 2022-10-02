@@ -17,6 +17,7 @@ import Users from "../Pages/User_Dashboard/Users";
 import GoogleCalender from "../Pages/Integrations/GoogleCalender/GoogleCalender";
 import AllIntegrations from "../Pages/Integrations/AllIntegrations/AllIntegrations";
 import TrelloTimeTracking from "../Pages/Integrations/TrelloTimeTracking/TrelloTimeTracking";
+import Tags from "../Pages/User_Dashboard/Tags";
 const AllRoutes = () => {
   return (
     <div>
@@ -31,12 +32,13 @@ const AllRoutes = () => {
         <Route path="/timesheet" element={<Timesheet />} />
         <Route path="/auth/login" element={<Login/>} />
         <Route path="/auth/signup" element={<Signup/>} />
-        <Route path="/dashboard/timesheet" element={<PrivateRouter> <TimeSheet/></PrivateRouter>} />
-        <Route path="/dashboard/projects" element={<PrivateRouter> <Projects/></PrivateRouter>} />
-        <Route path="/dashboard/users" element={<PrivateRouter> <Users/></PrivateRouter>} />
         <Route path="/trello" element={<TrelloTimeTracking/>} />
         <Route path="/googleCalender" element={<GoogleCalender />} />
         <Route path="/allIntegrations" element={<AllIntegrations />} />
+        <Route path="/dashboard/timesheet" element={<PrivateRouter> <TimeSheet/></PrivateRouter>} />
+        <Route path="/dashboard/projects" element={<PrivateRouter> <Projects/></PrivateRouter>} />
+        <Route path="/dashboard/users" element={<PrivateRouter> <Users/></PrivateRouter>} />
+        <Route path="/dashboard/tags" element={<PrivateRouter><Tags /></PrivateRouter>} />
       </Routes>
     </div>
   );

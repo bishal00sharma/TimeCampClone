@@ -132,7 +132,7 @@ const Navbar = () => {
             </Link>
           </Menu>
 
-          <Menu>
+          
             
 
           <Menu isOpen={menu2isOpen}>
