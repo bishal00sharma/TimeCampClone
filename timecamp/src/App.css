@@ -47,14 +47,14 @@
   border-top: 1px solid rgba(128, 128, 128, 0.49);
   padding: 20px 10px;
 }
-#sidebar>div>div{
+#sidebar>div a>div{
   padding: 10px;
   gap: 10px;
   align-items: center;
   border-left: 4px solid transparent;
 }
 
-#sidebar>div>div:hover{
+#sidebar>div a>div:hover{
   background-color: rgba(128, 128, 128, 0.064);
   border-left: 4px solid green;
   cursor: pointer;

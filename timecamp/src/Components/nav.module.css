@@ -47,12 +47,13 @@
       margin: auto;
       font-weight: 500;
       cursor: pointer;
-      font-size: 16px;
+      font-size: 12px;
       margin-bottom: 35px;
-      line-height: 45px;
+      line-height: 35px;
       margin-top: 5%;
 
 }
+
 .tfooter{
     margin-bottom: 40px;
     line-height: 30px;

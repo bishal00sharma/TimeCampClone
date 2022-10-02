@@ -4,16 +4,14 @@ import { Box, SimpleGrid,Container,
   Flex,
   Heading,
   Text,
-  Button,
   Image,
-  IconButton,
-  Input,
-  HStack,
-  Center } from '@chakra-ui/react'
+   } from '@chakra-ui/react'
 import axios from 'axios'
 import BlogCard from './BlogCard'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import Footer from '../../Components/Footer'
+import Navbar from '../../Components/Navbar'
 
 
 const Blog = () => {
@@ -27,6 +25,7 @@ const Blog = () => {
     },[])
   return (
     <>
+    <Navbar/>
     <Container maxW={"7xl"} my={10} w={["100%","95%","85%"]}>
           <Stack
             align={"center"}
@@ -192,6 +191,7 @@ const Blog = () => {
           ))}
         </SimpleGrid>
     </Box>
+    <Footer/>
     </>
   )
 }

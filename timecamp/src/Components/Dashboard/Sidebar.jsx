@@ -1,5 +1,4 @@
-import { Box, Button, Flex, Grid, Img, MenuButton, MenuItem, MenuList, Text } from "@chakra-ui/react";
-import { Menu,} from '@chakra-ui/react'
+import { Box,  Flex, Grid, Img, Text } from "@chakra-ui/react";
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
 import LogoBar from "../../Components/Login/Logo-bar"
 import { Link } from "react-router-dom";
@@ -12,50 +11,65 @@ export default function Sidebar() {
             <Grid id="sidebar">
                 <Grid h="fit-content"  >
                     <Text>TRACK</Text>
+                    <Link to="/dashboard/timesheet">
                     <Flex>
                         <Img src={require("../../Resources/icons/dashboard/timesheet.png")} alt="TimeSheet" />
                         <Text>TimeSheet</Text>
                     </Flex>
-                    
+                    </Link>
                 </Grid>
                 <Grid>
                     <Text>ANALYZE</Text>
-                    <Flex>
-                        <Img src={require("../../Resources/icons/dashboard/dashboard.png")} alt="TimeSheet" />
-                        <Text>Dashboard</Text>
-                    </Flex>
+                    <Link to="">
+                      <Flex>
+                          <Img src={require("../../Resources/icons/dashboard/dashboard.png")} alt="TimeSheet" />
+                          <Text>Dashboard</Text>
+                      </Flex>
+                    </Link>
+                      <Link to="/dashboard/reports/menu">
                         <Flex className="menu">
                             <Img src={require("../../Resources/icons/dashboard/reports.png")} alt="TimeSheet" />
                             <Text>Reports </Text>
                             <ChevronRightIcon w={4} h={4} />
                         </Flex>
+                      </Link>
+                      <Link to="">
                     <Flex className="menu">
                         <Img src={require("../../Resources/icons/dashboard/computer-time.png")} alt="TimeSheet" />
                         <Text>Computer Time</Text>
                         <ChevronRightIcon w={4} h={4} />
                     </Flex>
+                    </Link>
                 </Grid>
                 <Grid>
                     <Text>MANAGE</Text>
-                    <Flex>
-                        <Img src={require("../../Resources/icons/dashboard/projects.png")} alt="TimeSheet" />
-                        <Text>Projects</Text>
-                    </Flex>
+                    <Link to="/dashboard/projects">
+                      <Flex>
+                          <Img src={require("../../Resources/icons/dashboard/projects.png")} alt="projectw" />
+                          <Text>Projects</Text>
+                      </Flex>
+                    </Link>
+                    <Link to="/dashboard/tags">
                     <Flex>
                         <Img src={require("../../Resources/icons/dashboard/tags.png")} alt="TimeSheet" />
                        <Link to="/dashboard/tags">  <Text>Tags</Text> </Link>
                     </Flex>
+                    </Link>
                 </Grid>
                 <Grid>
                     <Text>TEAM</Text>
+                    <Link to="/dashboard/users">
                     <Flex>
                         <Img src={require("../../Resources/icons/dashboard/users.png")} alt="TimeSheet" />
                         <Link to="/dashboard/users">  <Text>Users</Text> </Link>
                     </Flex>
+                    </Link>
+                    <Link to="/dashboard/attendance">
                     <Flex>
                         <Img src={require("../../Resources/icons/dashboard/attendance.png")} alt="TimeSheet" />
                         <Link to="/dashboard/attendance">  <Text>Attendance</Text> </Link>
                     </Flex>
+                    </Link>
                 </Grid>
             </Grid>
         </Grid>

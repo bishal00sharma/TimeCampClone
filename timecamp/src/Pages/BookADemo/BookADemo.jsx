@@ -1,11 +1,14 @@
 import React from 'react'
 import { AspectRatio, Box, Button, Container,Flex,Heading,Image,SimpleGrid,Stack, Text } from '@chakra-ui/react';
 import Calendar from 'react-calendar'
+import Navbar from '../../Components/Navbar';
+import Footer from '../../Components/Footer';
 
 
 const BookADemo = () => {
   return (
     <>
+        <Navbar />
         <Container
             py={"64px"}
             px={"12%"}
@@ -22,6 +25,7 @@ const BookADemo = () => {
             >
                 <Stack
                     direction={["column", "column", "row"]}
+                    spacing={[12,10,8]}
                     // justifyContent={["center","left","left"]}
                     // alignItems={["center","left","left"]}
                     // border={"1px"}
@@ -156,18 +160,19 @@ const BookADemo = () => {
                         w={["100%","100%","40%"]}
                         // border={"1px"}
                         // borderColor="magenta"
-                        maxH={"600px"}
+                        // maxH={"100%"}
                         boxShadow="2xl"
                         borderRadius={"30px"}
                     > */}
-                        {/* <Calendar /> */}
-                    <iframe 
-                        src='https://calendly.com/timecamp-sales-team/timecamp-consultation?embed_domain=www.timecamp.com&embed_type=Inline&hide_event_type_details=1&hide_gdpr_banner=1' 
-                        width={"80%"} 
-                        h={"100%"}
-                        maxH={"600px"} 
-                    >
-                    </iframe>
+                        <iframe 
+                            src='https://calendly.com/timecamp-sales-team/timecamp-consultation?embed_domain=www.timecamp.com&embed_type=Inline&hide_event_type_details=1&hide_gdpr_banner=1' 
+                            width={"100%"} 
+                            h={"100%"}
+                            // maxH={"600px"} 
+                            border={"1px"}
+                            borderColor={"black"}
+                        >
+                        </iframe>
                     {/* </Box> */}
                 </Stack>
             </Container>
@@ -184,10 +189,11 @@ const BookADemo = () => {
           <SimpleGrid
             px={[10, 20, 40]}
             justifyContent={"center"}
-            columns={[2, 3, 3, 6]}
+            alignItems={"center"}
+            columns={[1, 3, 6]}
             spacing={6}
           >
-            <Image src="https://cdn-m.timecamp.com/img/greenbranding/social-proof-section/usp-logo-white.png" />
+            <Image display={"flex"} alignItems={"center"} justifyContent={"center"} src="https://cdn-m.timecamp.com/img/greenbranding/social-proof-section/usp-logo-white.png" />
             <Image src="https://cdn-m.timecamp.com/img/greenbranding/social-proof-section/dsv-logo-white.png" />
             <Image src="https://cdn-m.timecamp.com/img/greenbranding/social-proof-section/raindrop-logo-white.png" />
             <Image src="https://cdn-m.timecamp.com/img/greenbranding/social-proof-section/saatchi-logo-white.png" />
@@ -227,7 +233,10 @@ const BookADemo = () => {
                         lineHeight={1.5}
                         mb={"16px"}
                     >
-                        Great asset to managing our marketing agency. We love the ease it takes to input times. We never have to worry about time record keeping because TimeCamp does it so accurately. It makes creating our invoices at the end of each month so much easier.
+                        Great asset to managing our marketing agency. 
+                        We love the ease it takes to input times. 
+                        We never have to worry about time record keeping because TimeCamp does it so accurately. 
+                        It makes creating our invoices at the end of each month so much easier.
                     </Text>
                     <Text
                         textAlign={"left"}
@@ -266,7 +275,10 @@ const BookADemo = () => {
                         lineHeight={1.5}
                         mb={"16px"}
                     >
-                        Our business problem was simple - at any given time we have 20 or so contractors working on a handful of different projects and we needed to be scientific about knowing how many of whose hours were being spent on which project. TimeCamp solved this problem well and simply.</Text>
+                        Our business problem was simple - at any given time we have 20 or so 
+                        contractors working on a handful of different projects and we 
+                        needed to be scientific about knowing how many of whose hours were being spent on which project.
+                        TimeCamp solved this problem well and simply.</Text>
                     <Text
                         textAlign={"left"}
                         fontSize={"16px"}
@@ -305,7 +317,11 @@ const BookADemo = () => {
                         lineHeight={1.5}
                         mb={"16px"}
                     >
-                        We've tried a lot of tools and the integration, flexibility and fast array of features that come with TimeCamp have really made this tool stand out and pay for itself. It connects to a number of tools we use like our in house project management tools, our client's project management tools and our accounting software.
+                        We've tried a lot of tools and the integration, 
+                        flexibility and fast array of features that come with TimeCamp have 
+                        really made this tool stand out and pay for itself. It connects to a number of 
+                        tools we use like our in house project management tools, our client's project 
+                        management tools and our accounting software.
                     </Text>
                     <Text
                         textAlign={"left"}
@@ -345,7 +361,9 @@ const BookADemo = () => {
                         lineHeight={1.5}
                         mb={"16px"}
                     >
-                        The primary reason I chose TimeCamp was the direct timekeeping-to-invoicing function, which has been a tremendous timesaver. I love the way it shows me what I'm spending my time on even when I'm not logging billable hours.
+                        The primary reason I chose TimeCamp was the direct timekeeping-to-invoicing function, 
+                        which has been a tremendous timesaver. I love the way it shows me what 
+                        I'm spending my time on even when I'm not logging billable hours.
                     </Text>
                     <Text
                         textAlign={"left"}
@@ -374,7 +392,7 @@ const BookADemo = () => {
         <Container
             mb={"80px"}
             mt={"140px"}
-            maxW={"76%"}
+            maxW={["100%","100%","76%"]}
             // border={"1px"}
             // borderColor={"black"}
         >
@@ -394,8 +412,9 @@ const BookADemo = () => {
                 <Heading
                     mb={"8px"}
                     py={"32px"}
-                    px={["56px","112px","224px"]}
+                    px={["8%","10%","12%"]}
                     fontWeight={600}
+                    textAlign={"center"}
                 >
                     Want a quick overview of TimeCamp?
                     Just watch our product walkthrough
@@ -505,6 +524,7 @@ const BookADemo = () => {
                 </Flex>
             </SimpleGrid>
         </Container>
+        <Footer />
     </>
   )
 }

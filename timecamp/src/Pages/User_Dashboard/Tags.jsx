@@ -20,16 +20,15 @@ import Sidebar from '../../Components/Dashboard/Sidebar';
     setShow(!show)
   }
   async function getData(){
-    let userToken=(localStorage.getItem("userToken")) || "";
-    let [id]=userToken.split(":");
-    let dataa= await fetch(`http://localhost:8080/users/tags/${id}`,{headers:{ "token": userToken}});
-    let res= await dataa.json();
-    setData(res.tags)
+    let token=JSON.parse(localStorage.getItem("userToken")) || "";
+    let id=token.split(":")[0];
+
+    let response = await axios.get(`http://localhost:8080/users/tags/${id}`,{headers : {"token": token}});
+    setData(response.data.tags)
     setTimeout(()=>{
       setLoading(true)
     },1000)
     
-
   }
   console.log(data)
   function addList(value){

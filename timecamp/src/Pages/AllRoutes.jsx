@@ -10,7 +10,7 @@ import Reporting from "../Pages/Features/Reporting";
 import Timesheet from "../Pages/Features/Timesheet";
 import Timeoff from "../Pages/Features/Timeoff";
 import Billing from "../Pages/Features/Billing"
-import Blog from "./Blog/Blog";
+import Blog from "../Pages/Blog/Blog";
 import BlogPage from "./Blog/BlogPage";
 import Login from "./Login";
 import Signup from "./Signup";
@@ -22,7 +22,7 @@ const AllRoutes = () => {
         <Route path="/auth/signup" element={ <Signup />} />
         <Route path="/auth/login" element={ <Login />} />
         <Route path="/Pricing" element={<Pricing />} />
-        <Route path="/features" element={<Feature />} />
+        <Route path="/features" element={<Feature/>} />
         <Route path="/automatic" element={<Automatic />} />
         <Route path="/invoicing" element={<Invoicing />} />
         <Route path="/productivity" element={<Productivity />} />

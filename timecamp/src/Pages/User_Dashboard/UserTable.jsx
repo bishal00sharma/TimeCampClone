@@ -12,6 +12,7 @@ import {
     
   } from '@chakra-ui/react'
 import UserAdd from './UserAdd';
+import axios from 'axios';
 
 const UserTable = () => {
 
@@ -25,10 +26,8 @@ const UserTable = () => {
     let token=JSON.parse(localStorage.getItem("userToken"));
     const [id,user]=token.split(":");
     setUser(user)
-    let dataa= await fetch(`http://localhost:8080/users/${id}/clients`);
-    let res= await dataa.json();
-    setData(res.clients)
-
+    let res = await axios.get(`http://localhost:8080/users/${id}/clients`);
+    setData(res.data.clients)
   }
 
 function changeGet(){
