@@ -15,6 +15,8 @@ import {
   } from "@chakra-ui/react";
   import React, { useState } from "react";
   import { AiOutlineGoogle,AiOutlineArrowRight } from "react-icons/ai";
+import Footer from "../../Components/Footer";
+import Navbar from "../../Components/Navbar";
   
   
   export default function Feature() {
@@ -38,6 +40,7 @@ import {
     };
     return (
       <>
+      <Navbar/>
         <Container maxW={"7xl"} my={10} textAlign="left">
           <Stack
             align={"center"}
@@ -1295,6 +1298,7 @@ import {
             mt={-2}
           />
         </Container>
+        <Footer/>
       </>
     );
   }
