@@ -10,11 +10,11 @@ import {
 } from "./tasks.type";
 
 
-const token = JSON.parse(localStorage.getItem("userToken")) || "6333f7c01cc7acad26c89dcb:example@gmail.com:123";
-export const getTasks = () =>  async (dispatch) => {
+const token =  JSON.parse(localStorage.getItem("userToken")) || "6333f7c01cc7acad26c89dcb:example@gmail.com:123";
+export const getTasks = (auth) =>  async (dispatch) => {
     dispatch({type:TASKS_FETCH_LOADING});
     try{
-        let response = await axios.get("http://localhost:8080/tasks",{headers:{ "token": token}});
+        let response = await axios.get("http://localhost:8080/tasks",{headers:{ "token": auth || token }});
         dispatch({type:TASKS_FETCH_SUCCESS, payload: response.data})
         return response.data;
     } catch (e) {
