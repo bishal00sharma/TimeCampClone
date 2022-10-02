@@ -28,7 +28,7 @@ export default function TimeSheet() {
                         </Flex>
                         <Flex alignItems="center" gap="10px">
                             <Text>Day Type : </Text>
-                            <Box border="1px solid rgba(128,128,128, 0.290)" borderRadius="10px" p="10px">{day==0 || day==6 ? "Non-working day" : "Working day"}</Box>
+                            <Box border="1px solid rgba(128,128,128, 0.290)" borderRadius="10px" p="10px">{day===0 || day===6 ? "Non-working day" : "Working day"}</Box>
                         </Flex>
                         <AllTasks />
                     </Grid>

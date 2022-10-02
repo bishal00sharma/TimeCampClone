@@ -11,7 +11,7 @@ import {
 } from "./auth.type";
 
 export const logout = () => async (dispatch) => {
-    localStorage.removeItem("token");
+    localStorage.removeItem("userToken");
     dispatch({type: AUTH_LOGOUT});
 }
 
@@ -21,7 +21,7 @@ export const login = (creds) =>  async (dispatch) => {
         let response = await axios.post("http://localhost:8080/users/login", {email: creds.email, password: creds.password});
         dispatch({type:AUTH_LOGIN_SUCCESS, payload: response.data.token})
         if(response.data.token){
-            localStorage.setItem("token",JSON.stringify(response.data.token));
+            localStorage.setItem("userToken",JSON.stringify(response.data.token));
         }
         return response.data;
     } catch (e) {
@@ -35,7 +35,7 @@ export const signup = (creds) => async (dispatch) => {
         let response = await axios.post("http://localhost:8080/users/signup", {email: creds.email, password: creds.password});
         dispatch({type:AUTH_SIGNUP_SUCCESS, payload: response.data.token});
         if(response.data.token){
-            localStorage.setItem("token",JSON.stringify(response.data.token));
+            localStorage.setItem("userToken",JSON.stringify(response.data.token));
         }
         return response.data;
     } catch (e) {

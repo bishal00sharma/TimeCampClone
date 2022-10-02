@@ -26,9 +26,9 @@ export default function Login () {
                             <Text>or</Text>
                             <LoginForm />
                             <Grid gap="10px" templateColumns={{base:"1fr", sm:"1fr", md:"1fr 0.2fr 1f", lg:"1fr 0.2fr 1fr"}} justifyContent="center" >
-                                <Link to="/auth/signup">No Account? Sign Up</Link>
+                                <Link to="/auth/signup" className="routes">No Account? Sign Up</Link>
                                 <Text border="1px solid rgba(128, 128, 128, 0.226)">or</Text>
-                                <Link>Login with SSO </Link>
+                                <Link className="routes">Login with SSO </Link>
                             </Grid>
                         </form>
                     </Box>
