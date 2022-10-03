@@ -14,7 +14,6 @@ import axios from 'axios';
 
 const UserTable = () => {
 
-  const [show, setShow] =useState(false);
   const [data, setData]=useState([]);
   const [user, setUser]=useState("");
   const [get, setGet]=useState(false)
