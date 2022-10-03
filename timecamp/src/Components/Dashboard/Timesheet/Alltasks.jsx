@@ -10,9 +10,6 @@ export default function AllTasks() {
     const token = useSelector((store)=> store.auth.token) || localToken ;
     const dispatch = useDispatch();
 
-
-    
-
     useEffect(()=>{
         dispatch(getTasks(token));
     },[dispatch])

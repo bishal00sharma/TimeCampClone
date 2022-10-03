@@ -123,7 +123,7 @@ const HomePage = () => {
           <p
             style={{
               marginTop: "8%",
-              color: "#1b1b20;",
+              color: "#1b1b20",
               fontWeight: "bold",
               fontSize: "14px",
             }}
@@ -233,7 +233,7 @@ const HomePage = () => {
         </div>
       </div>
       <Heading
-        font-family="'Roboto', sans-serif;"
+        fontFamily="'Roboto', sans-serif;"
         marginLeft="24%"
         marginTop="3%"
         marginRight="24%"
@@ -770,9 +770,9 @@ const HomePage = () => {
         marginLeft={"50px"}
         overflowWrap="anywhere"
       >
-        {timeApi.map((el) => {
+        {timeApi.map((el,index) => {
           return (
-            <>
+            <div key={index}>
               <Box
                 backgroundColor={"white"}
                 width="auto"
@@ -801,7 +801,7 @@ const HomePage = () => {
                   {el.name}
                 </Text>
               </Box>
-            </>
+            </div>
           );
         })}
       </SimpleGrid>
@@ -812,13 +812,13 @@ const HomePage = () => {
         marginLeft="7%"
         spacing="40px"
       >
-        {reviewsImgapi.map((el) => {
+        {reviewsImgapi.map((el,index) => {
           return (
-            <>
+            <div key={index}>
               <Box height="80px">
                 <Image width="55%" src={el.img} alt="Dan Abramov" />
               </Box>
-            </>
+            </div>
           );
         })}
       </SimpleGrid>
@@ -850,7 +850,7 @@ const HomePage = () => {
           >
             <img
               height="16px"
-              marginRight="8px"
+              margin-right="8px"
               src="https://cdn-m.timecamp.com/img/greenbranding/features/chrome-white.png"
               alt=""
             />
@@ -861,7 +861,7 @@ const HomePage = () => {
             tracking software, with your currently used apps.
           </p>
           <h4>
-            Check integrations<i class="fa-solid fa-arrow-right"></i>
+            Check integrations<i className="fa-solid fa-arrow-right"></i>
           </h4>
         </div>
         {/* <div className={style.integration_subpart2}> */}
@@ -871,9 +871,9 @@ const HomePage = () => {
           spacing="40px"
           marginLeft={"50px"}
         >
-          {trackingApi.map((el) => {
+          {trackingApi.map((el,index) => {
             return (
-              <>
+              <div key={index}>
                 <Box
                   height="120px"
                   backgroundColor={"white"}
@@ -888,7 +888,7 @@ const HomePage = () => {
                     src={el.img}
                   />
                 </Box>
-              </>
+              </div>
             );
           })}
         </SimpleGrid>
@@ -1114,7 +1114,7 @@ const HomePage = () => {
                 fontSize={"40px"}
                 fontWeight="550"
                 textAlign="start"
-                font-family="nunito sans,sans-serif;"
+                fontFamily="nunito sans,sans-serif;"
               >
                 Check the latest blog updates
               </Text>
@@ -1128,7 +1128,7 @@ const HomePage = () => {
                 marginLeft={"2"}
                 marginTop={"2"}
                 fontWeight="500"
-                _hover="#25CF60;"
+                _hover="#25CF60"
                 color="white"
                 borderRadius="22px"
               >
@@ -1143,9 +1143,9 @@ const HomePage = () => {
             spacing="30px"
             overflowWrap="anywhere"
           >
-            {blogApi.map((el) => {
+            {blogApi.map((el,index) => {
               return (
-                <>
+                <div key={index}>
                   <Box
                     width="auto"
                     height="auto"
@@ -1176,7 +1176,7 @@ const HomePage = () => {
                       marginTop={"0%"}
                       textAlign={"start"}
                       fontWeight="500"
-                      font-family="nunito sans,sans-serif"
+                      fontFamily="nunito sans,sans-serif"
                     >
                       {el.desc}
                     </Text>
@@ -1192,7 +1192,7 @@ const HomePage = () => {
                       {el.read}
                     </Text>
                   </Box>
-                </>
+                </div>
               );
             })}
           </SimpleGrid>
