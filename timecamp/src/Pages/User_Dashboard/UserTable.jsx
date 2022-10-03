@@ -1,9 +1,7 @@
 
-import { Button, Flex, Table, TableCaption, TableContainer, Thead } from '@chakra-ui/react';
+import {  Flex, Table, TableCaption, TableContainer, Thead } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import {FaRegUserCircle} from "react-icons/fa";
-import {MdDeleteForever} from "react-icons/md";
-import {MdTimer} from "react-icons/md";
 import {
    Tbody,
     Tr,Box,
@@ -25,7 +23,7 @@ const UserTable = () => {
     // localStorage.setItem("token","63344372e20682bebf2433eb:bishal@gmail.com:no");
     let token=JSON.parse(localStorage.getItem("userToken"));
     const id=token.split(":")[0];
-    let res = await axios.get(`https://timecamp-clone.herokuapp.com/users/${id}/clients`);
+    let res = await axios.get(`http://localhost:8080/users/${id}/clients`);
     setData(res.data.clients)
   }
 
@@ -37,7 +35,6 @@ useEffect(()=>{
   getData()
   
 },[get]);
-console.log(data);
 
   return (
     <Box marginTop="20px">
