@@ -23,7 +23,7 @@ import Sidebar from '../../Components/Dashboard/Sidebar';
     let token=JSON.parse(localStorage.getItem("userToken")) || "63344372e20682bebf2433eb:bishal@gmail.com:no";
     let id=token.split(":")[0];
 
-    let response = await axios.get(`http://localhost:8080/users/tags/${id}`,{headers : {"token": token}});
+    let response = await axios.get(`https://timecamp-clone.herokuapp.com/users/tags/${id}`,{headers : {"token": token}});
     setData(response.data.tags)
     setTimeout(()=>{
       setLoading(true)
@@ -34,7 +34,7 @@ import Sidebar from '../../Components/Dashboard/Sidebar';
    //localStorage.setItem("userToken","63344372e20682bebf2433eb:bishal@gmail.com:no");
     let userToken=JSON.parse(localStorage.getItem("userToken") ) || "63344372e20682bebf2433eb:bishal@gmail.com:no";
     let id=userToken.split(":")[0];
-    await axios.patch(`http://localhost:8080/users/tags/${id}`,{"tags":value},{headers:{ "token": userToken}})
+    await axios.patch(`https://timecamp-clone.herokuapp.com/users/tags/${id}`,{"tags":value},{headers:{ "token": userToken}})
     setGet(!get)
     setValue("")
   }

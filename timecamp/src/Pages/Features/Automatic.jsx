@@ -11,10 +11,9 @@ import {
     Input,
     HStack,
     SimpleGrid,
-    Center,
   } from "@chakra-ui/react";
 import React from 'react'
-import { AiOutlineGoogle,AiOutlineArrowRight } from "react-icons/ai";
+import { AiOutlineGoogle } from "react-icons/ai";
 import Footer from "../../Components/Footer";
 import Navbar from "../../Components/Navbar";
 

@@ -18,7 +18,7 @@ export const logout = () => async (dispatch) => {
 export const login = (creds) =>  async (dispatch) => {
     dispatch({type:AUTH_LOGIN_LOADING});
     try{
-        let response = await axios.post("http://localhost:8080/users/login", {email: creds.email, password: creds.password});
+        let response = await axios.post("https://timecamp-clone.herokuapp.com/users/login", {email: creds.email, password: creds.password});
         dispatch({type:AUTH_LOGIN_SUCCESS, payload: response.data.token})
         if(response.data.token){
             localStorage.setItem("userToken",JSON.stringify(response.data.token));
@@ -32,7 +32,7 @@ export const login = (creds) =>  async (dispatch) => {
 export const signup = (creds) => async (dispatch) => {
     dispatch({type:AUTH_SIGNUP_LOADING});
     try{
-        let response = await axios.post("http://localhost:8080/users/signup", {email: creds.email, password: creds.password});
+        let response = await axios.post("https://timecamp-clone.herokuapp.com/users/signup", {email: creds.email, password: creds.password});
         dispatch({type:AUTH_SIGNUP_SUCCESS, payload: response.data.token});
         if(response.data.token){
             localStorage.setItem("userToken",JSON.stringify(response.data.token));

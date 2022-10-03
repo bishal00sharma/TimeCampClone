@@ -9,7 +9,7 @@ export default function Usermenu({title}) {
     const navigate = useNavigate();
     const handleClick = () =>{
         dispatch(logout());
-        navigate("/");
+        navigate("/auth/login");
     }
     const token = JSON.parse(localStorage.getItem("userToken")) || "6333f7c01cc7acad26c89dcb:example@gmail.com:jnxsjxbn";
     const user = token.split(":")[1] ;

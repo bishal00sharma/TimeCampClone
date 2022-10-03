@@ -19,7 +19,7 @@ export default function Signup () {
                             </Flex>
                             <Text>or</Text>
                             <SignupForm />
-                            <Link to="/auth/signup" className="routes">Already have an account? Log In</Link>
+                            <Link to="/auth/login" className="routes">Already have an account? Log In</Link>
                             <Text fontSize="sm">By signing up you agree to our <Link className="routes" >Terms of Service</Link> and <Link className="routes">Privacy Policy</Link></Text>
                         </form>
                     </Box>

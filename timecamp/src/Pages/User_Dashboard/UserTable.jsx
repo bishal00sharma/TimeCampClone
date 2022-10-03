@@ -25,7 +25,7 @@ const UserTable = () => {
     const id=token.split(":")[0];
     const us = token.split(":")[1];
     setUser(us)
-    let res = await axios.get(`http://localhost:8080/users/${id}/clients`);
+    let res = await axios.get(`https://timecamp-clone.herokuapp.com/users/${id}/clients`);
     setData(res.data.clients)
   }
 
