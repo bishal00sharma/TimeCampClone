@@ -24,9 +24,8 @@ const UserTable = () => {
   async function getData(){
     // localStorage.setItem("token","63344372e20682bebf2433eb:bishal@gmail.com:no");
     let token=JSON.parse(localStorage.getItem("userToken"));
-    const [id,user]=token.split(":");
-    setUser(user)
-    let res = await axios.get(`http://localhost:8080/users/${id}/clients`);
+    const id=token.split(":")[0];
+    let res = await axios.get(`https://timecamp-clone.herokuapp.com/users/${id}/clients`);
     setData(res.data.clients)
   }
 

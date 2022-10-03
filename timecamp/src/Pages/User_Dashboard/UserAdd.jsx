@@ -32,8 +32,8 @@ export default function UserAdd({changeGet}) {
 function userAdd(value){
   //localStorage.setItem("token","63344372e20682bebf2433eb:bishal@gmail.com:no");
   let token=JSON.parse(localStorage.getItem("userToken"));
-  let [id]=token.split(":");
-  axios.patch(`http://localhost:8080/users/${id}/clients/`,{"clients":value},{headers:{ "token": token}})
+  let [id]=token.split(":")[0];
+  axios.patch(`https://timecamp-clone.herokuapp.com/users/${id}/clients`,{"clients":value},{headers:{ "token": token}})
   
   changeGet()
   setValue("")
