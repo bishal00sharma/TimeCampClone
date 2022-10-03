@@ -12,7 +12,7 @@ We cloned a website called <a href="https://www.timecamp.com/" target="_blank">T
   HTML5 , CSS3 , JavaScript , React , Redux , Mongo DB , Mongoose , Express JS , Postman 
 ## Contributors 
  * <a href="https://github.com/lokesh-dc">Lokesh D Choudhary</a>
- * <a href="/github.com/bishal00sharma">Bishal Sharma </a>
+ * <a href="https://github.com/bishal00sharma">Bishal Sharma </a>
  * <a href="https://github.com/MrRohitMI">Rohit Maurya</a>
  * <a href="https://github.com/DivyankaRai">Divyanka Rai </a>
  * <a href="https://github.com/AbhayAg10">Abhay Agrawal</a>
