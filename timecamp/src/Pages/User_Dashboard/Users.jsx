@@ -1,19 +1,21 @@
-import { Box, Text, Flex, Button, Input, Link } from '@chakra-ui/react';
+import { Box, Text, Flex, Button, Input, Link, Grid } from '@chakra-ui/react';
 import React from 'react'
 import {BiUserPlus} from "react-icons/bi";
 import {FiMail} from "react-icons/fi"
 import Navbar from '../../Components/Dashboard/Navbar';
 import Sidebar from '../../Components/Dashboard/Sidebar';
+import Usermenu from '../../Components/Dashboard/UserMenu';
 import UserTable from './UserTable';
 
 const Users = () => {
   return (
-    <Flex>
+    <Grid templateColumns={"15vw 85vw"}>
       <Box>
          <Sidebar />
       </Box>
       <Box>
         <Navbar />
+        <Usermenu title="Teams  " />
       <Box  ml="60px" mt="50px">
         <Flex borderRadius="10px" color="blue" bgColor="blue.100" padding="5px">
               < BiUserPlus style={{fontSize:"40px",marginLeft:"10px"}} />
@@ -37,7 +39,7 @@ const Users = () => {
 
     </Box>
       </Box>
-    </Flex>
+    </Grid>
    
 
   )

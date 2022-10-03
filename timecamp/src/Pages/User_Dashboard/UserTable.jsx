@@ -23,6 +23,8 @@ const UserTable = () => {
     // localStorage.setItem("token","63344372e20682bebf2433eb:bishal@gmail.com:no");
     let token=JSON.parse(localStorage.getItem("userToken"));
     const id=token.split(":")[0];
+    const us = token.split(":")[1];
+    setUser(us)
     let res = await axios.get(`http://localhost:8080/users/${id}/clients`);
     setData(res.data.clients)
   }

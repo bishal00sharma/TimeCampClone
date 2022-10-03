@@ -1,6 +1,6 @@
 import { Button, Flex, Input, Text } from "@chakra-ui/react";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getTasks, postTask } from "../../../Store/tasks/tasks.actions";
 
 const initState = {
@@ -15,17 +15,17 @@ export default function CreateTask () {
     const hrs  = today.getHours()
     const min = today.getMinutes();
     const [taskDetails, setTaskDeTails] =  useState(initState);
+    const token = useSelector((store)=>store.auth.token);
     const dispatch = useDispatch();
 
     const handleData = (e) => {
         const {name, value} = e.target;
         setTaskDeTails({...taskDetails, [name]: value});
     }
-
     const handleAdd = async (e) =>{
         e.preventDefault();
         await dispatch(postTask(taskDetails));
-        dispatch(getTasks());
+        dispatch(getTasks(token));
         setTaskDeTails(initState);
     }
     return (

@@ -8,7 +8,7 @@ export default function Sidebar() {
         <Grid boxShadow="rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" alignItems="flex-start" templateRows="7vh 93vh" pos="relative">
             <Box pos="absolute" right="-20px" top="10px" backgroundColor="white" p="10px" borderRadius="50%" border="1px solid rgba(100, 100, 111, 0.2)"> <ChevronLeftIcon w={6} h={6} /> </Box>
             <LogoBar />
-            <Grid id="sidebar">
+            <Grid id="sidebar" w="15vw">
                 <Grid h="fit-content"  >
                     <Text>TRACK</Text>
                     <Link to="/dashboard/timesheet">

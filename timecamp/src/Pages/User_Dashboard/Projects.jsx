@@ -7,7 +7,7 @@ import Usermenu from "../../Components/Dashboard/UserMenu";
 
 export default function Projects() {
     return (
-        <Grid templateColumns="12vw 88vw">
+        <Grid templateColumns="15vw 85vw">
             <Sidebar />
             <Grid >
                 <Navbar />

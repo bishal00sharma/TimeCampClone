@@ -1,5 +1,5 @@
 import React from 'react'
-import {Box,Text,Button,Input,Flex, Spinner} from "@chakra-ui/react"
+import {Box,Text,Button,Input,Flex, Spinner, Grid} from "@chakra-ui/react"
 import { useState } from 'react'
 import { useEffect } from 'react';
 import { BiPlus} from 'react-icons/bi';
@@ -27,7 +27,7 @@ import Sidebar from '../../Components/Dashboard/Sidebar';
     setData(response.data.tags)
     setTimeout(()=>{
       setLoading(true)
-    },500)
+    },100)
     
   }
   async function addList(value){
@@ -48,49 +48,54 @@ import Sidebar from '../../Components/Dashboard/Sidebar';
   },[get]);
 
   return (
-    <Flex><Box>
+    <Grid templateColumns="15vw 84vw" overflowY="hidden">
+      <Box>
        <Sidebar />
     </Box>
       <Box>
       <Navbar />
         <Usermenu title="Tags" />
-        <Box style={{width:"50%",marginLeft:"50px",marginTop:"50px"}}>
-            <Button style={{marginLeft:"550px",marginBottom:"20px"}} bgColor="green" color="white" onClick={change}>+Add Tag List</Button>
+        <Grid w="50%" mt="30px" ml="100px">
+            <Button style={{marginLeft:"550px",marginBottom:"20px"}} colorScheme="green" color="white" onClick={change}>+Add Tag List</Button>
             <Text>Manage your tags, like list of customers or activities. All workspace members can assign tags to time entries, when they track time. Project managers can set lists of tags for projects. Reports can be filtered and grouped by tags.</Text>
-         {show&&<Flex style={{marginBottom:"50px",marginTop:"50px"}}>
-            <Input type="text" placeholder='New List Name' onChange={handleChange} value={value}/>
-            <Flex style={{marginBottom:"50px"}}>
-              <Button onClick={()=>addList(value)} style={{margin:"0px 20px"}} bgColor="green.400" color="white">Add</Button>
-              <Button>Cancel</Button>
-            </Flex>
-            </Flex>}
+            {
+            show && 
+              <Flex style={{marginBottom:"50px",marginTop:"50px"}}>
+                <Input type="text" placeholder='New List Name' onChange={handleChange} value={value}/>
+                <Flex style={{marginBottom:"50px"}}>
+                  <Button onClick={()=>addList(value)} style={{margin:"0px 20px"}} bgColor="green.400" color="white">Add</Button>
+                  <Button onClick={()=>setShow(false)}>Cancel</Button>
+                </Flex>
+              </Flex>
+            }
             {!loading && <Spinner thickness='4px'speed='1.65s'emptyColor='gray.200'color='blue.500'size='xl'/>}
-            {loading&&
+            { loading && 
               data?.map((item)=>(
-                <Flex key={item} bgColor="gray.100" padding="10px" borderRadius="15px" justifyContent="space-evenly" marginTop="10px">
+                <Grid key={item} bgColor="gray.100" p="15px 30px" borderRadius="15px" justifyContent="space-between" marginTop="10px"  textAlign="left" templateColumns="2fr 0.5fr">
                   <Box> <Text fontSize="18px">{item}</Text></Box>
-                  <Box>
-                    <Button marginRight="10px" bgColor="gray.300">
+                  <Flex>
+                    <Button marginRight="10px" colorScheme="green">
                         <BiPlus />
                     </Button>
                     <Button bgColor="gray.300"> 
-                      <BsArchive />
+                      {/* <BsArchive /> */}
+                      Archieve
                     </Button>
-                  </Box>
+                  </Flex>
                   
-                </Flex>
+                </Grid>
                
               ))
             }
             <hr style={{marginTop:"50px",marginBottom:"10px"}}/>
           <Box style={{marginBottom:"50px",display:"flex"}}>
-          <Button marginRight="10px" bgColor="lightgreen" color="white">Save Settings</Button>
+          <Button marginRight="10px" colorScheme="green" color="white">Save Settings</Button>
           <Button>Back to addons list</Button>
         </Box>
-        </Box>
+        </Grid>
         <hr style={{marginTop:"50px"}}/>
         </Box>
-    </Flex>
+    </Grid>
   )
 }
 export default Tags;

@@ -54,7 +54,7 @@ async function userAdd(value){
               <Text color="blue.600">Each person's email address:</Text>
               <hr />
               <Text mt="20px" mb="20px" color="teal.600">Each person will receive an email with their login information and a link to your account</Text>
-              <Input value={value} onChange={handleChange} bgColor="gray.200" type="text" placeholder="Enter new project here"/>
+              <Input value={value} onChange={handleChange} bgColor="gray.200" type="text" placeholder="Enter User Id  to invite"/>
                <Text fontSize="14px" mt="20px" mb="20px">Project assignment:</Text>
               <Button bgColor="red.200" color="white">Cancel</Button>
               <Box mt="20px">
