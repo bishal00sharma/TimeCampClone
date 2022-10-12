@@ -198,6 +198,7 @@ const Navbar = () => {
                   Google Calendar
                 </MenuItem>
                 </Link>
+                <Link to="/ical">
                 <MenuItem _hover={{ bgColor: "#25CF60" }}>
                   <img
                     style={{ marginRight: "10px" }}
@@ -206,6 +207,8 @@ const Navbar = () => {
                   />
                   iCal
                 </MenuItem>
+                </Link>
+                <Link to="/asana">
                 <MenuItem _hover={{ bgColor: "#25CF60" }}>
                   <img
                     style={{ marginRight: "10px" }}
@@ -214,6 +217,8 @@ const Navbar = () => {
                   />
                   Asana
                 </MenuItem>
+                </Link>
+                <Link to="/monday">
                 <MenuItem _hover={{ bgColor: "#25CF60" }}>
                   <img
                     style={{ marginRight: "10px" }}
@@ -222,6 +227,8 @@ const Navbar = () => {
                   />
                   Monday.com
                 </MenuItem>
+                </Link>
+                <Link to="/jira">
                 <MenuItem _hover={{ bgColor: "#25CF60" }}>
                   <img
                     style={{ marginRight: "10px" }}
@@ -230,6 +237,7 @@ const Navbar = () => {
                   />
                   Jira
                 </MenuItem>
+                </Link>
                 <Link to="/allIntegrations">
                 <MenuItem _hover={{ bgColor: "#25CF60" }}>
                   <img
