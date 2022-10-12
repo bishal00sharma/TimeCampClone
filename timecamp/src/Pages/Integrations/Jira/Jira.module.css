@@ -1,0 +1,14 @@
+.image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ .image>img{
+     margin-top: 80px;
+     margin-bottom: 80px;
+     max-width: 70%;
+     transition: transform .2s;
+ }
+ .image>img:hover{
+     transform: scale(1.4);
+ }
