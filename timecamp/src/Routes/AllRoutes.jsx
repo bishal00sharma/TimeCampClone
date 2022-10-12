@@ -28,6 +28,10 @@ import Detailed from "../Pages/User_Dashboard/Detailed";
 import Attendance from "../Pages/User_Dashboard/Attendance";
 import AccountSettings from "../Pages/User_Dashboard/AccountSettings";
 import BookADemo from "../Pages/BookADemo/BookADemo";
+import Asana from "../Pages/Integrations/Asana/Asana";
+import ICal from "../Pages/Integrations/ICal/ICal";
+import Jira from "../Pages/Integrations/Jira/Jira";
+import Monday from "../Pages/Integrations/Monday/Monday";
 const AllRoutes = () => {
   return (
     <div>
@@ -55,6 +59,10 @@ const AllRoutes = () => {
         <Route path="/dashboard/reports/menu" element={<PrivateRouter> <ReportsMenu/></PrivateRouter>} />
         <Route path="/trello" element={<TrelloTimeTracking/>} />
         <Route path="/googleCalender" element={<GoogleCalender />} />
+        <Route path="/asana" element={<Asana />} />
+        <Route path="/ical" element={<ICal />} />
+        <Route path="/jira" element={<Jira />} />
+        <Route path="/monday" element={<Monday />} />
         <Route path="/allIntegrations" element={<AllIntegrations />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogPage/>}/>
