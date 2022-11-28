@@ -1,4 +1,5 @@
 import axios from "axios";
+import baselink from "../baselink";
 
 import {    
     ADD_TASK,
@@ -15,7 +16,7 @@ const token =  JSON.parse(localStorage.getItem("userToken")) || "6333f7c01cc7aca
 export const getTasks = (auth) =>  async (dispatch) => {
     dispatch({type:TASKS_FETCH_LOADING});
     try{
-        let response = await axios.get("https://timecamp-clone.herokuapp.com/tasks",{headers:{ "token": auth || token }});
+        let response = await axios.get(`${baselink}/tasks`,{headers:{ "token": auth || token }});
         dispatch({type:TASKS_FETCH_SUCCESS, payload: response.data})
         return response.data;
     } catch (e) {
@@ -26,7 +27,7 @@ export const getTasks = (auth) =>  async (dispatch) => {
 export const postTask = (taskDetails) =>  async (dispatch) => {
     dispatch({type:TASKS_FETCH_LOADING});
     try{
-        let response = await axios.post("https://timecamp-clone.herokuapp.com/tasks", taskDetails,{headers:{ "token": token}});
+        let response = await axios.post(`${baselink}/tasks`, taskDetails,{headers:{ "token": token}});
         dispatch({type:ADD_TASK})
         return response.data;
     } catch (e) {
@@ -37,7 +38,7 @@ export const postTask = (taskDetails) =>  async (dispatch) => {
 export const deleteTask = (id) =>  async (dispatch) => {
     dispatch({type:TASKS_FETCH_LOADING});
     try{
-        let response = await axios.delete(`https://timecamp-clone.herokuapp.com/tasks/${id}`,{headers:{ "token": token}});
+        let response = await axios.delete(`${baselink}/tasks/${id}`,{headers:{ "token": token}});
         dispatch({type:TASKS_DELETE})
         return response.data;
     } catch (e) {
@@ -49,7 +50,7 @@ export const deleteTask = (id) =>  async (dispatch) => {
 export const updateTask = ({id,status}) =>  async (dispatch) => {
     dispatch({type:TASKS_FETCH_LOADING});
     try{
-        let response = await axios.patch(`https://timecamp-clone.herokuapp.com/tasks/${id}`,{isBillingStatus: status},{headers:{ "token": token}});
+        let response = await axios.patch(`${baselink}/tasks/${id}`,{isBillingStatus: status},{headers:{ "token": token}});
         dispatch({type:TASKS_UPDATE})
         return response.data;
     } catch (e) {

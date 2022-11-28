@@ -11,6 +11,7 @@ import {
   } from '@chakra-ui/react'
 import UserAdd from './UserAdd';
 import axios from 'axios';
+import baselink from '../../Store/baselink';
 
 const UserTable = () => {
 
@@ -24,7 +25,7 @@ const UserTable = () => {
     const id=token.split(":")[0];
     const us = token.split(":")[1];
     setUser(us)
-    let res = await axios.get(`https://timecamp-clone.herokuapp.com/users/${id}/clients`);
+    let res = await axios.get(`${baselink}/users/${id}/clients`);
     setData(res.data.clients)
   }
 

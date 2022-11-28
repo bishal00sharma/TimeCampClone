@@ -1,4 +1,5 @@
 import axios from "axios";
+import baselink from "../baselink";
 
 import {    
     PROJECT_FETCH_ERROR,
@@ -14,7 +15,7 @@ export const fetchProject = () => async(dispatch) => {
     if(token!==""){
         dispatch({type:PROJECT_FETCH_LOADING});
         try{
-            let response = await axios.get("https://timecamp-clone.herokuapp.com/projects",{headers:{ "token": token}});
+            let response = await axios.get(`${baselink}/projects`,{headers:{ "token": token}});
             dispatch({type:PROJECT_FETCH_SUCCESS, payload: response.data})
             return response.data;
         } catch (e) {
@@ -27,7 +28,7 @@ export const fetchProject = () => async(dispatch) => {
 export const deleteProject = (id) => async (dispatch) => {
     if(token!==""){
         try{
-            let response = await axios.delete(`https://timecamp-clone.herokuapp.com/projects/${id}`,{headers:{ "token": token}});
+            let response = await axios.delete(`${baselink}/projects/${id}`,{headers:{ "token": token}});
             dispatch({type:DELETE_PROJECT})
             return response.data;
         } catch (e) {
@@ -40,7 +41,7 @@ export const deleteProject = (id) => async (dispatch) => {
 export const addProject = (data) => async (dispatch) => {
     if(token!=="") {
         try{
-            let response = await axios.post(`https://timecamp-clone.herokuapp.com/projects`,data,{headers:{ "token": token}});
+            let response = await axios.post(`${baselink}/projects`,data,{headers:{ "token": token}});
             dispatch({type:ADD_PROJECT, payload: response.data})
             return response.data;
         } catch (e) {
