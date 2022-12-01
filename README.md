@@ -13,7 +13,7 @@ We cloned a website called <a href="https://www.timecamp.com/" target="_blank">T
 ## Contributors 
  * <a href="https://github.com/lokesh-dc">Lokesh D Choudhary</a>
  * <a href="https://github.com/bishal00sharma">Bishal Sharma </a>
- * <a href="https://github.com/MrRohitMI">Rohit Maurya</a>
+ * <a href="https://github.com/MrRohitMI">Rohit Mourya</a>
  * <a href="https://github.com/DivyankaRai">Divyanka Rai </a>
  * <a href="https://github.com/AbhayAg10">Abhay Agrawal</a>
 
